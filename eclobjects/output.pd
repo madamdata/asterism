@@ -1,0 +1,54 @@
+#N canvas 489 70 625 468 10;
+#X obj 102 102 cnv 15 146 116 empty empty empty 20 12 0 14 -195769
+-66577 0;
+#X msg 432 195 \; pd dsp \$1;
+#X obj 138 111 tgl 28 0 empty empty dsp 3 6 0 10 -261495 -262144 -99849
+0 1;
+#X obj 363 312 dac~;
+#X obj 210 42 inlet~;
+#X obj 105 39 inlet~;
+#X obj 105 112 vsl 30 98 0 1 0 0 empty empty vol 9 4 0 10 -261552 -184321
+-1 4800 1;
+#X obj 352 279 *~;
+#X obj 408 280 *~;
+#X obj 362 248 smoother 70;
+#X obj 436 247 smoother 70;
+#X obj 138 172 recorder;
+#X floatatom 188 148 5 0 0 2 cpu - -, f 5;
+#X obj 20 159 cputime;
+#X obj 20 19 loadbang;
+#X obj 20 103 metro 1000;
+#X msg 20 47 1;
+#X floatatom 20 75 0 0 0 0 - - -;
+#X obj 20 131 t b b;
+#X obj 20 219 * 0.1;
+#X obj 20 188 int;
+#X obj 138 141 tgl 28 0 empty empty kb 4 7 0 10 -260832 -261752 -1
+1 1;
+#X obj 146 284 s keycontrol;
+#X text 325 37 most of the buttons should be self explanatory. 'kb'
+turns keyboard control on and off globally., f 36;
+#X text 180 110 ECL 0.2;
+#X text 317 112 madam data apr 2017;
+#X connect 2 0 1 0;
+#X connect 4 0 8 0;
+#X connect 5 0 7 0;
+#X connect 6 0 9 0;
+#X connect 6 0 10 0;
+#X connect 7 0 3 0;
+#X connect 7 0 11 0;
+#X connect 8 0 3 1;
+#X connect 8 0 11 1;
+#X connect 9 0 7 1;
+#X connect 10 0 8 1;
+#X connect 13 0 20 0;
+#X connect 14 0 16 0;
+#X connect 15 0 18 0;
+#X connect 16 0 17 0;
+#X connect 17 0 15 0;
+#X connect 18 0 13 0;
+#X connect 18 1 13 1;
+#X connect 19 0 12 0;
+#X connect 20 0 19 0;
+#X connect 21 0 22 0;
+#X coords 0 -1 1 1 150 120 2 100 100;

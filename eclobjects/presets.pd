@@ -1,0 +1,86 @@
+#N canvas 284 51 775 570 10;
+#X obj 108 108 bng 15 250 50 0 empty empty Save 17 7 0 10 -144464 -257985
+-1;
+#X obj 96 405 s savemessage;
+#X obj 22 300 r saveinfo;
+#X obj 173 344 textfile;
+#X msg 127 293 clear;
+#X obj 506 330 spigot;
+#X obj 509 357 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 539 313 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 578 283 0;
+#X obj 189 445 s loadmessage;
+#X msg 315 263 rewind;
+#X msg 22 329 add \$1 \$2 \$3;
+#X obj 285 411 print;
+#X symbolatom 153 109 10 0 0 0 - - -, f 10;
+#X obj 108 133 bng 15 250 50 0 empty empty Load 17 7 0 10 -202659 -1
+-1;
+#X obj 77 169 t b b b;
+#X obj 181 238 makefilename eclpresets/%s.txt;
+#X msg 169 309 write \$1;
+#X obj 148 266 symbol;
+#X obj 183 49 loadbang;
+#X msg 184 74 set filename;
+#X text 356 502 sending a bang to savemessage results in info coming
+from saveinfo;
+#X msg 261 382 saving \$1;
+#X msg 329 304 read \$1;
+#X obj 362 129 t b b b b;
+#X obj 519 282 bang;
+#X obj 570 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 551 283 1;
+#X msg 326 380 loading \$1;
+#X obj 320 35 openpanel;
+#X obj 311 93 t b a b;
+#X obj 318 60 moonlib/relativepath;
+#X obj 570 250 t b b;
+#X obj 154 132 hradio 15 1 1 8 empty empty empty 0 -8 0 10 -99344 -261682
+-1 2;
+#X obj 577 382 cyclone/uzi;
+#X obj 509 251 pipe 0;
+#X connect 0 0 15 0;
+#X connect 2 0 11 0;
+#X connect 3 0 9 0;
+#X connect 3 1 6 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 5 0 35 0;
+#X connect 6 0 8 0;
+#X connect 7 0 5 1;
+#X connect 8 0 7 0;
+#X connect 10 0 3 0;
+#X connect 11 0 3 0;
+#X connect 13 0 16 0;
+#X connect 14 0 29 0;
+#X connect 15 0 18 0;
+#X connect 15 1 1 0;
+#X connect 15 2 4 0;
+#X connect 16 0 18 1;
+#X connect 17 0 3 0;
+#X connect 18 0 17 0;
+#X connect 18 0 22 0;
+#X connect 19 0 20 0;
+#X connect 19 0 8 0;
+#X connect 20 0 13 0;
+#X connect 22 0 12 0;
+#X connect 23 0 3 0;
+#X connect 24 0 26 0;
+#X connect 24 1 10 0;
+#X connect 25 0 5 0;
+#X connect 26 0 32 0;
+#X connect 27 0 7 0;
+#X connect 28 0 12 0;
+#X connect 29 0 31 0;
+#X connect 30 0 24 0;
+#X connect 30 1 23 0;
+#X connect 30 1 28 0;
+#X connect 30 2 4 0;
+#X connect 31 0 30 0;
+#X connect 32 0 25 0;
+#X connect 32 1 27 0;
+#X connect 35 0 25 0;
+#X coords 0 -1 1 1 180 60 2 100 100;

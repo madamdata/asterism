@@ -1,0 +1,123 @@
+#N canvas 399 28 611 580 10;
+#X obj 103 103 cnv 15 145 75 empty empty \$1 20 12 0 14 -180160 -66577
+0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-env 128 float 1;
+#A 0 -0.0410923 0.342468 0.383564 0.616439 0.684932 0.684932 0.794521
+0.876712 0.876712 0.869863 0.863014 0.849315 0.849315 0.842466 0.821918
+0.821918 0.794521 0.794521 0.780822 0.780822 0.767124 0.760274 0.753425
+0.739727 0.739727 0.732877 0.712329 0.712329 0.698631 0.684932 0.678083
+0.671234 0.657535 0.643836 0.643836 0.643836 0.630138 0.630138 0.623289
+0.616439 0.602741 0.589042 0.582193 0.575344 0.561645 0.547946 0.547946
+0.547946 0.520549 0.515983 0.511417 0.506851 0.493152 0.488586 0.48402
+0.479454 0.465755 0.452056 0.44749 0.442924 0.438358 0.424659 0.41781
+0.410961 0.397262 0.397262 0.397262 0.397262 0.397262 0.383564 0.376714
+0.369865 0.356166 0.342468 0.342468 0.335618 0.328769 0.315071 0.301372
+0.301372 0.301372 0.301372 0.273975 0.273975 0.260276 0.260276 0.260276
+0.260276 0.260276 0.246578 0.232879 0.22603 0.219181 0.219181 0.205482
+0.198633 0.191783 0.178085 0.164386 0.164386 0.164386 0.150688 0.136989
+0.136989 0.123291 0.123291 0.109592 0.109592 0.109592 0.0958934 0.0958934
+0.0958934 0.0821948 0.0821948 0.0684962 0.0684962 0.0684962 0.0684962
+0.0547976 0.0547945 0.0547945 0.0547945 0.0547945 0.0479453 0.041096
+0.0342467 0.0273974 -0.0136983;
+#X coords 0 1 127 0 96 73 2 0 0;
+#X restore 102 103 graph;
+#X obj 315 361 outlet~;
+#X obj 357 46 inlet;
+#X obj 201 152 bng 25 250 50 0 empty empty tr 6 11 0 10 -81210 -261234
+-1;
+#X obj 315 268 line~;
+#X msg 355 231 0;
+#X msg 300 232 128 \$1;
+#X obj 287 157 f 0.5;
+#X obj 299 203 t f b;
+#X obj 315 289 tabread4~ \$0-env;
+#X obj 231 108 vsl 12 65 1 15 0 1 \$0-levelsnd \$0-levelrcv empty 0
+-9 0 10 -133312 -1 -1 0 1;
+#X obj 279 331 *~;
+#X obj 227 296 smoother 40;
+#X obj 461 356 outlet;
+#X obj 201 106 moonlib/mknob 25 100 4000 5 1 1 \$0-ratesnd \$0-ratercv
+empty -2 -6 0 8 -139257 -4160 -1 3836 1;
+#X obj 114 243 f 0;
+#X obj 146 243 f 0;
+#X obj 35 186 r savemessage;
+#X obj 45 284 pack \$1 1 0;
+#X obj 77 307 pack \$1 2 0;
+#X obj 45 364 s saveinfo;
+#X obj 162 390 r loadmessage;
+#X obj 162 412 route \$1;
+#X obj 205 134 tgl 15 0 \$0-autotogglesnd \$0-autotogglercv empty 17
+7 0 10 -204800 -1 -1 0 1;
+#X obj 352 125 metro 150;
+#X obj 171 246 f 0;
+#X obj 51 215 t b b b b;
+#X obj 51 238 t b b b;
+#X obj 122 326 pack \$1 3 0;
+#X obj 164 435 route 1 2 3;
+#X obj 162 518 s \$0-autotoggle;
+#X obj 406 48 inlet~;
+#X obj 385 162 snapshot~;
+#X obj 372 185 cyclone/scale -1 1 0.25 1.75;
+#X obj 311 181 *;
+#X obj 241 30 loadbang;
+#X msg 241 52 0;
+#X obj 160 471 s \$0-ratercv;
+#X obj 161 495 s \$0-levelrcv;
+#N canvas 646 186 450 300 defaults 1;
+#X obj 216 44 loadbang;
+#X obj 216 66 f \$0;
+#X msg 206 113 \; \$1-ratercv 300 \; \$1-levelrcv 1 \; \$1-autotogglercv
+0 \;;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 336 427 pd defaults;
+#X connect 3 0 4 0;
+#X connect 4 0 8 0;
+#X connect 4 0 14 0;
+#X connect 4 0 33 0;
+#X connect 5 0 10 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 25 1;
+#X connect 8 0 35 0;
+#X connect 9 0 7 0;
+#X connect 9 1 6 0;
+#X connect 10 0 12 0;
+#X connect 11 0 13 0;
+#X connect 11 0 17 1;
+#X connect 12 0 2 0;
+#X connect 13 0 12 1;
+#X connect 15 0 8 1;
+#X connect 15 0 16 1;
+#X connect 16 0 19 2;
+#X connect 17 0 20 2;
+#X connect 18 0 27 0;
+#X connect 19 0 21 0;
+#X connect 20 0 21 0;
+#X connect 22 0 23 0;
+#X connect 23 0 30 0;
+#X connect 24 0 25 0;
+#X connect 24 0 26 1;
+#X connect 25 0 8 0;
+#X connect 25 0 33 0;
+#X connect 25 0 14 0;
+#X connect 26 0 29 2;
+#X connect 27 0 28 0;
+#X connect 27 1 16 0;
+#X connect 27 2 17 0;
+#X connect 27 3 26 0;
+#X connect 28 0 19 0;
+#X connect 28 1 20 0;
+#X connect 28 2 29 0;
+#X connect 29 0 21 0;
+#X connect 30 0 38 0;
+#X connect 30 1 39 0;
+#X connect 30 2 31 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 34 0 35 1;
+#X connect 35 0 9 0;
+#X connect 36 0 37 0;
+#X connect 37 0 24 0;
+#X coords 0 -1 1 1 150 80 1 100 100;
