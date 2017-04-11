@@ -1,7 +1,9 @@
 # eclipse [ECL] v0.2
-modular synth environment for pd
-developed and tested on Pd Vanilla v0.47.1
-dependencies: moonlib, cyclone, zexy, iemguts, iemlib
+modular synth environment for pd   
+
+developed and tested on Pd Vanilla v0.47.1  
+
+dependencies: moonlib, cyclone, zexy, iemguts, iemlib  
 
 ## Installation Instructions
 
