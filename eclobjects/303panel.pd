@@ -24,7 +24,7 @@
 #X obj 611 312 *~;
 #X obj 611 334 smoother 50;
 #X obj 143 119 moonlib/mknob 25 100 0 4.2 0 0 \$0-qsnd \$0-qrcv Q -2
--6 0 8 -259622 -228856 -261488 7300 1;
+-6 0 8 -259622 -228856 -261488 9900 1;
 #X obj 232 38 inlet~;
 #X obj 611 290 cyclone/scale~ -1 1 0.5 1.5;
 #X text 633 80 fold env;
@@ -33,19 +33,19 @@
 #X obj 192 156 bng 30 250 50 0 empty empty trig 2 35 0 10 -261234 -203904
 -228856;
 #X obj 179 119 moonlib/mknob 25 100 100 1800 1 0 \$0-decsnd \$0-decrcv
-dec -2 -6 0 8 -2368 -228856 -208064 6500 1;
+dec -2 -6 0 8 -2368 -228856 -208064 3200 1;
 #X text 232 18 q inlet;
 #X obj 282 38 inlet~;
 #X text 282 18 dec inlet;
 #X obj 70 239 snapshot~;
 #X obj 156 160 moonlib/mknob 25 100 0 0.5 0 0 \$0-decmodsnd \$0-decmodrcv
-decMod -2 -6 0 8 -244487 -228856 -261800 7800 1;
+decMod -2 -6 0 8 -244487 -228856 -261800 0 1;
 #X obj 65 294 *;
 #X obj 468 381 ad, f 6;
 #X obj 626 211 ad, f 7;
 #X obj 566 103 ad, f 9;
 #X obj 121 160 moonlib/mknob 25 100 0 1.1 0 1 \$0-timbresnd \$0-timbrercv
-timbre -2 -6 0 8 -224119 -228856 -261426 3800 1;
+timbre -2 -6 0 8 -224119 -228856 -261426 0 1;
 #X obj 329 38 inlet~;
 #X text 348 18 timbre inlet;
 #X msg 319 290 1 \$1;
@@ -58,8 +58,8 @@ timbre -2 -6 0 8 -224119 -228856 -261426 3800 1;
 #X obj 707 59 r \$0-tofoldenv;
 #X msg 633 59 1 \$1;
 #X obj 256 160 t f b;
-#X obj 108 119 moonlib/mknob 25 100 50 7500 1 0 \$0-cutoffsnd \$0-cutoffrcv
-cutoff -2 -6 0 8 -259835 -228856 -232576 2100 1;
+#X obj 108 119 moonlib/mknob 25 100 30 7500 1 0 \$0-cutoffsnd \$0-cutoffrcv
+cutoff -2 -6 0 8 -259835 -228856 -232576 0 1;
 #X obj 581 287 *~;
 #X obj 581 265 smoother 50;
 #X obj 683 254 +~ 0.5;
