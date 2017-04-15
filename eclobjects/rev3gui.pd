@@ -5,15 +5,15 @@
 #X obj 508 612 outlet~;
 #X obj 298 124 inlet~;
 #X obj 398 125 inlet~;
-#X obj 110 130 hsl 128 15 0 100 0 1 \$0-livenesssnd \$0-livenessrcv
-liveness -2 -8 0 10 -233473 -1 -1 10795 1;
+#X obj 110 130 hsl 128 15 60 100 0 1 \$0-livenesssnd \$0-livenessrcv
+liveness -2 -8 0 10 -233473 -1 -1 10500 1;
 #X obj 110 160 hsl 128 15 50 10000 1 1 \$0-crossoversnd \$0-crossoverrcv
-crossover -2 -8 0 10 -212993 -66577 -1 11476 1;
+crossover -2 -8 0 10 -212993 -66577 -1 11276 1;
 #X obj 110 190 hsl 128 15 0 100 0 1 \$0-dampingsnd \$0-dampingrcv damping
--2 -8 0 10 -167937 -112348 -1 10160 1;
+-2 -8 0 10 -167937 -112348 -1 8960 1;
 #X obj 593 119 loadbang;
 #X obj 110 221 hsl 128 15 50 8500 1 1 \$0-filtsnd \$0-filtrcv filt
--2 -8 0 10 -131073 -195568 -1 11388 1;
+-2 -8 0 10 -131073 -195568 -1 6888 1;
 #X obj 263 372 smoother 50;
 #X obj 577 475 smoother 50;
 #X obj 348 529 hip~ 30;
@@ -38,6 +38,40 @@ crossover -2 -8 0 10 -212993 -66577 -1 11476 1;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X restore 693 217 pd defaults;
+#N canvas 640 61 450 300 state_saving 0;
+#X obj 62 45 r \$0-livenesssnd;
+#X obj 73 65 r \$0-crossoversnd;
+#X obj 85 85 r \$0-dampingsnd;
+#X obj 102 105 r \$0-filtsnd;
+#X obj 60 138 cyclone/bondo 4;
+#X obj 68 171 pack f f f f;
+#X obj 117 205 outlet;
+#X connect 0 0 4 0;
+#X connect 1 0 4 1;
+#X connect 2 0 4 2;
+#X connect 3 0 4 3;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
+#X connect 4 2 5 2;
+#X connect 4 3 5 3;
+#X connect 5 0 6 0;
+#X restore 652 283 pd state_saving;
+#X obj 652 308 canvasargs;
+#N canvas 366 85 450 300 state_loading 0;
+#X obj 111 162 s \$0-crossoverrcv;
+#X obj 109 141 s \$0-livenessrcv;
+#X obj 111 182 s \$0-dampingrcv;
+#X obj 111 204 s \$0-filtrcv;
+#X obj 114 29 loadbang;
+#X obj 114 51 pack \$1 \$2 \$3 \$4;
+#X obj 114 73 unpack f f f f;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X connect 6 1 0 0;
+#X connect 6 2 2 0;
+#X connect 6 3 3 0;
+#X restore 763 285 pd state_loading;
 #X connect 3 0 15 0;
 #X connect 4 0 15 1;
 #X connect 5 0 15 3;
@@ -59,4 +93,5 @@ crossover -2 -8 0 10 -212993 -66577 -1 11476 1;
 #X connect 20 0 2 0;
 #X connect 21 0 19 0;
 #X connect 22 0 20 0;
-#X coords 0 -1 1 1 150 140 1 100 100;
+#X connect 24 0 25 0;
+#X coords 0 -1 1 1 150 140 2 100 100;

@@ -2,11 +2,11 @@
 #X obj 102 102 cnv 15 146 146 empty empty empty 20 12 0 14 -261578
 -66577 0;
 #X obj 103 108 vsl 25 80 0.01 1 1 0 \$0-fader1snd \$0-fader1rcv empty
-0 -9 0 10 -261682 -260097 -1 6100 1;
+0 -9 0 10 -261682 -260097 -1 5400 1;
 #X obj 130 108 vsl 25 80 0.01 1 1 0 \$0-fader2snd \$0-fader2rcv empty
-0 -9 0 10 -261682 -260097 -1 0 1;
+0 -9 0 10 -261682 -260097 -1 4700 1;
 #X obj 157 108 vsl 25 80 0.01 1 1 0 \$0-fader3snd \$0-fader3rcv empty
-0 -9 0 10 -261682 -260097 -1 0 1;
+0 -9 0 10 -261682 -260097 -1 7400 1;
 #X obj 184 108 vsl 25 80 0.01 1 1 0 \$0-fader4snd \$0-fader4rcv empty
 0 -9 0 10 -261682 -260097 -1 7900 1;
 #X obj 325 367 *~;
@@ -19,13 +19,13 @@
 #X obj 530 367 *~;
 #X obj 594 367 *~;
 #X obj 620 367 *~;
-#X obj 103 218 moonlib/mknob 23 100 0 1 0 0 \$0-pan1snd \$0-pan1rcv
+#X obj 103 218 moonlib/mknob 23 100 0 1 0 1 \$0-pan1snd \$0-pan1rcv
 empty -2 -6 0 8 -261541 -239489 -1 5100 1;
-#X obj 131 218 moonlib/mknob 23 100 0 1 0 0 \$0-pan2snd \$0-pan2rcv
-empty -2 -6 0 8 -261541 -239489 -1 5200 1;
-#X obj 159 218 moonlib/mknob 23 100 0 1 0 0 \$0-pan3snd \$0-pan3rcv
+#X obj 131 218 moonlib/mknob 23 100 0 1 0 1 \$0-pan2snd \$0-pan2rcv
+empty -2 -6 0 8 -261541 -239489 -1 5100 1;
+#X obj 159 218 moonlib/mknob 23 100 0 1 0 1 \$0-pan3snd \$0-pan3rcv
 empty -2 -6 0 8 -261541 -239489 -1 5000 1;
-#X obj 187 218 moonlib/mknob 23 100 0 1 0 0 \$0-pan4snd \$0-pan4rcv
+#X obj 187 218 moonlib/mknob 23 100 0 1 0 1 \$0-pan4snd \$0-pan4rcv
 empty -2 -6 0 8 -261541 -239489 -1 5100 1;
 #X obj 325 321 adapan;
 #X obj 415 321 adapan;
@@ -55,14 +55,14 @@ empty -2 -6 0 8 -261541 -239489 -1 5100 1;
 #X obj 169 64 - 90;
 #X obj 239 65 - 90;
 #X obj 284 149 canvasargs;
-#X obj 104 195 tgl 20 0 \$0-mute1snd \$0-mute1rcv empty 17 7 0 10 -261653
--1 -1 1 1;
-#X obj 132 195 tgl 20 0 \$0-mute2snd \$0-mute2rcv empty 17 7 0 10 -261653
--1 -1 1 1;
-#X obj 159 195 tgl 20 0 \$0-mute3snd \$0-mute3rcv empty 17 7 0 10 -261653
--1 -1 1 1;
-#X obj 186 195 tgl 20 0 \$0-mute4snd \$0-mute4rcv empty 17 7 0 10 -261653
--1 -1 1 1;
+#X obj 104 195 tgl 20 1 \$0-mute1snd \$0-mute1rcv empty 17 7 0 10 -261653
+-1 -1 0 1;
+#X obj 132 195 tgl 20 1 \$0-mute2snd \$0-mute2rcv empty 17 7 0 10 -261653
+-1 -1 0 1;
+#X obj 159 195 tgl 20 1 \$0-mute3snd \$0-mute3rcv empty 17 7 0 10 -261653
+-1 -1 0 1;
+#X obj 186 195 tgl 20 1 \$0-mute4snd \$0-mute4rcv empty 17 7 0 10 -261653
+-1 -1 0 1;
 #X obj 367 438 *~;
 #X obj 398 437 *~;
 #X obj 439 438 *~;
