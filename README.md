@@ -5,6 +5,8 @@ developed and tested on Pd Vanilla v0.47.1
 
 dependencies: moonlib, cyclone, zexy, iemguts, iemlib  
 
+![ecl 0.2](ecl12screenshot.png)
+
 ## Installation Instructions
 
 1. clone this repository or click "download as zip". 
