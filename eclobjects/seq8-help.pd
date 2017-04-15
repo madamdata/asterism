@@ -1,8 +1,8 @@
 #N canvas 95 122 523 355 10;
 #X obj 120 102 seq8 0 1 0 1 1 0 0 1 0;
 #X obj 120 78 metro 250;
-#X obj 120 57 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 120 57 tgl 15 0 empty empty click_here 17 7 0 10 -262144 -1
+-1 1 1;
 #X obj 120 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 167 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144

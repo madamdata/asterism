@@ -6,8 +6,8 @@
 #X obj 315 262 f 0;
 #X obj 337 262 f 0;
 #X obj 359 262 f 0;
-#X obj 231 204 bng 15 250 50 0 empty empty empty 17 7 0 10 -261682
--260097 -1;
+#X obj 231 204 bng 15 70 10 0 empty empty empty 17 7 0 10 -261682 -260097
+-1;
 #X obj 138 28 inlet;
 #X obj 172 28 inlet;
 #X obj 206 28 inlet;
@@ -56,7 +56,7 @@
 #X obj 215 204 tgl15 68 169;
 #X obj 573 196 + 0.5;
 #X obj 573 218 s \$0-statusrcv;
-#X obj 202 207 cnv 4 4 4 empty \$0-cnv empty 0 0 0 14 -61638 -66577
+#X obj 138 207 cnv 4 4 4 empty \$0-cnv empty 0 0 0 14 -61638 -66577
 0;
 #X obj 574 274 pack f \$0;
 #X msg 574 296 \; \$2-cnv pos \$1 207;
@@ -133,6 +133,8 @@
 #X restore 616 96 pd state_saving;
 #X obj 616 117 canvasargs;
 #X obj 388 317 sel 1 0;
+#X obj 281 147 loadbang;
+#X msg 281 169 flashtime 10 70;
 #X connect 0 0 7 0;
 #X connect 0 0 17 0;
 #X connect 1 0 2 0;
@@ -202,4 +204,6 @@
 #X connect 63 0 13 0;
 #X connect 63 1 15 0;
 #X connect 63 1 12 0;
+#X connect 64 0 65 0;
+#X connect 65 0 7 0;
 #X coords 0 -1 1 1 150 23 2 100 200;

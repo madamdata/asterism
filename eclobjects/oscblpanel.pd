@@ -2,7 +2,7 @@
 #X obj 102 102 cnv 15 146 106 empty \$0-canvas oscbl_\$1 90 8 0 12
 -121466 -240893 0;
 #X obj 107 123 moonlib/mknob 35 100 1 127 1 1 \$0-freqsnd \$0-freqrcv
-freq -2 -6 0 8 -203904 -159808 -261758 2300 1;
+freq -2 -6 0 8 -203904 -159808 -261758 3700 1;
 #X obj 367 283 osc~;
 #X obj 123 173 moonlib/mknob 20 100 0 1 0 1 \$0-modsnd \$0-modrcv mod_Amt
 -2 -6 0 8 -203904 -159808 -261824 9900 1;
@@ -11,7 +11,7 @@ freq -2 -6 0 8 -203904 -159808 -261758 2300 1;
 #X obj 367 257 *~;
 #X obj 362 370 fold~ 2;
 #X obj 146 124 moonlib/mknob 35 100 0.48 4 0 1 \$0-foldsnd \$0-foldrcv
-fold -2 -6 0 8 -203904 -159808 -261824 9900 1;
+fold -2 -6 0 8 -203904 -159808 -261824 0 1;
 #X obj 411 234 cyclone/scale~ -1 1 1 1;
 #X obj 431 275 smoother 100;
 #X obj 389 143 cyclone/scale 0 127 30 17000 2;
@@ -31,7 +31,7 @@ foldmod_Amt -2 -6 0 8 -203904 -159808 -261824 8400 1;
 #X obj 492 336 osc~;
 #X obj 493 377 fold~ 2;
 #X obj 186 128 moonlib/mknob 30 100 0 0.04 0 1 \$0-detunesnd \$0-detunercv
-detune -2 -6 0 8 -203904 -159808 -261824 3900 1;
+detune -2 -6 0 8 -203904 -159808 -261824 3800 1;
 #X obj 277 274 smoother 50;
 #X obj 401 282 *~;
 #X obj 401 261 +~ 1;
