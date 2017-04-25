@@ -26,21 +26,21 @@
 #X obj 342 128 mod 8;
 #X obj 485 334 outlet;
 #X obj 107 105 vsl 15 70 -1 1 0 0 \$0-step1snd \$0-step1rcv empty 0
--9 0 10 -260319 -261518 -1 2750 1;
+-9 0 10 -260319 -261518 -1 1950 1;
 #X obj 124 105 vsl 15 70 -1 1 0 0 \$0-step2snd \$0-step2rcv empty 0
--9 0 10 -260319 -261518 -1 4100 1;
+-9 0 10 -260319 -261518 -1 2150 1;
 #X obj 141 105 vsl 15 70 -1 1 0 0 \$0-step3snd \$0-step3rcv empty 0
--9 0 10 -260319 -261518 -1 6050 1;
+-9 0 10 -260319 -261518 -1 5450 1;
 #X obj 158 105 vsl 15 70 -1 1 0 0 \$0-step4snd \$0-step4rcv empty 0
--9 0 10 -260319 -261518 -1 1750 1;
+-9 0 10 -260319 -261518 -1 2550 1;
 #X obj 175 105 vsl 15 70 -1 1 0 0 \$0-step5snd \$0-step5rcv empty 0
--9 0 10 -260319 -261518 -1 4850 1;
+-9 0 10 -260319 -261518 -1 4350 1;
 #X obj 192 105 vsl 15 70 -1 1 0 0 \$0-step6snd \$0-step6rcv empty 0
--9 0 10 -260319 -261518 -1 6250 1;
+-9 0 10 -260319 -261518 -1 2550 1;
 #X obj 209 105 vsl 15 70 -1 1 0 0 \$0-step7snd \$0-step7rcv empty 0
--9 0 10 -260319 -261518 -1 650 1;
+-9 0 10 -260319 -261518 -1 5150 1;
 #X obj 226 105 vsl 15 70 -1 1 0 0 \$0-step8snd \$0-step8rcv empty 0
--9 0 10 -260319 -261518 -1 3650 1;
+-9 0 10 -260319 -261518 -1 2050 1;
 #X obj 424 362 loadbang;
 #X text 499 360 state saving;
 #X obj 59 428 canvasargs;
@@ -48,24 +48,24 @@
 1 to 8 (-1 to 1) \;;
 #X obj 242 300 smoother 20;
 #X obj 110 205 hsl 129 12 0.01 2500 1 0 \$0-glideamtsnd \$0-glideamtrcv
-glide 45 5 0 9 -261355 -247320 -168707 7400 1;
+glide 45 5 0 9 -261355 -247320 -168707 0 1;
 #X obj 305 275 - 0.01;
 #X obj 107 188 tgl 15 0 \$0-glide1snd \$0-glide1rcv empty 17 7 0 10
--259863 -261830 -1 1 1;
+-259863 -261830 -1 0 1;
 #X obj 124 188 tgl 15 0 \$0-glide2snd \$0-glide2rcv empty 17 7 0 10
 -259863 -261830 -1 0 1;
 #X obj 141 188 tgl 15 0 \$0-glide3snd \$0-glide3rcv empty 17 7 0 10
 -259863 -261830 -1 0 1;
 #X obj 158 188 tgl 15 0 \$0-glide4snd \$0-glide4rcv empty 17 7 0 10
--259863 -261830 -1 1 1;
+-259863 -261830 -1 0 1;
 #X obj 175 188 tgl 15 0 \$0-glide5snd \$0-glide5rcv empty 17 7 0 10
--259863 -261830 -1 1 1;
+-259863 -261830 -1 0 1;
 #X obj 192 188 tgl 15 0 \$0-glide6snd \$0-glide6rcv empty 17 7 0 10
--259863 -261830 -1 1 1;
+-259863 -261830 -1 0 1;
 #X obj 209 188 tgl 15 0 \$0-glide7snd \$0-glide7rcv empty 17 7 0 10
 -259863 -261830 -1 0 1;
 #X obj 226 188 tgl 15 0 \$0-glide8snd \$0-glide8rcv empty 17 7 0 10
--259863 -261830 -1 1 1;
+-259863 -261830 -1 0 1;
 #X obj 359 249 f 0;
 #X obj 383 249 f 0;
 #X obj 407 249 f 0;
@@ -224,12 +224,13 @@ glide 45 5 0 9 -261355 -247320 -168707 7400 1;
 #X obj 92 329 outlet numbers -1 to 1;
 #X obj 259 329 outlet~ signal;
 #X obj 313 386 outlet~ signal inv;
-#X obj 176 180 cnv 6 12 6 empty \$0-cnv empty 20 12 0 14 -253000 -66577
+#X obj 210 180 cnv 6 12 6 empty \$0-cnv empty 20 12 0 14 -253000 -66577
 0;
 #X obj 604 209 pack f \$0;
 #X floatatom 602 146 5 0 7 0 - - -, f 5;
 #X msg 604 231 \; \$2-cnv pos \$1 180;
 #X obj 604 187 expr $f1*17+108;
+#X obj 483 36 r allsequencers;
 #X connect 1 0 12 0;
 #X connect 2 0 3 0;
 #X connect 2 0 23 0;
@@ -326,4 +327,5 @@ glide 45 5 0 9 -261355 -247320 -168707 7400 1;
 #X connect 76 0 78 0;
 #X connect 77 0 79 0;
 #X connect 79 0 76 0;
+#X connect 80 0 2 1;
 #X coords 0 -1 1 1 150 120 2 100 100;
