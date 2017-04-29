@@ -16,14 +16,14 @@
 #X obj 155 261 s \$0-recordbutton;
 #X msg 214 203 stop;
 #X obj 217 225 print;
-#X obj 258 145 makefilename /Users/adamadhiyatma/Documents/Pd/recordings/%s.wav
-;
 #X msg 378 111 start;
 #X obj 351 88 t b b;
 #X msg 5 210 color 34;
 #X msg 95 230 color 13;
+#X obj 258 145 makefilename /Users/ada/Documents/Pd/recordings/%s.wav
+;
 #X connect 2 0 9 0;
-#X connect 3 0 14 0;
+#X connect 3 0 18 0;
 #X connect 4 0 3 1;
 #X connect 5 0 8 0;
 #X connect 5 0 13 0;
@@ -31,14 +31,14 @@
 #X connect 7 0 8 1;
 #X connect 9 0 10 0;
 #X connect 10 0 12 0;
-#X connect 10 0 17 0;
-#X connect 10 1 16 0;
-#X connect 10 1 18 0;
+#X connect 10 0 16 0;
+#X connect 10 1 15 0;
+#X connect 10 1 17 0;
 #X connect 12 0 8 0;
-#X connect 14 0 5 0;
-#X connect 15 0 8 0;
-#X connect 16 0 15 0;
-#X connect 16 1 3 0;
+#X connect 14 0 8 0;
+#X connect 15 0 14 0;
+#X connect 15 1 3 0;
+#X connect 16 0 11 0;
 #X connect 17 0 11 0;
-#X connect 18 0 11 0;
+#X connect 18 0 5 0;
 #X coords 0 -1 1 1 100 40 2 100 100;
