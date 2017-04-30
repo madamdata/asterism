@@ -1,0 +1,168 @@
+#N canvas 420 151 654 616 10;
+#X obj 12 24 cnv 15 146 72 empty empty empty 20 12 0 14 -232890 -66577
+0;
+#X obj 185 62 inlet bangs;
+#X obj 281 68 inlet numbers;
+#X obj 379 72 inlet notevelpairs;
+#X obj 396 480 outlet notevelpairs;
+#X obj 199 479 outlet bangs;
+#X obj 291 480 outlet numbers;
+#X floatatom 30 27 3 0 0 0 - #0-note1rcv #0-note1snd, f 3;
+#X obj 13 27 tgl 15 0 \$0-tgl1snd \$0-tgl1rcv empty 17 7 0 10 -191407
+-262144 -1 1 1;
+#X floatatom 30 44 3 0 0 0 - #0-note4rcv #0-note4snd, f 3;
+#X obj 13 44 tgl 15 0 \$0-tgl4snd \$0-tgl4rcv empty 17 7 0 10 -191407
+-262144 -1 1 1;
+#X floatatom 69 27 3 0 0 0 - #0-note2rcv #0-note2snd, f 3;
+#X obj 52 27 tgl 15 0 \$0-tgl2snd \$0-tgl2rcv empty 17 7 0 10 -191407
+-262144 -1 1 1;
+#X floatatom 69 44 3 0 0 0 - #0-note5rcv #0-note5snd, f 3;
+#X obj 52 44 tgl 15 0 \$0-tgl5snd \$0-tgl5rcv empty 17 7 0 10 -191407
+-262144 -1 1 1;
+#X floatatom 108 27 3 0 0 0 - #0-note3rcv #0-note3snd, f 3;
+#X obj 91 27 tgl 15 0 \$0-tgl3snd \$0-tgl3rcv empty 17 7 0 10 -191407
+-262144 -1 1 1;
+#X floatatom 108 44 3 0 0 0 - #0-note6rcv #0-note6snd, f 3;
+#X obj 91 44 tgl 15 0 \$0-tgl6snd \$0-tgl6rcv empty 17 7 0 10 -191407
+-262144 -1 1 1;
+#X floatatom 130 29 4 0 0 3 trnsp #0-transprcv #0-transpsnd, f 4;
+#X floatatom 13 62 5 0 0 3 dur #0-durrcv #0-dursnd, f 5;
+#X floatatom 49 62 5 0 127 3 vel #0-velrcv #0-velsnd, f 5;
+#N canvas 0 22 679 648 chords 0;
+#X obj 153 423 makechord;
+#X obj 38 108 r \$0-note1snd;
+#X obj 48 128 r \$0-note2snd;
+#X obj 58 148 r \$0-note3snd;
+#X obj 128 108 r \$0-note4snd;
+#X obj 138 128 r \$0-note5snd;
+#X obj 148 148 r \$0-note6snd;
+#X obj 105 242 f 0;
+#X obj 135 242 f 0;
+#X obj 165 242 f 0;
+#X obj 195 242 f 0;
+#X obj 225 242 f 0;
+#X obj 255 242 f 0;
+#X obj 237 412 r \$0-dursnd;
+#X obj 192 368 r \$0-velsnd;
+#X obj 262 137 spigot;
+#X obj 272 157 spigot;
+#X obj 282 177 spigot;
+#X obj 322 137 spigot;
+#X obj 332 157 spigot;
+#X obj 342 177 spigot;
+#X obj 382 107 r \$0-tgl1snd;
+#X obj 392 127 r \$0-tgl2snd;
+#X obj 402 147 r \$0-tgl3snd;
+#X obj 462 107 r \$0-tgl4snd;
+#X obj 472 127 r \$0-tgl5snd;
+#X obj 482 147 r \$0-tgl6snd;
+#X obj 142 334 list prepend;
+#X obj 232 333 list;
+#X obj 261 80 t b b b b b b b b;
+#X obj 152 376 list;
+#X obj 145 289 +;
+#X obj 214 271 r \$0-transpsnd;
+#X obj 184 17 inlet;
+#X obj 176 514 outlet;
+#X obj 430 204 inlet;
+#X obj 145 311 + 0;
+#X obj 457 259 unpack f f;
+#X obj 457 285 - 64;
+#X obj 430 226 t l l;
+#X obj 472 351 stripnote;
+#X obj 469 372 bang;
+#X obj 531 291 r \$0-kvtrigsnd;
+#X obj 424 305 spigot;
+#X obj 406 421 makechordnoauto;
+#X obj 470 397 list prepend;
+#X obj 555 319 r \$0-autorelsnd;
+#X obj 213 471 adamux;
+#X obj 447 329 adademux;
+#X obj 409 370 bang;
+#X connect 0 0 47 1;
+#X connect 1 0 7 1;
+#X connect 2 0 8 1;
+#X connect 3 0 9 1;
+#X connect 4 0 10 1;
+#X connect 5 0 11 1;
+#X connect 6 0 12 1;
+#X connect 7 0 31 0;
+#X connect 8 0 31 0;
+#X connect 9 0 31 0;
+#X connect 10 0 31 0;
+#X connect 11 0 31 0;
+#X connect 12 0 31 0;
+#X connect 13 0 0 2;
+#X connect 14 0 0 1;
+#X connect 15 0 7 0;
+#X connect 16 0 8 0;
+#X connect 17 0 9 0;
+#X connect 18 0 10 0;
+#X connect 19 0 11 0;
+#X connect 20 0 12 0;
+#X connect 21 0 15 1;
+#X connect 22 0 16 1;
+#X connect 23 0 17 1;
+#X connect 24 0 18 1;
+#X connect 25 0 19 1;
+#X connect 26 0 20 1;
+#X connect 27 0 28 0;
+#X connect 27 0 30 1;
+#X connect 28 0 27 1;
+#X connect 29 0 30 0;
+#X connect 29 1 15 0;
+#X connect 29 2 16 0;
+#X connect 29 3 17 0;
+#X connect 29 4 18 0;
+#X connect 29 5 19 0;
+#X connect 29 6 20 0;
+#X connect 29 7 27 1;
+#X connect 30 0 0 0;
+#X connect 30 0 45 0;
+#X connect 31 0 36 0;
+#X connect 32 0 31 1;
+#X connect 33 0 29 0;
+#X connect 35 0 39 0;
+#X connect 36 0 27 0;
+#X connect 37 0 38 0;
+#X connect 37 1 45 1;
+#X connect 38 0 36 1;
+#X connect 39 0 43 0;
+#X connect 39 1 37 0;
+#X connect 40 1 41 0;
+#X connect 41 0 29 0;
+#X connect 42 0 43 1;
+#X connect 43 0 48 0;
+#X connect 44 0 47 0;
+#X connect 45 0 44 0;
+#X connect 46 0 47 2;
+#X connect 46 0 48 1;
+#X connect 47 0 34 0;
+#X connect 48 0 49 0;
+#X connect 48 1 40 0;
+#X connect 49 0 29 0;
+#X restore 298 248 pd chords;
+#X obj 85 61 tgl 15 0 \$0-kvtrigsnd \$0-kvtrigrcv kvtrig 17 7 0 8 -128992
+-262143 -1 1 1;
+#X obj 85 78 tgl 15 0 \$0-autorelsnd \$0-autorelrcv autorel 17 7 0
+8 -128992 -262143 -1 0 1;
+#X obj 12 12 cnv 10 50 11 empty empty bng 2 5 0 10 -124831 -261980
+0;
+#X obj 63 12 cnv 10 50 11 empty empty num 12 5 0 10 -124831 -261980
+0;
+#X obj 108 12 cnv 10 50 11 empty empty k/v 31 5 0 10 -124831 -261980
+0;
+#X obj 12 97 cnv 10 50 11 empty empty bng 2 5 0 10 -124831 -261980
+0;
+#X obj 63 97 cnv 10 50 11 empty empty num 12 5 0 10 -124831 -261980
+0;
+#X obj 108 97 cnv 10 50 11 empty empty k/v 31 5 0 10 -124831 -261980
+0;
+#X obj 408 195 stripnote;
+#X obj 203 440 bang;
+#X connect 1 0 22 0;
+#X connect 3 0 22 1;
+#X connect 3 0 31 0;
+#X connect 22 0 4 0;
+#X connect 31 1 32 0;
+#X coords 0 -1 1 1 150 100 2 10 10;
