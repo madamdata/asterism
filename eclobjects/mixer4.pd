@@ -4,13 +4,13 @@
 #X obj 12 12 cnv 15 146 146 empty empty empty 20 12 0 14 -261578 -66577
 0;
 #X obj 13 18 vsl 25 80 0.01 1 1 0 \$0-fader1snd \$0-fader1rcv empty
-0 -9 0 10 -261682 -260097 -1 6400 1;
+0 -9 0 10 -261682 -260097 -1 3300 1;
 #X obj 40 18 vsl 25 80 0.01 1 1 0 \$0-fader2snd \$0-fader2rcv empty
-0 -9 0 10 -261682 -260097 -1 5100 1;
+0 -9 0 10 -261682 -260097 -1 5200 1;
 #X obj 67 18 vsl 25 80 0.01 1 1 0 \$0-fader3snd \$0-fader3rcv empty
-0 -9 0 10 -261682 -260097 -1 6300 1;
+0 -9 0 10 -261682 -260097 -1 6500 1;
 #X obj 94 18 vsl 25 80 0.01 1 1 0 \$0-fader4snd \$0-fader4rcv empty
-0 -9 0 10 -261682 -260097 -1 0 1;
+0 -9 0 10 -261682 -260097 -1 4500 1;
 #X obj 420 367 *~;
 #X obj 453 367 *~;
 #X obj 535 531 outlet~;
@@ -22,13 +22,13 @@
 #X obj 689 367 *~;
 #X obj 715 367 *~;
 #X obj 13 128 moonlib/mknob 23 100 0 1 0 1 \$0-pan1snd \$0-pan1rcv
-empty -2 -6 0 8 -261541 -239489 -1 7100 1;
-#X obj 41 128 moonlib/mknob 23 100 0 1 0 1 \$0-pan2snd \$0-pan2rcv
-empty -2 -6 0 8 -261541 -239489 -1 6600 1;
-#X obj 69 128 moonlib/mknob 23 100 0 1 0 1 \$0-pan3snd \$0-pan3rcv
-empty -2 -6 0 8 -261541 -239489 -1 5000 1;
-#X obj 97 128 moonlib/mknob 23 100 0 1 0 1 \$0-pan4snd \$0-pan4rcv
 empty -2 -6 0 8 -261541 -239489 -1 4700 1;
+#X obj 41 128 moonlib/mknob 23 100 0 1 0 1 \$0-pan2snd \$0-pan2rcv
+empty -2 -6 0 8 -261541 -239489 -1 4900 1;
+#X obj 69 128 moonlib/mknob 23 100 0 1 0 1 \$0-pan3snd \$0-pan3rcv
+empty -2 -6 0 8 -261541 -239489 -1 5200 1;
+#X obj 97 128 moonlib/mknob 23 100 0 1 0 1 \$0-pan4snd \$0-pan4rcv
+empty -2 -6 0 8 -261541 -239489 -1 7200 1;
 #X obj 420 321 adapan;
 #X obj 510 321 adapan;
 #X obj 396 221 inlet~;
@@ -49,21 +49,21 @@ empty -2 -6 0 8 -261541 -239489 -1 4700 1;
 #X obj 373 439 mux~ . . . .;
 #X obj 122 17 hradio 9 1 0 4 \$0-vuselectorsnd \$0-vuselectorrcv empty
 0 -8 0 10 -228856 -260097 -1 3;
-#X obj 177 292 r~ \$0-tovuL;
-#X obj 248 293 r~ \$0-tovuR;
-#X obj 193 328 env~;
-#X obj 263 328 env~;
-#X obj 193 350 - 90;
-#X obj 263 351 - 90;
+#X obj 177 262 r~ \$0-tovuL;
+#X obj 248 263 r~ \$0-tovuR;
+#X obj 178 284 env~;
+#X obj 248 284 env~;
+#X obj 178 306 - 90;
+#X obj 248 307 - 90;
 #X obj 158 226 canvasargs;
 #X obj 14 105 tgl 20 1 \$0-mute1snd \$0-mute1rcv empty 17 7 0 10 -261653
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 42 105 tgl 20 1 \$0-mute2snd \$0-mute2rcv empty 17 7 0 10 -261653
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 69 105 tgl 20 1 \$0-mute3snd \$0-mute3rcv empty 17 7 0 10 -261653
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 96 105 tgl 20 1 \$0-mute4snd \$0-mute4rcv empty 17 7 0 10 -261653
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 462 438 *~;
 #X obj 493 437 *~;
 #X obj 534 438 *~;
@@ -210,9 +210,9 @@ mute4;
 #X obj 866 319 r \$0-mute3snd;
 #X obj 876 338 r \$0-mute4snd;
 #X obj 279 403 r \$0-vuselectorsnd;
-#X obj 190 372 s \$0-vuLrcv;
-#X obj 266 373 s \$0-vuRrcv;
-#X obj 125 129 hradio 15 1 0 2 \$0-tabsnd \$0-tabrcv empty 0 -8 0 10
+#X obj 187 382 s \$0-vuLrcv;
+#X obj 263 383 s \$0-vuRrcv;
+#X obj 125 138 hradio 15 1 0 2 \$0-tabsnd \$0-tabrcv empty 0 -8 0 10
 -261674 -259727 -1 0;
 #X obj 27 212 namecanvas \$0-mixer4;
 #N canvas 0 22 450 300 tabs 0;
@@ -336,6 +336,9 @@ rsp 2 20 0 10 -260651 -258892 -1 900 1;
 #X obj 248 38 vsl 20 100 0 15 0 1 \$0-makeupsnd \$0-makeuprcv mkp 2
 20 0 10 -261344 -258892 -1 2200 1;
 #X obj 12 373 sel 49 50 51 52;
+#X obj 182 355 spigot;
+#X obj 260 355 spigot;
+#X obj 301 322 r allguis;
 #X connect 6 0 36 0;
 #X connect 6 0 50 0;
 #X connect 7 0 37 0;
@@ -374,8 +377,8 @@ rsp 2 20 0 10 -260651 -258892 -1 900 1;
 #X connect 40 0 42 0;
 #X connect 41 0 43 0;
 #X connect 42 0 44 0;
-#X connect 43 0 98 0;
-#X connect 44 0 99 0;
+#X connect 43 0 119 0;
+#X connect 44 0 120 0;
 #X connect 50 0 112 0;
 #X connect 51 0 112 1;
 #X connect 52 0 112 0;
@@ -439,4 +442,8 @@ rsp 2 20 0 10 -260651 -258892 -1 900 1;
 #X connect 118 1 72 0;
 #X connect 118 2 73 0;
 #X connect 118 3 74 0;
+#X connect 119 0 98 0;
+#X connect 120 0 99 0;
+#X connect 121 0 120 1;
+#X connect 121 0 119 1;
 #X coords 0 -1 1 1 150 150 2 10 10;
