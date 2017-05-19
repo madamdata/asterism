@@ -3,12 +3,12 @@
 -66577 0;
 #X msg 498 182 \; pd dsp \$1;
 #X obj 143 111 tgl 28 0 \$0-dspsnd \$0-dsprcv dsp 3 6 0 10 -261495
--259037 -99849 0 1;
+-259037 -99849 1 1;
 #X obj 363 312 dac~;
 #X obj 408 158 inlet~;
 #X obj 352 157 inlet~;
-#X obj 104 112 vsl 25 98 0.01 1.1 1 0 \$0-volsnd \$0-volrcv vol 5 4
-0 10 -261552 -184321 -1 0 1;
+#X obj 108 112 vsl 25 98 0.01 1.1 1 0 \$0-volsnd \$0-volrcv vol 5 4
+0 10 -261552 -184321 -1 7600 1;
 #X obj 352 279 *~;
 #X obj 408 280 *~;
 #X floatatom 204 133 5 0 0 2 cpu #0-cpu -, f 5;
@@ -114,7 +114,7 @@ once you've done this!, f 22;
 #X obj 145 249 r \$0-kbsnd;
 #X obj 20 103 metro 1000;
 #X obj 419 192 r \$0-volsnd;
-#X obj 132 125 vu 8 80 \$0-vurcv empty -1 -8 0 10 -141547 -1 0 0;
+#X obj 105 277 vu 8 80 \$0-vurcv empty -1 -8 0 10 -141547 -1 0 0;
 #X obj 527 295 r allguis;
 #X obj 362 248 smoother 70;
 #X obj 436 247 smoother 70;

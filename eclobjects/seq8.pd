@@ -54,7 +54,7 @@
 #X obj 215 204 tgl15 68 169;
 #X obj 573 196 + 0.5;
 #X obj 573 218 s \$0-statusrcv;
-#X obj 186 207 cnv 4 4 4 empty \$0-cnv empty 0 0 0 14 -61638 -66577
+#X obj 122 207 cnv 4 4 4 empty \$0-cnv empty 0 0 0 14 -61638 -66577
 0;
 #X obj 574 314 pack f \$0;
 #X msg 574 336 \; \$2-cnv pos \$1 207;
@@ -73,10 +73,7 @@
 #X obj 92 56 pack \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9;
 #X obj 92 78 unpack f f f f f f f f f;
 #X obj 50 117 s \$0-indexrcv;
-#X obj 321 40 r recallpreset;
-#X obj 427 49 r \$0-indexsnd;
-#X obj 348 108 route;
-#X obj 348 130 list prepend;
+#X obj 321 40 r recallpreset-\$1;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
@@ -88,11 +85,7 @@
 #X connect 11 6 5 0;
 #X connect 11 7 6 0;
 #X connect 11 8 7 0;
-#X connect 13 0 15 0;
-#X connect 14 0 15 1;
-#X connect 14 0 16 1;
-#X connect 15 0 16 0;
-#X connect 16 0 11 0;
+#X connect 13 0 11 0;
 #X restore 616 76 pd state_loading;
 #N canvas 0 22 610 380 state_saving 0;
 #X obj 151 58 r \$0-step1snd;
@@ -113,7 +106,8 @@
 #X msg 463 227 1;
 #X obj 408 283 spigot;
 #X msg 401 229 0;
-#X obj 408 305 s storeinfo;
+#X obj 408 346 s storeinfo;
+#X obj 408 305 reject0;
 #X connect 0 0 11 1;
 #X connect 1 0 11 2;
 #X connect 2 0 11 3;
@@ -139,8 +133,9 @@
 #X connect 14 1 11 0;
 #X connect 14 2 15 0;
 #X connect 15 0 16 1;
-#X connect 16 0 18 0;
+#X connect 16 0 19 0;
 #X connect 17 0 16 1;
+#X connect 19 0 18 0;
 #X restore 616 96 pd state_saving;
 #X obj 616 117 canvasargs;
 #X obj 388 317 sel 1 0;

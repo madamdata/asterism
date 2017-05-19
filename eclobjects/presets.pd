@@ -1,30 +1,27 @@
-#N canvas 448 63 775 570 10;
-#X obj 106 108 bng 15 250 50 0 \$0-savesnd \$0-savercv Save 17 7 0
-10 -144464 -257985 -1;
+#N canvas 448 63 773 635 10;
+#X obj 102 102 cnv 15 146 46 empty empty empty 20 12 0 14 -7225 -66577
+0;
+#X obj 123 127 bng 15 250 50 0 \$0-savesnd \$0-savercv save 17 7 0
+9 -79783 -257985 -1;
 #X symbolatom 373 109 10 0 0 0 - - -, f 10;
-#X obj 107 130 bng 15 250 50 0 \$0-loadsnd \$0-loadrcv Load 17 7 0
-10 -202659 -1 -1;
 #X obj 403 49 loadbang;
 #X msg 404 74 set filename;
-#X obj 154 108 hradio 15 1 1 8 \$0-banksnd \$0-bankrcv empty 0 -8 0
-10 -99344 -261682 -1 2;
-#X obj 154 133 bng 15 250 50 0 \$0-storesnd \$0-storercv store 17 7
-0 10 -144464 -257985 -1;
-#X obj 210 133 bng 15 250 50 0 \$0-recallsnd \$0-recallrcv recall 17
-7 0 10 -202659 -1 -1;
+#X obj 114 107 hradio 15 1 1 8 \$0-banksnd \$0-bankrcv empty 0 -8 0
+10 -107631 -261682 -1 0;
+#X obj 179 127 bng 15 250 50 0 \$0-storesnd \$0-storercv store 17 7
+0 9 -158585 -257985 -1;
 #X obj 273 228 r \$0-banksnd;
 #X obj 379 229 r \$0-storesnd;
 #X obj 348 292 s storebang;
 #X obj 301 318 r storeinfo;
 #X obj 301 430 print store;
-#X obj 520 392 text define presets;
+#X obj 520 442 text define presets;
 #X obj 301 402 list prepend;
 #X obj 383 430 textadd presets;
 #X obj 167 414 textgetall presets;
 #X obj 520 325 r \$0-savesnd;
-#X obj 520 347 savepanel;
-#X msg 520 369 write \$1;
-#X obj 167 438 s recallpreset;
+#X obj 520 397 savepanel;
+#X msg 520 419 write \$1;
 #X obj 566 248 canvasargs;
 #N canvas 0 22 450 300 state_loading 0;
 #X obj 113 35 loadbang;
@@ -38,8 +35,8 @@
 #X connect 4 0 2 0;
 #X restore 566 202 pd state_loading;
 #X obj 600 325 r \$0-loadfilename;
-#X obj 652 397 s \$0-savefilename;
-#X msg 600 347 read \$1;
+#X obj 652 447 s \$0-savefilename;
+#X msg 600 397 read \$1;
 #N canvas 0 23 450 300 state_saving 0;
 #X obj 173 70 r \$0-savefilename;
 #X obj 145 204 outlet;
@@ -91,27 +88,45 @@
 #X connect 11 0 1 0;
 #X connect 12 0 11 1;
 #X restore 70 387 pd keycontrol;
+#X obj 443 147 inlet;
+#X obj 443 169 s \$0-bankrcv;
+#X obj 110 185 bng 15 250 50 0 \$0-loadsnd empty load 17 7 0 10 -262144
+-1 -1;
+#X msg 520 356 symbol ~/documents/pd/eclobjects/presets;
+#X obj 221 480 list split 1;
+#X obj 183 457 t l l;
+#X obj 222 507 makefilename recallpreset-%d;
+#X obj 221 556 send;
+#X msg 222 528 symbol \$1;
 #X connect 3 0 4 0;
-#X connect 4 0 1 0;
-#X connect 8 0 16 0;
-#X connect 8 0 28 1;
-#X connect 8 0 14 1;
-#X connect 9 0 29 0;
-#X connect 11 0 14 0;
-#X connect 14 0 12 0;
-#X connect 14 0 15 0;
-#X connect 16 0 20 0;
+#X connect 4 0 2 0;
+#X connect 7 0 15 0;
+#X connect 7 0 26 1;
+#X connect 7 0 13 1;
+#X connect 8 0 27 0;
+#X connect 10 0 13 0;
+#X connect 13 0 11 0;
+#X connect 13 0 14 0;
+#X connect 15 0 36 0;
+#X connect 16 0 34 0;
 #X connect 17 0 18 0;
-#X connect 18 0 19 0;
-#X connect 18 0 24 0;
-#X connect 19 0 13 0;
-#X connect 23 0 25 0;
-#X connect 25 0 13 0;
-#X connect 26 0 21 0;
-#X connect 28 0 27 0;
-#X connect 29 0 10 0;
-#X connect 29 1 28 0;
-#X connect 30 0 31 0;
-#X connect 31 0 25 0;
-#X connect 31 0 24 0;
-#X coords 0 -1 1 1 180 60 2 100 100;
+#X connect 17 0 22 0;
+#X connect 18 0 12 0;
+#X connect 21 0 23 0;
+#X connect 21 0 22 0;
+#X connect 23 0 12 0;
+#X connect 24 0 19 0;
+#X connect 26 0 25 0;
+#X connect 27 0 9 0;
+#X connect 27 1 26 0;
+#X connect 28 0 29 0;
+#X connect 29 0 23 0;
+#X connect 29 0 22 0;
+#X connect 31 0 32 0;
+#X connect 34 0 17 0;
+#X connect 35 0 37 0;
+#X connect 36 0 38 0;
+#X connect 36 1 35 0;
+#X connect 37 0 39 0;
+#X connect 39 0 38 1;
+#X coords 0 -1 1 1 150 50 2 100 100;
