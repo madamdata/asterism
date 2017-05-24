@@ -57,7 +57,7 @@
 #X obj 14 60 tgl 30 0 \$0-overdubsnd \$0-overdubrcv dub 6 25 0 10 -261361
 -213060 -1 0 1;
 #X obj 178 113 hsl 130 8 0 100 0 0 \$0-positionsnd \$0-positionrcv
-empty -2 -8 0 10 -190656 -241472 -1 1699 1;
+empty -2 -8 0 10 -190656 -241472 -1 0 1;
 #X obj 628 267 t b f;
 #X obj 567 216 inlet reset;
 #X obj 464 217 inlet~ rate;
@@ -139,7 +139,7 @@ empty -2 -8 0 10 -190656 -241472 -1 1699 1;
 #X obj 426 153 hradio 12 1 0 4 \$0-tabselectorsnd \$0-tabselectorrcv
 empty 0 -8 0 10 -248799 -222740 -1 0;
 #X obj 48 27 vsl 20 100 0 1.8 0 0 \$0-levelsnd \$0-levelrcv Vol 2 3
-0 8 -261302 -260006 -1 6400 1;
+0 8 -261302 -260006 -1 9900 1;
 #X obj 538 684 *~;
 #X obj 588 684 *~;
 #X obj 769 632 r \$0-levelsnd;
@@ -244,7 +244,7 @@ dirty 0;
 #X connect 10 1 7 0;
 #X restore 541 602 pd fx;
 #X obj 70 27 vsl 20 100 1 110 0 0 \$0-distsnd \$0-distrcv Dist 0 3
-0 8 -244544 -260006 -1 300 1;
+0 8 -244544 -260006 -1 0 1;
 #X obj 92 27 vsl 20 100 40 15000 1 0 \$0-filtsnd \$0-filtrcv Filt 0
 3 0 8 -260394 -260006 -1 9900 1;
 #X obj 117 93 tgl 15 0 \$0-2stagesnd \$0-2stagercv 2stage 0 21 0 8
@@ -330,11 +330,11 @@ f f f, f 86;
 #X connect 30 0 7 0;
 #X connect 32 0 27 0;
 #X restore 16 324 pd state_loading;
-#N canvas 278 116 902 486 saving_loading 0;
+#N canvas 278 116 902 486 saving_loading 1;
 #X obj 328 284 soundfiler;
 #X obj 290 72 openpanel;
-#X msg 467 249 read -maxsize 1.323e+07 -resize /Users/ada/Documents/soundlibrary/loops/hop4loop.wav
-1035-samp1L 1035-samp1R;
+#X msg 467 249 read -maxsize 1.323e+07 -resize /Users/ada/Documents/soundlibrary/traptoolkit/Drum_Hits/Kick_09.wav
+1991-samp1L 1991-samp1R;
 #X obj 345 125 f \$0;
 #X msg 365 170 add2 \$1-samp1L;
 #X obj 345 147 t f f;
@@ -345,10 +345,10 @@ f f f, f 86;
 #X obj 178 255 unpack s s;
 #X obj 70 15 inlet save;
 #X obj 254 29 inlet load;
-#X obj 79 63 savepanel;
-#X obj 79 85 pack s \$0;
-#X msg 79 107 write \$1 \$2-samp1L \$2-samp1R;
-#X obj 82 133 soundfiler;
+#X obj 59 73 savepanel;
+#X obj 59 95 pack s \$0;
+#X msg 59 117 write \$1 \$2-samp1L \$2-samp1R;
+#X obj 62 143 soundfiler;
 #X obj 397 36 r \$0-filenamercv;
 #X obj 408 102 s \$0-filenamesnd;
 #X obj 29 175 s \$0-filenamesnd;
@@ -508,33 +508,33 @@ recommend not having any.;
 #X obj 7 9 cnv 15 330 465 empty empty empty 20 12 0 14 -155129 -66577
 0;
 #X obj 23 32 hsl 295 320 0 100 0 0 \$0-positionsnd \$0-positionrcv
-empty -2 -8 0 10 -190656 -241472 -1 3872 1;
+empty -2 -8 0 10 -190656 -241472 -1 0 1;
 #N canvas 0 22 450 278 (subpatch) 0;
-#X array \$0-samp1L 176449 float 2;
-#X coords 0 1 176449 -1 300 150 1 0 0;
+#X array \$0-samp1L 64763 float 2;
+#X coords 0 1 64763 -1 300 150 1 0 0;
 #X restore 20 32 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
-#X array \$0-samp1R 176449 float 2;
-#X coords 0 1 176449 -1 300 150 1 0 0;
+#X array \$0-samp1R 64763 float 2;
+#X coords 0 1 64763 -1 300 150 1 0 0;
 #X restore 20 202 graph;
 #X obj 24 359 hsl 295 10 0 1 0 0 \$0-startsnd \$0-startrcv start 15
 4 0 10 -101504 -256853 -1 0 1;
 #X obj 24 375 hsl 295 9 0 1 0 0 \$0-slice1snd \$0-slice1rcv slice_1
 15 4 0 7 -210742 -253394 -262144 0 1;
 #X obj 24 386 hsl 295 9 0 1 0 0 \$0-slice2snd \$0-slice2rcv slice_2
-15 4 0 7 -210742 -253394 -1 8205 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 24 397 hsl 295 9 0 1 0 0 \$0-slice3snd \$0-slice3rcv slice_3
-15 4 0 7 -210742 -253394 -1 18844 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 24 408 hsl 295 9 0 1 0 0 \$0-slice4snd \$0-slice4rcv slice_4
-15 4 0 7 -210742 -253394 -1 23702 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 24 419 hsl 295 9 0 1 0 0 \$0-slice5snd \$0-slice5rcv slice_5
-15 4 0 7 -210742 -253394 -1 11167 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 24 430 hsl 295 9 0 1 0 0 \$0-slice6snd \$0-slice6rcv slice_6
-15 4 0 7 -210742 -253394 -1 27349 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 24 441 hsl 295 9 0 1 0 0 \$0-slice7snd \$0-slice7rcv slice_7
-15 4 0 7 -210742 -253394 -1 2963 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 24 452 hsl 295 9 0 1 0 0 \$0-slice8snd \$0-slice8rcv slice_8
-15 4 0 7 -210742 -253394 -1 13502 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X restore 695 167 pd \$0-samples;
 #X obj 695 109 f \$0;
 #X msg 695 131 \; pd-\$1-samples vis 1;
@@ -554,7 +554,7 @@ empty -2 -8 0 10 -190656 -241472 -1 3872 1;
 #X obj 530 530 tabread4~ \$0-samp1L;
 #X obj 582 488 spigot;
 #X obj 175 149 tgl 15 1 \$0-loopsnd \$0-looprcv loop 17 7 0 10 -89664
--261963 -1 1 1;
+-261963 -1 0 1;
 #X obj 635 475 r \$0-loopsnd;
 #X obj 635 497 == 0;
 #X obj 450 266 r \$0-loopsnd;
@@ -565,14 +565,14 @@ empty -2 -8 0 10 -190656 -241472 -1 3872 1;
 #X obj 785 244 loadbang;
 #X text 734 452 looping on/off;
 #X obj 175 36 vsl 13 70 0.01 2000 1 1 \$0-attacksnd \$0-attackrcv a
-3 -9 0 12 -253376 -259674 -1 0 1;
+3 -9 0 12 -253376 -259674 -1 1900 1;
 #X obj 887 349 r \$0-attacksnd;
 #X obj 190 36 vsl 13 70 5 2000 1 1 \$0-decaysnd \$0-decayrcv d 3 -9
-0 12 -182784 -259674 -1 6700 1;
+0 12 -182784 -259674 -1 4000 1;
 #X obj 205 36 vsl 13 70 0 1 0 1 \$0-sustainsnd \$0-sustainrcv s 3 -9
-0 12 -260787 -259674 -1 1700 1;
+0 12 -260787 -259674 -1 0 1;
 #X obj 220 36 vsl 13 70 2 2000 1 1 \$0-releasesnd \$0-releasercv r
-3 -9 0 12 -174976 -259674 -1 3900 1;
+3 -9 0 12 -174976 -259674 -1 537 1;
 #X obj 916 371 r \$0-decaysnd;
 #X obj 945 396 r \$0-sustainsnd;
 #X obj 974 416 r \$0-releasesnd;
@@ -651,23 +651,23 @@ empty -2 -8 0 10 -190656 -241472 -1 3872 1;
 #X obj 340 50 hsl 130 9 0 1 0 0 \$0-slice1snd \$0-slice1rcv slice_1
 15 4 0 7 -210742 -253394 -262144 0 1;
 #X obj 340 61 hsl 130 9 0 1 0 0 \$0-slice2snd \$0-slice2rcv slice_2
-15 4 0 7 -210742 -253394 -1 3600 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 340 72 hsl 130 9 0 1 0 0 \$0-slice3snd \$0-slice3rcv slice_3
-15 4 0 7 -210742 -253394 -1 8268 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 340 83 hsl 130 9 0 1 0 0 \$0-slice4snd \$0-slice4rcv slice_4
-15 4 0 7 -210742 -253394 -1 10400 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 340 94 hsl 130 9 0 1 0 0 \$0-slice5snd \$0-slice5rcv slice_5
-15 4 0 7 -210742 -253394 -1 4900 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 340 105 hsl 130 9 0 1 0 0 \$0-slice6snd \$0-slice6rcv slice_6
-15 4 0 7 -210742 -253394 -1 12000 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 340 116 hsl 130 9 0 1 0 0 \$0-slice7snd \$0-slice7rcv slice_7
-15 4 0 7 -210742 -253394 -1 1300 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 340 127 hsl 130 9 0 1 0 0 \$0-slice8snd \$0-slice8rcv slice_8
-15 4 0 7 -210742 -253394 -1 5924 1;
+15 4 0 7 -210742 -253394 -1 0 1;
 #X obj 887 399 - 0.01;
 #X obj 218 286 thru notevelpair;
 #X obj 337 141 tgl 15 1 \$0-pitchslicesnd \$0-pitchslicercv pitch/slice
-17 7 0 8 -260470 -225152 -1 1 1;
+17 7 0 8 -260470 -225152 -1 0 1;
 #X obj 243 310 adademux;
 #X obj 339 225 r \$0-pitchslicesnd;
 #N canvas 684 23 446 379 slices 0;
