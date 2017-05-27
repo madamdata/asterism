@@ -1,11 +1,11 @@
-# eclipse [ECL] v0.2
+# eclipse [ECL] v0.35
 modular synth environment for pd   
 
 developed and tested on Pd Vanilla v0.47.1  
 
-dependencies: moonlib, cyclone, zexy, iemguts, iemlib  
+dependencies: moonlib, cyclone, zexy, iemguts, iemlib, pdlua  
 
-![ecl 0.2](ecl12screenshot.png)
+![ecl 0.35](ecl12screenshot.png)
 
 ## Installation Instructions
 
@@ -28,8 +28,12 @@ dependencies: moonlib, cyclone, zexy, iemguts, iemlib
 * [cvseq8] - same as above, but outputs continuous numbers between -1 and 1. 
 * [shaperpanel] - waveshaper with built in chebyshev polynomial generation
 * [filterpanel] - vcf based on [bob~]
-* [wavetablepanel] - 6 voice wavetable synth. Takes midi pitch/velocity pairs as input. Cpu intensive. 
+* [wavetablepanel] - 8 voice wavetable synth. Takes midi pitch/velocity pairs as input. Cpu intensive. 
 * [lfopanel] - multi-shape LFO with frequency and pulse width inputs.  
+* [noteloop] - captures a loop of incoming midi note / velocity pairs and plays it back with variable tempo
+* [delaypanel] - recirculating delay with filters
+* [rev3gui] - gui for all parameters of Miller Puckette's [rev3~]
+* [sampler] - powerful sample playback unit. takes bangs or note/velocity pairs and converts them to pitch or slice playback. 
 
 
 ## Notes
@@ -37,7 +41,4 @@ dependencies: moonlib, cyclone, zexy, iemguts, iemlib
 * [presets] currently doesn't work
 * you will need to configure [recorder] to point to where you want to store your sound files.
 * most objects save their state when you save the containing patch, but I haven't finished implementing this.
-* arrays still don't save at all, unless you save the containing abstraction, which will copy that table to all instances. 
-* [wavetablepanel] is still in development 
-
 
