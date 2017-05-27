@@ -59,7 +59,7 @@
 #X obj 574 314 pack f \$0;
 #X msg 574 336 \; \$2-cnv pos \$1 207;
 #X obj 546 238 expr $f1*16+106;
-#N canvas 262 61 570 321 state_loading 1;
+#N canvas 262 61 570 321 state_loading 0;
 #X obj 57 157 s \$0-step1rcv;
 #X obj 67 177 s \$0-step2rcv;
 #X obj 77 197 s \$0-step3rcv;
@@ -248,13 +248,15 @@
 #X obj 232 204 bng 15 250 50 0 \$0-offsetsnd \$0-offsetrcv o 5 7 0
 10 -145664 -184192 -1;
 #X obj 562 274 spigot;
-#X obj 646 264 r allguis;
 #X obj 774 138 propertybang;
 #N canvas 469 151 124 63 \$0-properties 0;
 #X floatatom 62 24 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
 #X restore 791 274 pd \$0-properties;
 #X msg 774 187 \; pd-\$1-properties vis 1;
 #X obj 774 160 f \$0;
+#X obj 646 264 value allguistgl;
+#X obj 683 228 r allguis;
+#X obj 675 204 loadbang;
 #X connect 0 0 16 0;
 #X connect 1 0 2 0;
 #X connect 1 0 27 0;
@@ -325,7 +327,9 @@
 #X connect 62 1 11 0;
 #X connect 63 0 1 1;
 #X connect 66 0 56 0;
-#X connect 67 0 66 1;
-#X connect 68 0 71 0;
-#X connect 71 0 70 0;
+#X connect 67 0 70 0;
+#X connect 70 0 69 0;
+#X connect 71 0 66 1;
+#X connect 72 0 71 0;
+#X connect 73 0 71 0;
 #X coords 0 -1 1 1 150 23 2 100 200;

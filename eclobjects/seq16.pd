@@ -16,7 +16,7 @@
 #X obj 475 262 f 0;
 #X obj 499 262 f 0;
 #X obj 523 262 f 0;
-#X obj 540 33 inlet;
+#X obj 833 31 inlet;
 #X obj 657 388 outlet;
 #N canvas 262 61 570 321 state_loading 0;
 #X obj 92 34 loadbang;
@@ -316,44 +316,44 @@
 #X restore 49 161 pd offset;
 #X obj 182 104 bng 15 250 50 0 \$0-offsetplussnd \$0-offsetplusrcv
 + 5 7 0 10 -145664 -184192 -1;
-#X obj 884 138 propertybang;
+#X obj 895 280 propertybang;
 #N canvas 469 151 124 63 \$0-properties 0;
 #X floatatom 62 24 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
-#X restore 885 225 pd \$0-properties;
-#X msg 884 187 \; pd-\$1-properties vis 1;
-#X obj 884 160 f \$0;
-#X obj 53 104 tgl 15 0 \$0-tgl1snd \$0-tgl1rcv empty 17 7 0 10 -117052
--117052 -1 0 1;
+#X restore 896 367 pd \$0-properties;
+#X msg 895 329 \; pd-\$1-properties vis 1;
+#X obj 895 302 f \$0;
+#X obj 53 104 tgl 15 0 \$0-tgl1snd \$0-tgl1rcv empty 17 7 0 10 -255414
+-255414 -1 1 1;
 #X obj 69 104 tgl 15 0 \$0-tgl2snd \$0-tgl2rcv empty 17 7 0 10 -117052
 -117052 -1 0 1;
-#X obj 85 104 tgl 15 0 \$0-tgl3snd \$0-tgl3rcv empty 17 7 0 10 -255414
--255414 -1 1 1;
+#X obj 85 104 tgl 15 0 \$0-tgl3snd \$0-tgl3rcv empty 17 7 0 10 -117052
+-117052 -1 0 1;
 #X obj 101 104 tgl 15 0 \$0-tgl4snd \$0-tgl4rcv empty 17 7 0 10 -117052
 -117052 -1 0 1;
 #X obj 117 104 tgl 15 0 \$0-tgl5snd \$0-tgl5rcv empty 17 7 0 10 -117052
 -117052 -1 0 1;
-#X obj 133 104 tgl 15 0 \$0-tgl6snd \$0-tgl6rcv empty 17 7 0 10 -255414
--255414 -1 1 1;
-#X obj 149 104 tgl 15 0 \$0-tgl7snd \$0-tgl7rcv empty 17 7 0 10 -255414
--255414 -1 1 1;
+#X obj 133 104 tgl 15 0 \$0-tgl6snd \$0-tgl6rcv empty 17 7 0 10 -117052
+-117052 -1 0 1;
+#X obj 149 104 tgl 15 0 \$0-tgl7snd \$0-tgl7rcv empty 17 7 0 10 -117052
+-117052 -1 0 1;
 #X obj 165 104 tgl 15 0 \$0-tgl8snd \$0-tgl8rcv empty 17 7 0 10 -117052
 -117052 -1 0 1;
 #X obj 53 121 tgl 15 0 \$0-tgl9snd \$0-tgl9rcv empty 17 7 0 10 -117052
 -117052 -1 0 1;
 #X obj 69 121 tgl 15 0 \$0-tgl10snd \$0-tgl10rcv empty 17 7 0 10 -117052
 -117052 -1 0 1;
-#X obj 85 121 tgl 15 0 \$0-tgl11snd \$0-tgl11rcv empty 17 7 0 10 -255414
--255414 -1 1 1;
+#X obj 85 121 tgl 15 0 \$0-tgl11snd \$0-tgl11rcv empty 17 7 0 10 -117052
+-117052 -1 0 1;
 #X obj 101 121 tgl 15 0 \$0-tgl12snd \$0-tgl12rcv empty 17 7 0 10 -117052
 -117052 -1 0 1;
 #X obj 117 121 tgl 15 0 \$0-tgl13snd \$0-tgl13rcv empty 17 7 0 10 -117052
 -117052 -1 0 1;
-#X obj 133 121 tgl 15 0 \$0-tgl14snd \$0-tgl14rcv empty 17 7 0 10 -255414
--255414 -1 1 1;
+#X obj 133 121 tgl 15 0 \$0-tgl14snd \$0-tgl14rcv empty 17 7 0 10 -117052
+-117052 -1 0 1;
 #X obj 149 121 tgl 15 0 \$0-tgl15snd \$0-tgl15rcv empty 17 7 0 10 -117052
 -117052 -1 0 1;
-#X obj 165 121 tgl 15 0 \$0-tgl16snd \$0-tgl16rcv empty 17 7 0 10 -255414
--255414 -1 1 1;
+#X obj 165 121 tgl 15 0 \$0-tgl16snd \$0-tgl16rcv empty 17 7 0 10 -117052
+-117052 -1 0 1;
 #N canvas 0 22 901 306 receives 0;
 #X obj 37 51 r \$0-tgl1snd;
 #X obj 47 71 r \$0-tgl2snd;
@@ -414,7 +414,7 @@
 #X obj 715 262 f 0;
 #X obj 621 114 mod 16;
 #X obj 501 151 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
-#N canvas 491 35 789 437 colors 1;
+#N canvas 491 35 789 437 colors 0;
 #X obj 14 48 r \$0-tgl1snd;
 #X obj 29 68 r \$0-tgl2snd;
 #X obj 39 88 r \$0-tgl3snd;
@@ -496,11 +496,11 @@
 #X connect 46 0 29 0;
 #X connect 47 0 30 0;
 #X restore 49 186 pd colors;
-#X obj 152 107 cnv 4 4 4 empty \$0-cnv empty 0 0 0 14 -61638 -66577
+#X obj 168 123 cnv 4 4 4 empty \$0-cnv empty 0 0 0 14 -61638 -66577
 0;
 #N canvas 0 23 450 300 blinker 0;
 #X obj 213 238 spigot;
-#X obj 297 228 r allguis;
+#X obj 350 116 r allguis;
 #X obj 137 98 expr $f1*16+56;
 #X obj 91 70 div 8;
 #X obj 133 68 mod 8;
@@ -510,8 +510,10 @@
 #X msg 213 281 \; \$3-cnv pos \$2 \$1;
 #X obj 91 91 * 16;
 #X obj 78 5 inlet stepnumber;
+#X obj 328 80 loadbang;
+#X obj 329 183 value allguistgl;
 #X connect 0 0 8 0;
-#X connect 1 0 0 1;
+#X connect 1 0 12 0;
 #X connect 2 0 6 1;
 #X connect 3 0 9 0;
 #X connect 4 0 2 0;
@@ -521,9 +523,18 @@
 #X connect 7 0 6 0;
 #X connect 9 0 7 0;
 #X connect 10 0 5 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 1;
 #X restore 825 335 pd blinker;
 #X obj 182 121 bng 15 250 50 0 \$0-offsetminussnd \$0-offsetminusrcv
 - 5 7 0 10 -105472 -184192 -1;
+#X obj 833 52 route float list;
+#X obj 836 105 unpack f f;
+#X obj 837 128 makefilename \$0-tgl%drcv;
+#X obj 846 194 send;
+#X msg 837 149 symbol \$1;
+#X obj 870 71 t a a;
+#X obj 923 106 unpack f f;
 #X connect 0 0 12 0;
 #X connect 1 0 2 0;
 #X connect 1 0 55 0;
@@ -539,7 +550,7 @@
 #X connect 14 0 22 0;
 #X connect 15 0 22 0;
 #X connect 16 0 22 0;
-#X connect 17 0 1 1;
+#X connect 17 0 61 0;
 #X connect 20 0 21 0;
 #X connect 22 0 9 0;
 #X connect 22 0 8 0;
@@ -591,4 +602,12 @@
 #X connect 56 13 52 0;
 #X connect 56 14 53 0;
 #X connect 56 15 54 0;
+#X connect 61 0 1 1;
+#X connect 61 1 66 0;
+#X connect 62 0 63 0;
+#X connect 63 0 65 0;
+#X connect 65 0 64 1;
+#X connect 66 0 67 0;
+#X connect 66 1 62 0;
+#X connect 67 1 64 0;
 #X coords 0 -1 1 1 150 40 2 50 100;
