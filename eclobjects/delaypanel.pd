@@ -143,17 +143,17 @@
 #X connect 10 0 0 1;
 #X restore 394 334 pd feedback;
 #X obj 107 150 hsl 128 15 0 0.9 0 0 \$0-feedbacksnd \$0-feedbackrcv
-feedback -2 6 0 9 -260975 -258511 -1 7800 1;
+feedback -2 6 0 9 -260975 -258511 -1 11900 1;
 #X obj 107 133 hsl 128 15 1 4000 1 0 \$0-deltimesnd \$0-deltimercv
-time -2 6 0 9 -260125 -258511 -1 9100 1;
+time -2 6 0 9 -260125 -258511 -1 5100 1;
 #X obj 107 167 hsl 128 15 40 15000 1 0 \$0-cutoffsnd \$0-cutoffrcv
-cutoff -2 6 0 9 -227366 -258511 -1 8100 1;
+cutoff -2 6 0 9 -227366 -258511 -1 10900 1;
 #X obj 107 184 hsl 128 15 0 4 0 0 \$0-qsnd \$0-qrcv q -2 6 0 9 -226911
--261557 -1 2200 1;
+-261557 -1 700 1;
 #X obj 104 116 tgl 15 0 \$0-filterswitchsnd \$0-filterswitchrcv filter
 17 7 0 9 -260266 -261331 -1 1 1;
 #X obj 107 201 hsl 128 15 3 0.1 0 0 \$0-saturationsnd \$0-saturationrcv
-saturation -2 6 0 9 -247066 -261630 -1 3100 1;
+saturation -2 6 0 9 -247066 -261630 -1 6600 1;
 #X obj 232 118 tgl 12 0 \$0-switchsnd \$0-switchrcv empty 17 7 0 10
 -260271 -262144 -1 1 1;
 #N canvas 0 23 716 346 colours 0;
@@ -280,7 +280,7 @@ saturation -2 6 0 9 -247066 -261630 -1 3100 1;
 #X obj 233 102 cnv 8 15 12 empty empty q 8 5 0 9 -261502 -258642 0
 ;
 #X obj 107 218 hsl 128 15 0.5 1.5 0 0 \$0-decouplesnd \$0-decouplercv
-decouple -2 6 0 9 -218467 -261630 -1 6000 1;
+decouple -2 6 0 9 -218467 -261630 -1 7000 1;
 #X obj 689 276 r \$0-decouplesnd;
 #X floatatom 689 297 5 0 0 0 - - -, f 5;
 #X obj 562 115 *~ 0.6;
@@ -289,6 +289,12 @@ decouple -2 6 0 9 -218467 -261630 -1 6000 1;
 #X obj 498 117 *~ 0.8;
 #X obj 572 308 r \$0-switchsnd;
 #X obj 572 329 switch~;
+#X obj 161 117 bng 15 250 50 0 \$0-tapsnd \$0-taprcv tap 17 7 0 10
+-260131 -1 -1;
+#X obj 597 194 r \$0-tapsnd;
+#X obj 597 240 timer;
+#X obj 597 216 t b b;
+#X obj 597 262 s \$0-deltimercv;
 #X connect 1 0 3 0;
 #X connect 2 0 3 1;
 #X connect 3 0 4 0;
@@ -307,4 +313,8 @@ decouple -2 6 0 9 -218467 -261630 -1 6000 1;
 #X connect 35 0 8 2;
 #X connect 36 0 35 0;
 #X connect 37 0 38 0;
+#X connect 40 0 42 0;
+#X connect 41 0 43 0;
+#X connect 42 0 41 0;
+#X connect 42 1 41 1;
 #X coords 0 -1 1 1 150 140 2 100 100;
