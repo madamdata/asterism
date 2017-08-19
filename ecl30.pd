@@ -1,9 +1,9 @@
-#N canvas 0 0 798 670 10;
+#N canvas 493 50 798 671 10;
 #X obj 250 238 sampler 0 1.8 75.8687 77.2794 130 0 0 1 0.01 73.7924
 0.0434783 2 0.302326 0 0 0 0 0 0 0 0 0 0 0 0 0 C:/Users/Ada/Documents/Soundlibrary/170325_0241S12.wav
 ;
-#X obj 422 291 mixer4 0 0.704857 0.219671 0.62729 0.195497 0.50505
-0.515152 0.494949 0.494949 1 1 1 1 0 0 0 0 0 0 0 1;
+#X obj 422 290 mixer4 0 0.704857 0.219671 0.62729 0.195497 0.50505
+0.515152 0.494949 0.494949 0 0 0 0 0 0 0 0 0 0 0 1;
 #X obj 424 476 output;
 #X obj 97 59 keyb;
 #X obj 250 403 bus 1;
@@ -15,7 +15,7 @@
 #X obj 393 217 scaler;
 #X obj 645 82 lfopanel 0 1.46277 0.05 0;
 #X obj 560 200 max~;
-#X obj 312 12 clock 0 143 0 0 0 0;
+#X obj 312 12 clock 0 143 1 0 0 0;
 #X obj 469 1 lfopanel 0 3.28902 0.340909 0;
 #X obj 469 81 *~ 0.3;
 #X obj 469 100 *~ -1;
@@ -31,11 +31,11 @@
 #X obj 768 230 seq16bin 0 43144 43144 39532 2312 60799 0 0 0 4;
 #X obj 752 607 bus 4;
 #X obj 74 537 bus 4;
+#X obj 765 475 shaperpanel 0 0.919192 0.219192;
+#X msg 255 117 note 32 \, pmod 12 \, min 11;
 #X obj 58 231 sampler 0 1.8 91.2828 15000 1124 0 0 1 0.01 47.8031 0
 4.45509 0.0387597 0 0 0 0 0 0 0 0 0 0 0 0 0 C:/Users/Ada/Documents/Soundlibrary/170325_0236S12.wav
 ;
-#X obj 765 475 shaperpanel 0 0.919192 0.219192;
-#X msg 255 117 note 32 \, pmod 12 \, min 11;
 #X connect 0 0 4 0;
 #X connect 0 0 5 0;
 #X connect 0 1 4 1;
@@ -45,7 +45,7 @@
 #X connect 5 0 6 0;
 #X connect 5 1 6 1;
 #X connect 7 0 9 0;
-#X connect 7 0 28 2;
+#X connect 7 0 30 2;
 #X connect 8 0 11 0;
 #X connect 8 0 16 0;
 #X connect 8 0 18 1;
@@ -73,11 +73,11 @@
 #X connect 21 0 23 0;
 #X connect 21 1 23 1;
 #X connect 22 0 21 0;
-#X connect 24 0 29 0;
-#X connect 24 1 29 1;
+#X connect 24 0 28 0;
+#X connect 24 1 28 1;
 #X connect 25 0 24 0;
-#X connect 28 0 27 0;
-#X connect 28 1 27 1;
-#X connect 29 0 26 0;
-#X connect 29 1 26 1;
-#X connect 30 0 7 3;
+#X connect 28 0 26 0;
+#X connect 28 1 26 1;
+#X connect 29 0 7 3;
+#X connect 30 0 27 0;
+#X connect 30 1 27 1;

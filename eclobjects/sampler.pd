@@ -1,4 +1,4 @@
-#N canvas 77 65 1138 609 10;
+#N canvas 169 68 1138 609 10;
 #X obj 492 23 cnv 15 146 25 empty \$0-cnvrcv empty 20 12 0 14 -244085
 -66577 0;
 #X obj 138 12 cnv 10 20 10 empty empty Φ 12 6 0 10 -261757 -164491
@@ -37,7 +37,7 @@
 #X obj 14 60 tgl 30 0 \$0-overdubsnd \$0-overdubrcv dub 6 25 0 10 -261361
 -213060 -1 0 1;
 #X obj 178 113 hsl 130 8 0 100 0 0 \$0-positionsnd \$0-positionrcv
-empty -2 -8 0 10 -190656 -241472 -1 701 1;
+empty -2 -8 0 10 -190656 -241472 -1 3903 1;
 #X obj 628 267 t b f;
 #X obj 567 216 inlet reset;
 #X obj 464 217 inlet~ rate;
@@ -119,7 +119,7 @@ empty -2 -8 0 10 -190656 -241472 -1 701 1;
 #X obj 426 153 hradio 12 1 0 4 \$0-tabselectorsnd \$0-tabselectorrcv
 empty 0 -8 0 10 -248799 -222740 -1 0;
 #X obj 48 27 vsl 20 100 0 1.8 0 0 \$0-levelsnd \$0-levelrcv Vol 2 3
-0 8 -261302 -260006 -1 9600 1;
+0 8 -261302 -260006 -1 9900 1;
 #X obj 538 670 *~;
 #X obj 588 670 *~;
 #X obj 769 618 r \$0-levelsnd;
@@ -251,9 +251,9 @@ dirty 0;
 #X connect 10 1 7 0;
 #X restore 541 588 pd fx;
 #X obj 70 27 vsl 20 100 1 110 0 0 \$0-distsnd \$0-distrcv Dist 0 3
-0 8 -244544 -260006 -1 1000 1;
+0 8 -244544 -260006 -1 6800 1;
 #X obj 92 27 vsl 20 100 40 15000 1 0 \$0-filtsnd \$0-filtrcv Filt 0
-3 0 8 -260394 -260006 -1 8500 1;
+3 0 8 -260394 -260006 -1 1100 1;
 #X obj 115 92 tgl 15 0 \$0-2stagesnd \$0-2stagercv 2stg 0 21 0 8 -208320
 -259412 -1 0 1;
 #X obj 139 25 tgl 15 0 \$0-switchsnd \$0-switchrcv empty 17 7 0 10
@@ -266,7 +266,7 @@ dirty 0;
 -259567 -261773 -1 1 1;
 #X obj 14 95 bng 30 250 50 0 empty empty save 3 15 0 10 -261549 -211840
 -1;
-#X symbolatom 48 132 17 0 0 0 - #0-filedisprcv #0-filedispsnd, f 17
+#X symbolatom 48 132 14 0 0 0 - #0-filedisprcv #0-filedispsnd, f 14
 ;
 #N canvas 218 108 934 473 state_loading 0;
 #X obj 126 192 s \$0-levelrcv;
@@ -337,19 +337,17 @@ f f f, f 86;
 #X connect 30 0 7 0;
 #X connect 32 0 27 0;
 #X restore 16 324 pd state_loading;
-#N canvas 278 116 902 486 saving_loading 0;
+#N canvas 330 148 902 478 saving_loading 0;
 #X obj 328 284 soundfiler;
 #X obj 290 72 openpanel;
 #X msg 467 249 read -maxsize 1.323e+007 -resize C:/Users/Ada/Documents/Soundlibrary/170325_0241S12.wav
-1029-samp1L 1029-samp1R;
+2004-samp1L 2004-samp1R;
 #X obj 345 125 f \$0;
 #X msg 365 170 add2 \$1-samp1L;
 #X obj 345 147 t f f;
 #X msg 368 190 add2 \$1-samp1R;
 #X obj 328 370 s \$0-sampsize;
-#X obj 178 233 moonlib/basedir;
 #X obj 179 290 pack s \$0;
-#X obj 178 255 unpack s s;
 #X obj 70 15 inlet save;
 #X obj 254 29 inlet load;
 #X obj 59 73 savepanel;
@@ -367,37 +365,44 @@ f f f, f 86;
 #X msg 446 336 \; \$1-samp1L normalize \; \$1-samp1R normalize \;;
 #X obj 412 295 bang;
 #X obj 330 340 moses 1;
-#X connect 0 0 26 0;
-#X connect 0 0 27 0;
-#X connect 1 0 18 0;
-#X connect 1 0 22 0;
+#X obj 653 32 loadbang;
+#X obj 653 70 pdlua;
+#X msg 653 52 load adabasedir.pd_lua;
+#X obj 178 233 adabasedir;
+#X obj 272 203 print res;
+#X connect 0 0 24 0;
+#X connect 0 0 25 0;
+#X connect 1 0 16 0;
+#X connect 1 0 20 0;
 #X connect 2 0 0 0;
 #X connect 3 0 5 0;
 #X connect 4 0 2 0;
 #X connect 5 0 6 0;
 #X connect 5 1 4 0;
 #X connect 6 0 2 0;
-#X connect 8 0 10 0;
-#X connect 9 0 20 0;
-#X connect 10 0 9 0;
-#X connect 11 0 13 0;
-#X connect 12 0 1 0;
+#X connect 8 0 18 0;
+#X connect 9 0 11 0;
+#X connect 10 0 1 0;
+#X connect 11 0 12 0;
+#X connect 11 0 17 0;
+#X connect 12 0 13 0;
 #X connect 13 0 14 0;
-#X connect 13 0 19 0;
-#X connect 14 0 15 0;
+#X connect 15 0 20 0;
 #X connect 15 0 16 0;
-#X connect 17 0 22 0;
-#X connect 17 0 18 0;
+#X connect 19 0 2 0;
+#X connect 20 0 2 0;
+#X connect 20 1 3 0;
+#X connect 20 2 21 0;
+#X connect 20 2 29 0;
+#X connect 20 3 19 0;
 #X connect 21 0 2 0;
-#X connect 22 0 2 0;
-#X connect 22 1 3 0;
-#X connect 22 2 23 0;
-#X connect 22 2 8 0;
-#X connect 22 3 21 0;
-#X connect 23 0 2 0;
-#X connect 24 0 25 0;
-#X connect 26 0 24 0;
-#X connect 27 1 7 0;
+#X connect 22 0 23 0;
+#X connect 24 0 22 0;
+#X connect 25 1 7 0;
+#X connect 26 0 28 0;
+#X connect 28 0 27 0;
+#X connect 29 1 30 0;
+#X connect 29 1 8 0;
 #X restore 13 209 pd saving_loading;
 #N canvas 349 100 713 453 state_saving 0;
 #X obj 102 343 outlet;
@@ -515,7 +520,7 @@ recommend not having any.;
 #X obj 7 9 cnv 15 1030 465 empty empty empty 20 12 0 14 -155129 -66577
 0;
 #X obj 23 32 hsl 995 320 0 100 0 0 \$0-positionsnd \$0-positionrcv
-empty -2 -8 0 10 -190656 -241472 -1 5399 1;
+empty -2 -8 0 10 -190656 -241472 -1 30077 1;
 #N canvas 0 50 450 278 (subpatch) 0;
 #X array \$0-samp1L 5.90054e+006 float 2;
 #X coords 0 1 5.90054e+006 -1 1000 150 1 0 0;
@@ -525,7 +530,7 @@ empty -2 -8 0 10 -190656 -241472 -1 5399 1;
 #X coords 0 1 5.90054e+006 -1 1000 150 1 0 0;
 #X restore 20 202 graph;
 #X obj 24 359 hsl 995 10 0 1 0 0 \$0-startsnd \$0-startrcv start 15
-4 0 10 -101504 -256853 -1 5394 1;
+4 0 10 -101504 -256853 -1 30051 1;
 #X obj 24 375 hsl 995 9 0 1 0 0 \$0-slice1snd \$0-slice1rcv slice_1
 15 4 0 7 -210742 -253394 -262144 0 1;
 #X obj 24 386 hsl 995 9 0 1 0 0 \$0-slice2snd \$0-slice2rcv slice_2
@@ -557,7 +562,7 @@ empty -2 -8 0 10 -190656 -241472 -1 5399 1;
 #X msg 582 468 0;
 #X msg 686 420 0;
 #X msg 499 381 1;
-#X msg 437 382 0.0542636;
+#X msg 437 382 0.302326;
 #X obj 530 520 tabread4~ \$0-samp1L;
 #X obj 582 488 spigot;
 #X obj 175 149 tgl 15 1 \$0-loopsnd \$0-looprcv loop 17 7 0 10 -89664
@@ -575,11 +580,11 @@ empty -2 -8 0 10 -190656 -241472 -1 5399 1;
 3 -9 0 12 -253376 -259674 -1 0 1;
 #X obj 887 349 r \$0-attacksnd;
 #X obj 190 36 vsl 13 70 5 2000 1 1 \$0-decaysnd \$0-decayrcv d 3 -9
-0 12 -182784 -259674 -1 2600 1;
+0 12 -182784 -259674 -1 3100 1;
 #X obj 205 36 vsl 13 70 0 1 0 1 \$0-sustainsnd \$0-sustainrcv s 3 -9
-0 12 -260787 -259674 -1 0 1;
+0 12 -260787 -259674 -1 300 1;
 #X obj 220 36 vsl 13 70 2 2000 1 1 \$0-releasesnd \$0-releasercv r
-3 -9 0 12 -174976 -259674 -1 2700 1;
+3 -9 0 12 -174976 -259674 -1 0 1;
 #X obj 916 371 r \$0-decaysnd;
 #X obj 945 396 r \$0-sustainsnd;
 #X obj 974 416 r \$0-releasesnd;
@@ -621,7 +626,7 @@ empty -2 -8 0 10 -190656 -241472 -1 5399 1;
 #X obj 190 328 bang;
 #X obj 685 400 r \$0-deloop;
 #X obj 178 123 hsl 130 10 0 1 0 1 \$0-startsnd \$0-startrcv start 15
-6 0 8 -101504 -256853 -1 700 1;
+6 0 8 -101504 -256853 -1 3900 1;
 #X obj 420 309 r \$0-startsnd;
 #X obj 217 149 tgl 15 1 \$0-autoplaysnd \$0-autoplayrcv auto 17 7 0
 10 -261234 -260118 -1 0 1;
