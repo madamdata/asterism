@@ -27,26 +27,24 @@ turns keyboard control on and off globally., f 36;
 #X obj 204 153 bng 15 250 50 0 \$0-cfgbang empty conf 17 7 0 10 -259613
 -261824 -1;
 #X obj 20 250 s \$0-cpu;
-#N canvas 156 67 337 244 config 0;
+#N canvas 156 67 337 244 config 1;
 #X obj 42 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 42 152 s recordingslocation;
 #X obj 42 88 openpanel;
-#X obj 42 110 moonlib/basedir;
-#X obj 42 132 unpack s s;
 #X text 60 28 click to set recordings folder location. Select any file
 in the folder to register that folder as the save location., f 36
 ;
 #X text 180 138 make sure to open the output abstraction and save it
 once you've done this!, f 22;
+#X obj 42 110 adabasedir;
 #X connect 0 0 2 0;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 4 1 1 0;
+#X connect 2 0 5 0;
+#X connect 5 0 1 0;
 #X restore 107 402 pd config;
 #X obj 116 329 r \$0-cfgbang;
 #X msg 116 351 \; pd-config vis 1;
-#N canvas 0 22 593 382 recorder 0;
+#N canvas 0 50 593 382 recorder 0;
 #X obj 101 101 cnv 15 98 38 empty empty empty 20 12 0 14 -261169 -66577
 0;
 #X obj 257 97 openpanel;

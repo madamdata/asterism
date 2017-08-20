@@ -15,7 +15,6 @@ function adabasedir:in_1_symbol(string)
 end
 
 function adabasedir:in_1_list(ls)
-	pd.post(ls[1])
 	self.string = ls[1]
 	self.results= {}
 	self.results[1], self.results[2] = string.match(self.string, "(.-)([^\\/]-%.?([^%.\\/]*))$")

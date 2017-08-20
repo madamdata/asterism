@@ -18,7 +18,7 @@ function adabasedir:in_1_list(ls)
 	pd.post(ls[1])
 	self.string = ls[1]
 	self.results= {}
-	self.results[1], self.results[2] = self.string.match([[/mnt/tmp/myfile.txt]], "(.-)([^\\/]-%.?([^%.\\/]*))$")
+	self.results[1], self.results[2] = string.match(self.string, "(.-)([^\\/]-%.?([^%.\\/]*))$")
 	self:outlet(1, "symbol", {self.results[1]});
 	self:outlet(2, "symbol", {self.results[2]});
 end

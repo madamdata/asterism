@@ -17,12 +17,12 @@ ratios \;;
 #X obj 432 279 divider \$6;
 #X text 104 129 16th;
 #X floatatom 147 130 3 2 100 0 - #0-div1rcv #0-div1snd, f 3;
-#X floatatom 189 130 3 2 100 0 - #0-div2rcv #0-div2snd, f 3;
-#X floatatom 228 130 3 2 100 0 - #0-div3rcv #0-div3snd, f 3;
+#X floatatom 187 130 3 2 100 0 - #0-div2rcv #0-div2snd, f 3;
+#X floatatom 225 130 3 2 100 0 - #0-div3rcv #0-div3snd, f 3;
 #X obj 396 206 r \$0-div1snd;
 #X obj 406 226 r \$0-div2snd;
 #X obj 416 246 r \$0-div3snd;
-#N canvas 0 22 450 300 state 0;
+#N canvas 0 50 450 300 state 0;
 #X obj 80 104 t b f;
 #X obj 29 110 t b f;
 #X obj 23 70 r savemessage;
@@ -98,7 +98,7 @@ ratios \;;
 #X obj 716 192 spigot;
 #X obj 786 158 r keycontrol;
 #X obj 717 271 s \$0-tglrcv;
-#X obj 716 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 716 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X connect 3 0 35 0;
 #X connect 4 1 5 0;
