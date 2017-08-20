@@ -8,7 +8,7 @@
 #X obj 408 158 inlet~;
 #X obj 352 157 inlet~;
 #X obj 108 112 vsl 25 98 0.01 1.1 1 0 \$0-volsnd \$0-volrcv vol 5 4
-0 10 -261552 -184321 -1 0 1;
+0 10 -261552 -184321 -1 7000 1;
 #X obj 352 279 *~;
 #X obj 408 280 *~;
 #X floatatom 204 133 5 0 0 2 cpu #0-cpu -, f 5;
@@ -19,7 +19,7 @@
 #X obj 20 219 * 0.1;
 #X obj 20 188 int;
 #X obj 143 141 tgl 28 0 \$0-kbsnd \$0-kbrcv kb 4 7 0 10 -260832 -261752
--1 0 1;
+-1 1 1;
 #X obj 145 279 s keycontrol;
 #X text 325 37 most of the buttons should be self explanatory. 'kb'
 turns keyboard control on and off globally., f 36;
@@ -27,7 +27,7 @@ turns keyboard control on and off globally., f 36;
 #X obj 204 153 bng 15 250 50 0 \$0-cfgbang empty conf 17 7 0 10 -259613
 -261824 -1;
 #X obj 20 250 s \$0-cpu;
-#N canvas 156 67 337 244 config 1;
+#N canvas 156 67 460 252 config 0;
 #X obj 42 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 42 152 s recordingslocation;
@@ -38,9 +38,14 @@ in the folder to register that folder as the save location., f 36
 #X text 180 138 make sure to open the output abstraction and save it
 once you've done this!, f 22;
 #X obj 42 110 adabasedir;
+#X obj 279 32 loadbang;
+#X msg 279 51 load adabasedir.pd_lua;
+#X obj 279 70 pdlua;
 #X connect 0 0 2 0;
 #X connect 2 0 5 0;
 #X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
 #X restore 107 402 pd config;
 #X obj 116 329 r \$0-cfgbang;
 #X msg 116 351 \; pd-config vis 1;
@@ -71,7 +76,7 @@ once you've done this!, f 22;
 #X obj 129 32 loadbang;
 #X msg 129 54 set myfile;
 #X obj 423 35 r recordingslocation;
-#X msg 431 118 set /Users/ada/Documents/Pd/recordings/%s.wav;
+#X msg 431 118 set /mnt/tmp//%s.wav;
 #X obj 423 57 t b s;
 #X msg 444 93 set set \$1/%s.wav;
 #X obj 356 23 loadbang;

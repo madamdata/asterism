@@ -1,9 +1,10 @@
-#N canvas 248 58 1005 487 16;
+#N canvas 70 294 1155 489 16;
+#X obj 12 12 cnv 15 146 56 empty empty empty 0 0 0 8 -248037 -66577
+0;
 #X obj 266 63 inlet bangkv;
-#X obj 700 66 inlet~ start;
-#X obj 857 64 inlet~ lpcutoff;
-#X obj 429 299 outlet~ L;
-#X obj 527 299 outlet~ R;
+#X obj 627 65 inlet~ start;
+#X obj 429 370 outlet~ L;
+#X obj 527 370 outlet~ R;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-sampleL 749700 float 2;
 #X coords 0 250 749700 249 200 140 0;
@@ -13,10 +14,10 @@
 #X coords 0 250 749700 249 200 140 0;
 #X restore 17 124 graph;
 #X text 16 100 samples L and R;
-#X obj 14 46 bng 15 250 50 0 \$0-loadsnd \$0-loadrcv load 17 7 1 10
--262144 -1 -1;
+#X obj 14 48 bng 15 250 50 0 \$0-loadsnd \$0-loadrcv load 17 7 1 10
+-232890 -1 -1;
 #X obj 134 193 soundfiler;
-#N canvas 0 50 604 300 loadsample 0;
+#N canvas 612 50 604 300 loadsample 0;
 #X obj 46 23 r \$0-loadsnd;
 #X obj 46 46 openpanel;
 #X obj 53 128 pack s s s;
@@ -24,7 +25,6 @@
 #X obj 152 111 symbol \$0-sampleR;
 #X obj 46 68 t a b b;
 #X obj 67 202 outlet;
-#X msg 66 154 read -resize \$1 \$2 \$3;
 #X obj 395 192 s \$0-filenamedisplay;
 #X msg 349 28 load adabasedir.pd_lua;
 #X obj 349 51 pdlua;
@@ -32,21 +32,22 @@
 #X obj 380 162 adabasedir;
 #X obj 212 218 s \$0-filepathsnd;
 #X obj 176 36 r \$0-filepathrcv;
+#X msg 66 154 read -maxsize 4e+007 -resize \$1 \$2 \$3;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
-#X connect 2 0 7 0;
+#X connect 2 0 14 0;
 #X connect 3 0 2 1;
 #X connect 4 0 2 2;
 #X connect 5 0 2 0;
+#X connect 5 0 11 0;
 #X connect 5 0 12 0;
-#X connect 5 0 13 0;
 #X connect 5 1 3 0;
 #X connect 5 2 4 0;
-#X connect 7 0 6 0;
-#X connect 9 0 10 0;
-#X connect 11 0 9 0;
-#X connect 12 1 8 0;
-#X connect 14 0 5 0;
+#X connect 8 0 9 0;
+#X connect 10 0 8 0;
+#X connect 11 1 7 0;
+#X connect 13 0 5 0;
+#X connect 14 0 6 0;
 #X restore 134 164 pd loadsample;
 #N canvas 565 258 709 301 numberofsamples 0;
 #X obj 119 60 inlet;
@@ -96,21 +97,14 @@
 #X text 579 111 scale to 0-1 and add to start time control;
 #X obj 167 292 smoother 20;
 #X obj 367 224 max 0;
-#X floatatom 440 294 5 0 0 0 - - -, f 5;
 #X obj 321 13 inlet~ pitchlog;
 #X obj 305 40 *~ 60;
 #X obj 167 341 *~;
-#X obj 551 309 snapshot~;
-#X obj 615 265 metro 300;
-#X obj 551 331 print;
-#X obj 616 241 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
 #X obj 288 71 midiratio~;
 #X connect 0 0 1 1;
 #X connect 1 0 4 0;
 #X connect 2 0 6 0;
 #X connect 3 0 21 0;
-#X connect 3 0 23 0;
 #X connect 5 0 3 0;
 #X connect 6 0 5 0;
 #X connect 6 1 3 1;
@@ -128,17 +122,14 @@
 #X connect 17 1 18 0;
 #X connect 18 0 19 0;
 #X connect 19 0 16 1;
-#X connect 21 0 26 0;
+#X connect 21 0 25 0;
 #X connect 22 0 9 1;
-#X connect 24 0 25 0;
-#X connect 25 0 31 0;
-#X connect 26 0 9 0;
-#X connect 27 0 29 0;
-#X connect 28 0 27 0;
-#X connect 30 0 28 0;
-#X connect 31 0 26 1;
+#X connect 23 0 24 0;
+#X connect 24 0 26 0;
+#X connect 25 0 9 0;
+#X connect 26 0 25 1;
 #X restore 429 175 pd phase;
-#X floatatom 16 25 3 0 0 0 - #0-playbackspeedrcv #0-playbackspeedsnd
+#X floatatom 50 22 3 0 0 0 - #0-playbackspeedrcv #0-playbackspeedsnd
 , f 3;
 #X obj 528 230 tabread4~ \$0-sampleR;
 #N canvas 0 50 450 300 declick 0;
@@ -157,54 +148,80 @@
 #X connect 6 0 0 1;
 #X restore 430 255 pd declick;
 #X obj 314 131 s \$0-declickbang;
-#X obj 136 28 bng 15 250 50 0 \$0-manualtrigsnd \$0-manualtrigrcv empty
-17 7 0 10 -262144 -1 -1;
-#X symbolatom 55 46 9 0 0 0 - #0-filenamedisplay -, f 9;
+#X obj 126 23 bng 15 250 50 0 \$0-manualtrigsnd \$0-manualtrigrcv tr
+3 7 0 8 -248037 -241088 -262144;
+#X symbolatom 54 48 9 0 0 0 - #0-filenamedisplay -, f 9;
 #X obj 348 93 r \$0-manualtrigsnd;
-#X floatatom 52 25 3 0 1000 0 - #0-starttimercv #0-starttimesnd, f
+#X floatatom 87 22 3 0 1000 0 - #0-starttimercv #0-starttimesnd, f
 3;
 #X obj 430 209 tabread4~ \$0-sampleL;
-#N canvas 742 147 737 331 state_saving 0;
+#N canvas 529 132 737 331 state_saving 0;
 #X obj 14 56 pdlua;
 #X msg 14 34 load savestate.pd_lua;
 #X obj 14 10 loadbang;
 #X msg 128 137 symbol dumpvalues;
-#X obj 128 184 outlet;
+#X obj 128 210 outlet;
 #X obj 328 19 t b b;
-#X obj 321 64 pack \$1 \$2 \$3 s;
-#X obj 417 38 symbol \$4;
 #X obj 299 8 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 128 161 savestate \$0-index \$0-playbackspeed \$0-starttime
-\$0-filepath;
+\$0-volume \$0-filepath;
+#X obj 321 64 pack \$1 \$2 \$3 \$4 s;
+#X obj 510 35 symbol \$5;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 2 0 5 0;
-#X connect 3 0 9 0;
-#X connect 5 0 6 0;
-#X connect 5 1 7 0;
-#X connect 6 0 9 0;
-#X connect 7 0 6 3;
-#X connect 8 0 5 0;
-#X connect 9 0 4 0;
+#X connect 3 0 7 0;
+#X connect 5 0 8 0;
+#X connect 5 1 9 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 4;
 #X restore 175 321 pd state_saving;
 #X obj 175 343 canvasargs;
 #X floatatom 96 296 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
-#X obj 519 63 inlet~ pitchlog;
-#X connect 0 0 16 0;
-#X connect 0 0 12 0;
-#X connect 1 0 12 2;
+#X obj 468 65 inlet~ pitchlog;
+#X floatatom 13 22 3 0 150 0 - #0-volumercv #0-volumesnd, f 3;
+#X obj 428 343 *~;
+#X obj 527 344 *~;
+#X obj 750 235 r \$0-volumesnd;
+#X obj 554 316 smoother 10;
+#X obj 750 257 / 100;
+#X obj 12 12 cnv 8 35 8 empty empty ! 2 3 0 11 -151559 -262144 0;
+#X obj 46 12 cnv 8 50 8 empty empty pitch 2 3 0 11 -151559 -257150
+0;
+#X obj 94 12 cnv 8 50 8 empty empty start 2 3 0 11 -151559 -257150
+0;
+#X obj 798 68 inlet control;
+#X obj 123 12 cnv 8 35 8 empty empty ctrl 15 3 0 11 -151559 -262144
+0;
+#X obj 13 38 cnv 8 35 8 empty empty vol 2 3 0 11 -248037 -262144 0
+;
+#X obj 48 38 cnv 8 35 8 empty empty pitch 2 3 0 11 -248037 -262144
+0;
+#X obj 86 38 cnv 8 35 8 empty empty start 2 3 0 11 -248037 -262144
+0;
+#X connect 1 0 16 0;
+#X connect 1 0 12 0;
+#X connect 2 0 12 2;
 #X connect 9 0 11 0;
 #X connect 9 1 11 1;
 #X connect 10 0 9 0;
 #X connect 12 0 14 0;
 #X connect 12 0 21 0;
 #X connect 14 0 15 1;
-#X connect 15 0 3 0;
-#X connect 15 1 4 0;
+#X connect 15 0 27 0;
+#X connect 15 1 28 0;
 #X connect 19 0 16 0;
 #X connect 19 0 12 0;
 #X connect 21 0 15 0;
 #X connect 22 0 23 0;
 #X connect 25 0 12 1;
+#X connect 27 0 3 0;
+#X connect 28 0 4 0;
+#X connect 29 0 31 0;
+#X connect 30 0 28 1;
+#X connect 30 0 27 1;
+#X connect 31 0 30 0;
 #X coords 0 -1 1 1 150 60 2 10 10;
