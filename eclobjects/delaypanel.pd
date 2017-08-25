@@ -3,7 +3,7 @@
 -66577 0;
 #X obj 268 97 inlet~ L;
 #X obj 342 97 inlet~ R;
-#N canvas 0 23 450 300 delwrites 0;
+#N canvas 0 50 450 300 delwrites 0;
 #X obj 107 24 inlet~;
 #X obj 226 25 inlet~;
 #X obj 114 214 outlet~;
@@ -19,7 +19,7 @@
 #X connect 4 0 6 0;
 #X connect 5 0 7 0;
 #X restore 255 216 pd delwrites;
-#N canvas 0 23 629 419 delreads 0;
+#N canvas 0 90 629 419 delreads 0;
 #X obj 139 177 vd~ \$0-delL;
 #X obj 231 176 vd~ \$0-delR;
 #X obj 75 355 outlet~;
@@ -27,7 +27,7 @@
 #X obj 79 39 inlet~ L;
 #X obj 151 42 inlet~ R;
 #X obj 359 49 r \$0-deltimesnd;
-#X obj 320 118 smoother 40;
+#X obj 312 113 smoother 40;
 #N canvas 689 108 560 486 filters 0;
 #X obj 274 201 r \$0-filterswitchsnd;
 #X obj 24 71 inlet~;
@@ -47,11 +47,14 @@
 #X obj 300 87 smoother 40;
 #X obj 147 162 *~;
 #X obj 151 28 inlet~ cutoff;
+#X obj 66 369 *~ 1.3;
+#X obj 132 374 *~ 1.3;
+#X obj 147 181 clip~ 38 18000;
 #X connect 0 0 12 0;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
-#X connect 3 0 5 0;
-#X connect 4 0 6 0;
+#X connect 3 0 18 0;
+#X connect 4 0 19 0;
 #X connect 7 0 4 0;
 #X connect 7 0 3 0;
 #X connect 8 0 16 0;
@@ -63,9 +66,12 @@
 #X connect 14 0 8 0;
 #X connect 15 0 4 2;
 #X connect 15 0 3 2;
-#X connect 16 0 4 1;
-#X connect 16 0 3 1;
+#X connect 16 0 20 0;
 #X connect 17 0 16 1;
+#X connect 18 0 5 0;
+#X connect 19 0 6 0;
+#X connect 20 0 4 1;
+#X connect 20 0 3 1;
 #X restore 214 312 pd filters;
 #X obj 78 312 *~;
 #X obj 175 315 *~;
@@ -74,15 +80,18 @@
 #X obj 312 239 smoother 25;
 #X obj 245 43 inlet~ deltime;
 #X obj 473 51 r \$0-decouplesnd;
-#X obj 422 120 smoother 40;
+#X obj 426 115 smoother 40;
 #X obj 410 96 * 1;
-#X obj 216 148 *~;
-#X obj 287 152 *~;
-#X obj 245 85 +~ 1;
-#X obj 245 64 *~ 0.75;
+#X obj 213 131 *~;
+#X obj 284 135 *~;
 #X obj 359 70 f;
 #X obj 473 72 t b f;
 #X obj 351 280 inlet~ cutoff;
+#X obj 245 85 midiratio~;
+#X obj 260 154 max~ 1;
+#X obj 188 150 max~ 1;
+#X obj 244 64 *~ 60;
+#X obj 497 217 numscope;
 #X connect 0 0 9 0;
 #X connect 0 0 8 0;
 #X connect 1 0 10 0;
@@ -91,7 +100,7 @@
 #X connect 4 0 8 0;
 #X connect 5 0 10 0;
 #X connect 5 0 8 1;
-#X connect 6 0 22 0;
+#X connect 6 0 20 0;
 #X connect 7 0 18 0;
 #X connect 8 0 2 0;
 #X connect 8 1 3 0;
@@ -101,25 +110,28 @@
 #X connect 12 0 13 0;
 #X connect 13 0 10 1;
 #X connect 13 0 9 1;
-#X connect 14 0 21 0;
-#X connect 15 0 23 0;
+#X connect 14 0 26 0;
+#X connect 15 0 21 0;
 #X connect 16 0 19 0;
 #X connect 17 0 16 0;
-#X connect 18 0 0 0;
-#X connect 19 0 1 0;
-#X connect 20 0 18 1;
-#X connect 20 0 19 1;
+#X connect 18 0 25 0;
+#X connect 19 0 24 0;
+#X connect 20 0 17 0;
+#X connect 20 0 7 0;
 #X connect 21 0 20 0;
-#X connect 22 0 17 0;
-#X connect 22 0 7 0;
-#X connect 23 0 22 0;
-#X connect 23 1 17 1;
-#X connect 24 0 8 2;
+#X connect 21 1 17 1;
+#X connect 22 0 8 2;
+#X connect 23 0 18 1;
+#X connect 23 0 19 1;
+#X connect 24 0 1 0;
+#X connect 24 0 27 0;
+#X connect 25 0 0 0;
+#X connect 26 0 23 0;
 #X restore 258 259 pd delreads;
 #X obj 240 354 outlet~ L;
 #X obj 340 357 outlet~ R;
 #X text 203 238 dummy connection to ensure execution order;
-#N canvas 0 23 634 308 feedback 0;
+#N canvas 0 50 634 308 feedback 0;
 #X obj 91 107 *~;
 #X obj 166 108 *~;
 #X obj 91 221 s~ \$0-fbL;
@@ -143,20 +155,20 @@
 #X connect 10 0 0 1;
 #X restore 394 334 pd feedback;
 #X obj 107 150 hsl 128 15 0 0.98 0 0 \$0-feedbacksnd \$0-feedbackrcv
-feedback -2 6 0 9 -260975 -258511 -1 12500 1;
-#X obj 107 133 hsl 128 15 1 4000 1 0 \$0-deltimesnd \$0-deltimercv
-time -2 6 0 9 -260125 -258511 -1 2565 1;
+feedback -2 6 0 9 -260975 -258511 -1 8700 1;
+#X obj 107 133 hsl 128 15 5 4000 1 0 \$0-deltimesnd \$0-deltimercv
+time -2 6 0 9 -260125 -258511 -1 7716 1;
 #X obj 107 167 hsl 128 15 40 15000 1 0 \$0-cutoffsnd \$0-cutoffrcv
-cutoff -2 6 0 9 -227366 -258511 -1 8000 1;
+cutoff -2 6 0 9 -227366 -258511 -1 10500 1;
 #X obj 107 184 hsl 128 15 0 4 0 0 \$0-qsnd \$0-qrcv q -2 6 0 9 -226911
--261557 -1 800 1;
+-261557 -1 900 1;
 #X obj 104 116 tgl 15 0 \$0-filterswitchsnd \$0-filterswitchrcv filter
 17 7 0 9 -260266 -261331 -1 1 1;
 #X obj 107 201 hsl 128 15 3 0.1 0 0 \$0-saturationsnd \$0-saturationrcv
-saturation -2 6 0 9 -247066 -261630 -1 3500 1;
+saturation -2 6 0 9 -247066 -261630 -1 5200 1;
 #X obj 232 118 tgl 12 0 \$0-switchsnd \$0-switchrcv empty 17 7 0 10
 -260271 -262144 -1 1 1;
-#N canvas 0 23 716 346 colours 0;
+#N canvas 0 50 716 346 colours 0;
 #X obj 76 82 r \$0-filterswitchsnd;
 #X obj 76 103 sel 0 1;
 #X obj 100 167 rgb, f 8;
@@ -208,7 +220,7 @@ saturation -2 6 0 9 -247066 -261630 -1 3500 1;
 #X connect 21 0 22 0;
 #X connect 23 0 20 0;
 #X restore 43 247 pd colours;
-#N canvas 0 23 450 300 state_saving 0;
+#N canvas 0 50 450 300 state_saving 0;
 #X obj 48 33 r \$0-filterswitchsnd;
 #X obj 63 56 r \$0-deltimesnd;
 #X obj 93 98 r \$0-cutoffsnd;
@@ -240,7 +252,7 @@ saturation -2 6 0 9 -247066 -261630 -1 3500 1;
 #X connect 10 0 7 0;
 #X restore 45 278 pd state_saving;
 #X obj 45 299 canvasargs;
-#N canvas 0 23 450 300 state_loading 0;
+#N canvas 0 50 450 300 state_loading 0;
 #X obj 38 32 loadbang;
 #X obj 41 123 s \$0-filterswitchrcv;
 #X obj 41 142 s \$0-deltimercv;
@@ -280,7 +292,7 @@ saturation -2 6 0 9 -247066 -261630 -1 3500 1;
 #X obj 233 102 cnv 8 15 12 empty empty q 8 5 0 9 -261502 -258642 0
 ;
 #X obj 107 218 hsl 128 15 0.5 1.5 0 0 \$0-decouplesnd \$0-decouplercv
-decouple -2 6 0 9 -218467 -261630 -1 8200 1;
+decouple -2 6 0 9 -218467 -261630 -1 6800 1;
 #X obj 689 276 r \$0-decouplesnd;
 #X floatatom 689 297 5 0 0 0 - - -, f 5;
 #X obj 562 115 *~ 0.6;

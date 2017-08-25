@@ -8,7 +8,7 @@
 #X obj 408 158 inlet~;
 #X obj 352 157 inlet~;
 #X obj 108 112 vsl 25 98 0.01 1.1 1 0 \$0-volsnd \$0-volrcv vol 5 4
-0 10 -261552 -184321 -1 7000 1;
+0 10 -261552 -184321 -1 9700 1;
 #X obj 352 279 *~;
 #X obj 408 280 *~;
 #X floatatom 204 133 5 0 0 2 cpu #0-cpu -, f 5;
@@ -146,6 +146,8 @@ once you've done this!, f 22;
 #X obj 229 426 s allguis;
 #X obj 246 350 t b f;
 #X obj 273 390 value allguistgl;
+#X obj 547 274 mousewheel;
+#X obj 547 293 s mousewheeldata;
 #X connect 4 0 8 0;
 #X connect 5 0 7 0;
 #X connect 7 0 3 0;
@@ -174,4 +176,5 @@ once you've done this!, f 22;
 #X connect 34 0 32 0;
 #X connect 40 0 39 0;
 #X connect 40 1 41 0;
+#X connect 42 0 43 0;
 #X coords 0 -1 1 1 150 120 2 100 100;

@@ -3,8 +3,8 @@
 , f 4;
 #X obj 258 74 inlet~;
 #X obj 259 176 *~;
-#X obj 322 96 r \$0-attenuvertsnd;
-#X obj 307 151 smoother 9;
+#X obj 338 72 r \$0-attenuvertsnd;
+#X obj 323 127 smoother 9;
 #X obj 257 277 outlet~;
 #N canvas 124 54 603 310 state_saving 0;
 #X obj 95 221 outlet;
@@ -21,19 +21,22 @@
 #X restore 66 174 pd state_saving;
 #X floatatom 93 231 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
 #X obj 66 196 canvasargs;
-#X obj 322 118 / 100;
+#X obj 338 94 / 100;
 #X obj 151 103 tgl 15 0 \$0-mutesnd \$0-mutercv empty 17 7 0 10 -262144
 -1 -1 1 1;
-#X obj 559 82 inlet control;
+#X obj 641 84 inlet control;
 #X obj 257 230 *~;
 #X obj 359 199 r \$0-mutesnd;
 #X obj 359 221 smoother 10;
 #X obj 575 193 s \$0-mutercv;
-#X obj 559 104 route level mute bang;
+#X obj 641 106 route level mute bang;
+#X obj 530 96 +~ 1;
+#X obj 323 149 *~;
+#X obj 530 74 inlet~ gain;
 #X connect 1 0 2 0;
 #X connect 2 0 12 0;
 #X connect 3 0 9 0;
-#X connect 4 0 2 1;
+#X connect 4 0 18 0;
 #X connect 6 0 8 0;
 #X connect 9 0 4 0;
 #X connect 11 0 16 0;
@@ -42,4 +45,7 @@
 #X connect 14 0 12 1;
 #X connect 16 1 15 0;
 #X connect 16 2 15 0;
+#X connect 17 0 18 1;
+#X connect 18 0 2 1;
+#X connect 19 0 17 0;
 #X coords 0 -1 1 1 75 32 2 100 100;
