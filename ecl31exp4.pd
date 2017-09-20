@@ -1,7 +1,7 @@
-#N canvas 199 50 1052 670 16;
+#N canvas 198 0 1053 626 16;
 #X obj 572 352 output;
-#X obj 572 196 mixer4 0 0.839558 0.294005 1 1 0.373737 0.50505 0.535354
-0.50505 1 1 0 1 0 0 0 0 0 0 0 1;
+#X obj 572 196 mixer4 0 0.839558 0.62729 0.173983 1 0.373737 0.50505
+0.535354 0.50505 1 0 0 1 0 0 0 0 0 0 0 1;
 #X obj 168 129 seq16bin 0 39048 53836 0 0 55933 0 0 0 4;
 #X obj 177 531 bus 1;
 #X obj 730 86 seq16bin 0 43690 43008 8736 0 0 0 0 0 2;
@@ -10,7 +10,7 @@
 #X obj 780 195 sampler3 0 58 669 150 C:/Users/Ada/Documents/Soundlibrary/170325_0239S12.wav.wav
 ;
 #X obj 150 332 simplevca 0 471 1255 44;
-#X obj 371 386 delaypanel 0 1 639.224 0.740787 1264.41 0.125984 1.01339
+#X obj 371 386 delaypanel 0 1 138.913 0.470709 1264.41 0.850394 1.01339
 1 1.01969;
 #X obj 377 549 bus 2;
 #X obj 183 405 filterpanel 0 573.39 3.68687 40 0;
@@ -24,7 +24,7 @@
 #X obj 779 405 *~ 2;
 #X obj 840 408 *~ 2;
 #X obj 160 36 clock 0 77 1 14 0 0;
-#X obj 365 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 365 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 365 142 + 0.5;
 #X msg 366 200 time \$1;
@@ -33,8 +33,6 @@
 #X obj 402 291 max~;
 #X obj 335 331 attenuvert 0 43 1;
 #X obj 471 296 attenuvert 0 10.72 0;
-#X obj 52 517 cyclone/scope~ 130 130 256 3 128 -1 1 0 0 0 0 205 229
-232 74 79 77 96 98 102 0;
 #X obj 493 150 attenuvert 0 7 1;
 #X obj 862 506 sampler3 0 237 292 54 C:/Users/Ada/Documents/Soundlibrary/170326_0245S12.wav
 ;
@@ -44,6 +42,8 @@
 #X obj 699 597 attenuvert 0 110 1;
 #X obj 818 609 min~;
 #X obj 64 351 attenuvert 0 40 1;
+#X obj 472 39 osc~ 440;
+#X obj 472 61 *~ 0.4;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
 #X connect 2 0 5 0;
@@ -66,7 +66,7 @@
 #X connect 11 0 5 2;
 #X connect 11 0 26 1;
 #X connect 12 0 11 0;
-#X connect 12 1 37 0;
+#X connect 12 1 36 0;
 #X connect 15 0 18 0;
 #X connect 15 0 8 0;
 #X connect 15 1 19 0;
@@ -83,22 +83,23 @@
 #X connect 23 0 20 0;
 #X connect 24 0 23 0;
 #X connect 25 0 26 0;
-#X connect 25 0 32 0;
+#X connect 25 0 31 0;
 #X connect 25 1 28 0;
-#X connect 25 1 31 2;
-#X connect 25 1 34 1;
-#X connect 26 0 8 4;
+#X connect 25 1 30 2;
+#X connect 25 1 33 1;
 #X connect 26 0 27 0;
-#X connect 26 0 30 0;
+#X connect 26 0 29 0;
 #X connect 27 0 10 2;
 #X connect 28 0 8 2;
-#X connect 28 0 36 1;
-#X connect 30 0 5 1;
-#X connect 31 0 33 0;
-#X connect 31 1 33 1;
-#X connect 32 0 31 0;
-#X connect 32 1 31 0;
+#X connect 28 0 35 1;
+#X connect 29 0 5 1;
+#X connect 30 0 32 0;
+#X connect 30 1 32 1;
+#X connect 31 0 30 0;
+#X connect 31 1 30 0;
+#X connect 33 0 34 0;
 #X connect 34 0 35 0;
-#X connect 35 0 36 0;
-#X connect 36 0 31 1;
-#X connect 37 0 8 2;
+#X connect 35 0 30 1;
+#X connect 37 0 38 0;
+#X connect 38 0 8 0;
+#X connect 38 0 8 1;

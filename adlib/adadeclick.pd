@@ -10,8 +10,8 @@
 #X obj 235 37 inlet~;
 #X text 323 208 try adjusting 3rd argument '10' to another value;
 #X text 303 122 try adjusting 3rd argument '5' to another value;
-#X msg 252 208 \$1 \, 0 5;
-#X msg 252 123 0 \, 1 2;
+#X msg 252 208 \$1 \, 0 6;
+#X msg 252 124 0 \, 1 2;
 #X connect 0 0 2 0;
 #X connect 0 0 7 0;
 #X connect 1 0 0 1;

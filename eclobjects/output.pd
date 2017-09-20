@@ -3,12 +3,12 @@
 -66577 0;
 #X msg 498 182 \; pd dsp \$1;
 #X obj 143 111 tgl 28 0 \$0-dspsnd \$0-dsprcv dsp 3 6 0 10 -261495
--259037 -99849 0 1;
+-259037 -99849 1 1;
 #X obj 363 312 dac~;
 #X obj 408 158 inlet~;
 #X obj 352 157 inlet~;
 #X obj 108 112 vsl 25 98 0.01 1.1 1 0 \$0-volsnd \$0-volrcv vol 5 4
-0 10 -261552 -184321 -1 9700 1;
+0 10 -261552 -184321 -1 8200 1;
 #X obj 352 279 *~;
 #X obj 408 280 *~;
 #X floatatom 204 133 5 0 0 2 cpu #0-cpu -, f 5;
@@ -18,7 +18,7 @@
 #X obj 20 131 t b b;
 #X obj 20 219 * 0.1;
 #X obj 20 188 int;
-#X obj 143 141 tgl 28 0 \$0-kbsnd \$0-kbrcv kb 4 7 0 10 -260832 -261752
+#X obj 143 141 tgl 28 1 \$0-kbsnd \$0-kbrcv kb 4 7 0 10 -260832 -261752
 -1 1 1;
 #X obj 145 279 s keycontrol;
 #X text 325 37 most of the buttons should be self explanatory. 'kb'
@@ -31,25 +31,25 @@ turns keyboard control on and off globally., f 36;
 #X obj 42 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 42 152 s recordingslocation;
-#X obj 42 88 openpanel;
+#X obj 42 72 openpanel;
 #X text 60 28 click to set recordings folder location. Select any file
 in the folder to register that folder as the save location., f 36
 ;
 #X text 180 138 make sure to open the output abstraction and save it
 once you've done this!, f 22;
-#X obj 42 110 adabasedir;
 #X obj 279 32 loadbang;
 #X msg 279 51 load adabasedir.pd_lua;
 #X obj 279 70 pdlua;
+#X obj 42 129 adabasedir;
 #X connect 0 0 2 0;
-#X connect 2 0 5 0;
-#X connect 5 0 1 0;
+#X connect 2 0 8 0;
+#X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X connect 7 0 8 0;
+#X connect 8 0 1 0;
 #X restore 107 402 pd config;
 #X obj 116 329 r \$0-cfgbang;
 #X msg 116 351 \; pd-config vis 1;
-#N canvas 0 50 593 382 recorder 0;
+#N canvas 12 52 699 382 recorder 0;
 #X obj 101 101 cnv 15 98 38 empty empty empty 20 12 0 14 -261169 -66577
 0;
 #X obj 257 97 openpanel;
@@ -76,7 +76,7 @@ once you've done this!, f 22;
 #X obj 129 32 loadbang;
 #X msg 129 54 set myfile;
 #X obj 423 35 r recordingslocation;
-#X msg 431 118 set /mnt/tmp//%s.wav;
+#X msg 431 118 set C:/Users/Ada/Desktop//%s.wav;
 #X obj 423 57 t b s;
 #X msg 444 93 set set \$1/%s.wav;
 #X obj 356 23 loadbang;

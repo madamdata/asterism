@@ -9,7 +9,7 @@ end
 function adabasedir:in_1_symbol(string)
 	self.string = string
 	self.results= {}
-	self.results[1], self.results[2] = self.string.match([[/mnt/tmp/myfile.txt]], "(.-)([^\\/]-%.?([^%.\\/]*))$")
+	self.results[1], self.results[2] = self.string.match(self.string, "(.-)([^\\/]-%.?([^%.\\/]*))$")
 	self:outlet(1, "symbol", {self.results[1]})
 	self:outlet(2, "symbol", {self.results[2]})
 end

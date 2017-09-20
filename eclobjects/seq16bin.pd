@@ -1,4 +1,4 @@
-#N canvas 95 23 1100 738 10;
+#N canvas 95 0 1175 653 10;
 #X obj 203 22 inlet;
 #X obj 622 93 f 1;
 #X obj 652 93 + 1;
@@ -77,7 +77,7 @@
 #X connect 28 0 27 0;
 #X connect 28 1 22 0;
 #X restore 49 210 pd state_loading;
-#N canvas 325 25 699 561 state_saving 0;
+#N canvas 325 50 699 561 state_saving 0;
 #X text 103 17 state saving;
 #X obj 8 265 r \$0-indexsnd;
 #X obj 103 189 debinarizer;
@@ -93,7 +93,7 @@
 #X obj 224 416 list split 1;
 #X obj 188 204 r \$0-currentslot;
 #X obj 398 154 r \$0-sequenceload;
-#N canvas 0 22 473 345 receive_toggles 0;
+#N canvas 0 50 473 345 receive_toggles 0;
 #X obj 358 120 r storebang;
 #X obj 358 142 t b b b;
 #X msg 403 177 1;
@@ -210,7 +210,7 @@
 #X obj 49 251 canvasargs;
 #X obj 458 307 sel 1 0;
 #X obj 668 32 r allsequencers;
-#N canvas 349 31 787 519 offset 0;
+#N canvas 349 50 787 519 offset 0;
 #X obj 204 284 f 0;
 #X obj 234 284 f 0;
 #X obj 264 284 f 0;
@@ -393,39 +393,39 @@
 #X restore 896 367 pd \$0-properties;
 #X msg 895 329 \; pd-\$1-properties vis 1;
 #X obj 895 302 f \$0;
-#X obj 53 103 tgl 15 0 \$0-tgl1snd \$0-tgl1rcv empty 17 7 0 10 -117052
--117052 -1 0 1;
-#X obj 69 103 tgl 15 0 \$0-tgl2snd \$0-tgl2rcv empty 17 7 0 10 -117052
--117052 -1 0 1;
-#X obj 85 103 tgl 15 0 \$0-tgl3snd \$0-tgl3rcv empty 17 7 0 10 -117052
--117052 -1 0 1;
-#X obj 101 103 tgl 15 0 \$0-tgl4snd \$0-tgl4rcv empty 17 7 0 10 -117052
--117052 -1 0 1;
-#X obj 117 103 tgl 15 0 \$0-tgl5snd \$0-tgl5rcv empty 17 7 0 10 -117052
--117052 -1 0 1;
+#X obj 53 103 tgl 15 0 \$0-tgl1snd \$0-tgl1rcv empty 17 7 0 10 -255414
+-255414 -1 1 1;
+#X obj 69 103 tgl 15 0 \$0-tgl2snd \$0-tgl2rcv empty 17 7 0 10 -255414
+-255414 -1 1 1;
+#X obj 85 103 tgl 15 0 \$0-tgl3snd \$0-tgl3rcv empty 17 7 0 10 -255414
+-255414 -1 1 1;
+#X obj 101 103 tgl 15 0 \$0-tgl4snd \$0-tgl4rcv empty 17 7 0 10 -255414
+-255414 -1 1 1;
+#X obj 117 103 tgl 15 0 \$0-tgl5snd \$0-tgl5rcv empty 17 7 0 10 -255414
+-255414 -1 1 1;
 #X obj 133 103 tgl 15 0 \$0-tgl6snd \$0-tgl6rcv empty 17 7 0 10 -117052
 -117052 -1 0 1;
-#X obj 149 103 tgl 15 0 \$0-tgl7snd \$0-tgl7rcv empty 17 7 0 10 -117052
--117052 -1 0 1;
+#X obj 149 103 tgl 15 0 \$0-tgl7snd \$0-tgl7rcv empty 17 7 0 10 -255414
+-255414 -1 1 1;
 #X obj 165 103 tgl 15 0 \$0-tgl8snd \$0-tgl8rcv empty 17 7 0 10 -255414
 -255414 -1 1 1;
-#X obj 53 120 tgl 15 0 \$0-tgl9snd \$0-tgl9rcv empty 17 7 0 10 -117052
--117052 -1 0 1;
-#X obj 69 120 tgl 15 0 \$0-tgl10snd \$0-tgl10rcv empty 17 7 0 10 -117052
--117052 -1 0 1;
-#X obj 85 120 tgl 15 0 \$0-tgl11snd \$0-tgl11rcv empty 17 7 0 10 -117052
--117052 -1 0 1;
+#X obj 53 120 tgl 15 0 \$0-tgl9snd \$0-tgl9rcv empty 17 7 0 10 -255414
+-255414 -1 1 1;
+#X obj 69 120 tgl 15 0 \$0-tgl10snd \$0-tgl10rcv empty 17 7 0 10 -255414
+-255414 -1 1 1;
+#X obj 85 120 tgl 15 0 \$0-tgl11snd \$0-tgl11rcv empty 17 7 0 10 -255414
+-255414 -1 1 1;
 #X obj 101 120 tgl 15 0 \$0-tgl12snd \$0-tgl12rcv empty 17 7 0 10 -117052
 -117052 -1 0 1;
 #X obj 117 120 tgl 15 0 \$0-tgl13snd \$0-tgl13rcv empty 17 7 0 10 -117052
 -117052 -1 0 1;
 #X obj 133 120 tgl 15 0 \$0-tgl14snd \$0-tgl14rcv empty 17 7 0 10 -255414
 -255414 -1 1 1;
-#X obj 149 120 tgl 15 0 \$0-tgl15snd \$0-tgl15rcv empty 17 7 0 10 -117052
--117052 -1 0 1;
-#X obj 165 120 tgl 15 0 \$0-tgl16snd \$0-tgl16rcv empty 17 7 0 10 -117052
--117052 -1 0 1;
-#N canvas 0 22 901 306 receives 0;
+#X obj 149 120 tgl 15 0 \$0-tgl15snd \$0-tgl15rcv empty 17 7 0 10 -255414
+-255414 -1 1 1;
+#X obj 165 120 tgl 15 0 \$0-tgl16snd \$0-tgl16rcv empty 17 7 0 10 -255414
+-255414 -1 1 1;
+#N canvas 0 50 901 306 receives 0;
 #X obj 37 51 r \$0-tgl1snd;
 #X obj 47 71 r \$0-tgl2snd;
 #X obj 57 91 r \$0-tgl3snd;
@@ -485,7 +485,7 @@
 #X obj 715 262 f 0;
 #X obj 621 114 mod 16;
 #X obj 501 151 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
-#N canvas 491 35 789 437 colors 0;
+#N canvas 491 50 789 437 colors 0;
 #X obj 14 48 r \$0-tgl1snd;
 #X obj 29 68 r \$0-tgl2snd;
 #X obj 39 88 r \$0-tgl3snd;
@@ -567,9 +567,9 @@
 #X connect 46 0 29 0;
 #X connect 47 0 30 0;
 #X restore 49 186 pd colors;
-#X obj 56 107 cnv 4 4 4 empty \$0-cnv empty 0 0 0 14 -61638 -66577
+#X obj 136 123 cnv 4 4 4 empty \$0-cnv empty 0 0 0 14 -61638 -66577
 0;
-#N canvas 0 23 450 300 blinker 0;
+#N canvas 0 50 450 300 blinker 0;
 #X obj 213 238 spigot;
 #X obj 350 116 r allguis;
 #X obj 137 98 expr $f1*16+56;
@@ -610,12 +610,12 @@
 #X msg 926 475 load debinarizer.pd_lua;
 #X obj 915 506 pdlua;
 #X obj 53 137 hradio 16 1 0 8 \$0-seqsnd \$0-seqrcv empty 0 -8 0 10
--167424 -259869 -1 2;
+-167424 -259869 -1 0;
 #X obj 155 285 r \$0-seqsnd;
 #X obj 155 307 t f f;
 #X obj 182 347 s \$0-currentslot;
 #X obj 126 388 r \$0-sequences;
-#N canvas 0 22 672 294 listaccess 0;
+#N canvas 0 50 672 294 listaccess 0;
 #X obj 151 80 unpack f f f f f f f f;
 #X obj 151 38 inlet;
 #X obj 107 149 f;
@@ -660,8 +660,8 @@
 #X obj 1004 28 inlet kv;
 #X obj 1004 50 unpack f f;
 #X obj 1006 98 mod 8;
-#X obj 1006 120 s \$0-seqrcv;
-#X obj 822 53 route float list sequence;
+#X obj 968 132 s \$0-seqrcv;
+#X obj 799 54 route float list sequence numsteps;
 #X connect 0 0 12 0;
 #X connect 1 0 2 0;
 #X connect 1 0 55 0;
@@ -750,4 +750,5 @@
 #X connect 82 0 1 1;
 #X connect 82 1 65 0;
 #X connect 82 2 81 0;
+#X connect 82 3 55 1;
 #X coords 0 -1 1 1 150 55 2 50 100;
