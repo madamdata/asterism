@@ -1,0 +1,47 @@
+#N canvas 242 170 793 404 10;
+#X msg 230 115 octaves 5;
+#X msg 229 91 shift -1;
+#X msg 233 43 ad 500 4500;
+#X obj 255 174 wavefiddleenv 8;
+#X msg 229 67 sensitivity 0.9;
+#X obj 84 172 wavefiddle 16;
+#X text 354 66 pitch detection sensitivity (0-1);
+#X text 351 94 pitch shift in octaves;
+#X text 351 115 random octave range;
+#X obj 81 65 adc~;
+#X obj 102 202 *~ 0.3;
+#X obj 182 202 *~ 0.3;
+#X obj 186 239 *~ 0;
+#X obj 105 237 *~ 0;
+#X obj 114 266 dac~;
+#X obj 67 211 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 261 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 298 211 <- click to listen;
+#X text 348 43 attack and decay time in ms (wavefiddleenv only);
+#X text 87 294 wavefiddle and wavefiddleenv are polyphonic tone generators
+that listen to incoming audio and replicate any detected pitches. The
+object takes the number of voices as its first and only argument.;
+#X msg 237 136 portamento 500;
+#X text 361 138 pitch slide time in ms (wavefiddleenv only);
+#X connect 0 0 3 1;
+#X connect 0 0 5 1;
+#X connect 1 0 3 1;
+#X connect 1 0 5 1;
+#X connect 2 0 3 1;
+#X connect 3 0 11 0;
+#X connect 4 0 3 1;
+#X connect 4 0 5 1;
+#X connect 5 0 10 0;
+#X connect 9 0 5 0;
+#X connect 9 0 3 0;
+#X connect 10 0 13 0;
+#X connect 11 0 12 0;
+#X connect 12 0 14 1;
+#X connect 12 0 14 0;
+#X connect 13 0 14 0;
+#X connect 13 0 14 1;
+#X connect 15 0 13 1;
+#X connect 16 0 12 1;
+#X connect 20 0 3 1;

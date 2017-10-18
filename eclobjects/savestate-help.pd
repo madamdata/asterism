@@ -1,0 +1,27 @@
+#N canvas 471 194 638 472 10;
+#X obj 60 53 loadbang;
+#X msg 60 75 load savestate.pd_lua;
+#X obj 60 97 pdlua;
+#X obj 123 163 savestate \$0-var1 \$0-var2 \$0-var3 \$0-var4;
+#X msg 123 138 symbol dumpvalues;
+#X text 32 209 savestate is a pdlua script that automates some of the
+drudgery of saving states in abstractions. It is designed to work with
+[canvasargs] from the iemguts library.;
+#X floatatom 390 66 5 0 0 0 var1 #0-var1rcv #0-var1snd, f 5;
+#X floatatom 390 86 5 0 0 0 var2 #0-var2rcv #0-var2snd, f 5;
+#X floatatom 464 66 5 0 0 0 var3 #0-var3rcv #0-var3snd, f 5;
+#X floatatom 464 86 5 0 0 0 var4 #0-var4rcv #0-var4snd, f 5;
+#X obj 123 185 canvasargs;
+#X text 35 265 To use \, simply provide arguments listing each of the
+state variables that you would like to persist. The object will generate
+internal sends and receives for those names according to the following
+scheme - [name]snd and [name]rcv.;
+#X text 41 349 For instance \, if an argument is \$0-var1 as above
+\, the corresponding sends and receives will be \$0-var1snd and \$0-var1rcv.
+Anything sent to \$0-var1snd will be registered by the object and sent
+to canvasargs \, and when the patch is loaded the saved value will
+be sent to \$0-var1rcv.;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 10 0;
+#X connect 4 0 3 0;

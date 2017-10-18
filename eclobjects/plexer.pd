@@ -1,0 +1,15 @@
+#N canvas 394 182 450 300 10;
+#N canvas 227 181 450 300 keys 1;
+#X obj 135 44 key;
+#X obj 144 132 sel 59 113 106 107;
+#X obj 85 221 outlet;
+#X obj 138 222 outlet;
+#X obj 192 224 outlet;
+#X obj 245 225 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 1 3 5 0;
+#X restore 297 120 pd keys;
+#X coords 0 -1 1 1 150 60 2 100 100;

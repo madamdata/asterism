@@ -1,17 +1,17 @@
-#N canvas 673 266 1155 489 16;
-#X obj 12 12 cnv 15 146 56 empty \$0-canvasrcv empty 0 0 0 8 -199926
+#N canvas 204 245 1155 489 16;
+#X obj 12 12 cnv 15 146 56 empty \$0-canvasrcv empty 0 0 0 8 -248037
 -66577 0;
 #X obj 266 63 inlet bangkv;
 #X obj 627 65 inlet~ start;
 #X obj 429 370 outlet~ L;
 #X obj 527 370 outlet~ R;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-sampleL 29401 float 2;
-#X coords 0 250 29401 249 200 140 0;
+#X array \$0-sampleL 705600 float 2;
+#X coords 0 250 705600 249 200 140 0;
 #X restore 16 144 graph;
 #N canvas 0 50 687 386 (subpatch) 0;
-#X array \$0-sampleR 29401 float 2;
-#X coords 0 386 29401 385 200 140 0;
+#X array \$0-sampleR 705600 float 2;
+#X coords 0 386 705600 385 200 140 0;
 #X restore 19 121 graph;
 #X text 18 80 samples L and R;
 #X obj 14 48 bng 15 250 50 0 \$0-loadsnd \$0-loadrcv load 17 7 1 10
@@ -32,7 +32,7 @@
 #X obj 380 197 adabasedir;
 #X obj 212 218 s \$0-filepathsnd;
 #X obj 176 36 r \$0-filepathrcv;
-#X msg 66 154 read -maxsize 4e+007 -resize \$1 \$2 \$3;
+#X msg 66 154 read -maxsize 4e+07 -resize \$1 \$2 \$3;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 2 0 14 0;
@@ -190,7 +190,7 @@ of 1;
 #X floatatom 87 22 3 0 1000 0 - #0-starttimercv #0-starttimesnd, f
 3;
 #X obj 430 209 tabread4~ \$0-sampleL;
-#N canvas 854 436 737 331 state_saving 0;
+#N canvas 409 149 737 331 state_saving 0;
 #X obj 14 56 pdlua;
 #X msg 14 34 load savestate.pd_lua;
 #X obj 14 10 loadbang;
@@ -217,7 +217,7 @@ of 1;
 #X connect 10 0 4 0;
 #X connect 11 0 7 6;
 #X restore 175 321 pd state_saving;
-#X obj 175 343 canvasargs;
+#X obj 178 350 canvasargs;
 #X floatatom 96 296 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
 #X obj 468 65 inlet~ pitchlog;
 #X floatatom 13 22 3 0 150 0 - #0-volumercv #0-volumesnd, f 3;
@@ -241,9 +241,9 @@ of 1;
 #X obj 86 38 cnv 8 35 8 empty empty start 2 3 0 11 -248037 -262144
 0;
 #X obj 139 49 tgl 15 0 \$0-loopsnd \$0-looprcv L 4 8 0 10 -261682 -1
--1 0 1;
+-1 1 1;
 #X obj 145 23 tgl 12 0 \$0-onoffsnd \$0-onoffrcv empty 17 7 0 10 -260757
--261682 -1 0 1;
+-261682 -1 1 1;
 #N canvas 1252 182 450 300 onoff 0;
 #X obj 286 122 outlet;
 #X obj 41 17 r \$0-onoffsnd;
