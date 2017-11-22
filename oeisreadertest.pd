@@ -1,0 +1,20 @@
+#N canvas 681 53 678 686 10;
+#X msg 108 55 load oeisreader.pd_lua;
+#X obj 108 77 pdlua;
+#X obj 166 200 print;
+#X obj 166 178 oeisreader;
+#X floatatom 215 136 5 0 0 0 - - -, f 5;
+#X msg 168 133 1;
+#X msg 299 62 load numseq.pd_lua;
+#X obj 294 227 numseq;
+#X obj 310 180 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 294 249 print;
+#X connect 0 0 1 0;
+#X connect 3 0 2 0;
+#X connect 3 0 7 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 1 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;

@@ -108,6 +108,10 @@ function M:in_1_stop()
     self.clock:unset()
 end    
 
+function M:in_1_reset()
+    self.i = 1
+end    
+
 function M:in_1_mode(atoms)
     if type(atoms[1]) == "number" then
         self.mode = modes[atoms[1]]

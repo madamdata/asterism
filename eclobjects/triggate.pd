@@ -1,0 +1,19 @@
+#N canvas 65 104 858 393 10;
+#X obj 206 9 inlet bangs;
+#X obj 511 13 inlet control;
+#X obj 17 16 tgl 15 0 \$0-polaritysnd \$0-polarityrcv polarity 17 7
+0 10 -262144 -1 -1 0 1;
+#X obj 205 259 outlet bangs+delayedbangs;
+#X obj 220 137 spigot;
+#X obj 393 107 == 0;
+#X obj 454 89 r \$0-polaritysnd;
+#X obj 511 35 route float polarity;
+#X obj 602 89 s \$0-polarityrcv;
+#X connect 0 0 4 0;
+#X connect 1 0 7 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 1;
+#X connect 6 0 5 1;
+#X connect 7 0 5 0;
+#X connect 7 1 8 0;
+#X coords 0 -1 1 1 75 25 2 10 10;

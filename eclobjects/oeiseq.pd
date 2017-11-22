@@ -1,0 +1,95 @@
+#N canvas 462 53 819 596 10;
+#X obj 12 12 cnv 15 146 66 empty empty empty 20 12 0 14 -261228 -66577
+0;
+#X msg 439 128 load oeisreader.pd_lua;
+#X obj 439 150 pdlua;
+#X msg 630 135 load numseq.pd_lua;
+#X obj 546 289 numseq;
+#X obj 562 242 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 455 88 loadbang;
+#X obj 418 214 r \$0-seqnumsnd;
+#X obj 647 187 inlet bangtrigs;
+#X obj 536 461 outlet numscooked;
+#X obj 677 462 outlet numsraw;
+#X obj 523 360 mod 24;
+#X obj 121 38 nbx 3 14 2 128 0 0 \$0-modsnd \$0-modrcv mod -20 7 0
+10 -262130 -1 -1 2 256;
+#X obj 628 328 r \$0-modsnd;
+#X obj 304 521 outlet midinotes;
+#X obj 121 21 nbx 3 14 10 80 0 0 \$0-offsetsnd \$0-offsetrcv off -20
+7 0 10 -256421 -1 -1 10 256;
+#X obj 37 38 nbx 5 14 10 1e+09 0 0 \$0-dursnd \$0-durrcv dur -20 7
+0 10 -260878 -1 -1 10 256;
+#X obj 381 457 pack f f;
+#X obj 376 418 makenote 127 100;
+#X obj 281 350 r \$0-dursnd;
+#X obj 400 384 +;
+#X obj 384 345 r \$0-offsetsnd;
+#X obj 523 382 * 1;
+#X obj 121 54 nbx 3 14 10 1000 0 0 \$0-multsnd \$0-multrcv mult -25
+7 0 10 -262130 -1 -1 10 256;
+#X obj 694 366 r \$0-multsnd;
+#X obj 694 388 / 100;
+#X obj 419 280 list trim;
+#X obj 413 305 print OEIS#;
+#N canvas 611 160 584 302 state_saving 0;
+#X obj 165 204 outlet;
+#X obj 289 32 loadbang;
+#X msg 289 54 load savestate.pd_lua;
+#X obj 289 76 pdlua;
+#X obj 34 128 savestate \$0-index \$0-seqnum \$0-offset \$0-dur \$0-mod
+\$0-mult;
+#X obj 77 59 pack \$1 \$2 \$3 \$4 \$5 \$6;
+#X connect 1 0 2 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X restore 184 214 pd state_saving;
+#X obj 184 236 canvasargs;
+#X obj 12 12 cnv 10 50 8 empty empty ! 2 5 0 8 -231268 -66577 0;
+#X obj 37 21 nbx 6 14 1 1e+37 0 0 \$0-seqnumsnd \$0-seqnumrcv oeis
+-25 7 0 10 -261542 -1 -1 23 256;
+#X obj 12 70 cnv 10 50 8 empty empty k/v 2 4 0 8 -231268 -66577 0;
+#X obj 53 70 cnv 10 60 8 empty empty num(mod) 8 4 0 8 -231268 -66577
+0;
+#X obj 108 70 cnv 10 50 8 empty empty num(raw) 12 4 0 8 -231268 -66577
+0;
+#X obj 37 54 bng 14 250 50 0 \$0-randomsnd \$0-randomrcv ??? 17 7 0
+10 -260736 -258049 -1;
+#X obj 88 321 r \$0-randomsnd;
+#X obj 78 364 + 1;
+#X obj 78 386 s \$0-seqnumrcv;
+#X obj 78 342 random 200000;
+#X floatatom 111 482 5 0 0 2 index #0-indexrcv #0-indexsnd, f 5;
+#X obj 418 240 oeisreader;
+#X connect 1 0 2 0;
+#X connect 3 0 2 0;
+#X connect 4 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 4 0;
+#X connect 6 0 1 0;
+#X connect 6 0 3 0;
+#X connect 7 0 41 0;
+#X connect 8 0 4 0;
+#X connect 11 0 22 0;
+#X connect 13 0 11 1;
+#X connect 17 0 14 0;
+#X connect 18 0 17 0;
+#X connect 18 1 17 1;
+#X connect 19 0 18 2;
+#X connect 20 0 18 0;
+#X connect 21 0 20 1;
+#X connect 22 0 9 0;
+#X connect 22 0 20 0;
+#X connect 24 0 25 0;
+#X connect 25 0 22 1;
+#X connect 26 0 27 0;
+#X connect 28 0 29 0;
+#X connect 36 0 39 0;
+#X connect 37 0 38 0;
+#X connect 39 0 37 0;
+#X connect 41 0 4 0;
+#X connect 41 1 26 0;
+#X coords 0 -1 1 1 150 70 2 10 10;

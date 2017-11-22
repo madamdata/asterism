@@ -1,6 +1,6 @@
-#N canvas 472 77 784 360 16;
-#X floatatom 105 102 4 -120 120 3 attenuvert #0-attenuvertrcv #0-attenuvertsnd
-, f 4;
+#N canvas 472 77 784 360 10;
+#X floatatom 104 103 5 -120 120 3 attenuvert #0-attenuvertrcv #0-attenuvertsnd
+, f 5;
 #X obj 258 74 inlet~;
 #X obj 259 176 *~;
 #X obj 338 72 r \$0-attenuvertsnd;
@@ -23,7 +23,7 @@
 #X obj 66 196 canvasargs;
 #X obj 338 94 / 100;
 #X obj 151 103 tgl 15 0 \$0-mutesnd \$0-mutercv empty 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 641 84 inlet control;
 #X obj 257 230 *~;
 #X obj 359 199 r \$0-mutesnd;
