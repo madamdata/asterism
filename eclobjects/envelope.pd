@@ -48,11 +48,11 @@
 #X obj 299 203 t f b;
 #X obj 331 279 tabread4~ \$0-env;
 #X obj 231 114 vsl 15 67 1 15 1 1 \$0-levelsnd \$0-levelrcv empty 0
--9 0 10 -133312 -1 -1 3900 1;
+-9 0 10 -133312 -1 -1 1400 1;
 #X obj 295 321 *~;
 #X obj 243 286 smoother 40;
 #X obj 205 112 moonlib/mknob 25 100 5 4000 1 1 \$0-ratesnd \$0-ratercv
-empty -2 -6 0 8 -139257 -4160 -1 7400 1;
+empty -2 -6 0 8 -139257 -4160 -1 6900 1;
 #X obj 207 141 tgl 20 0 \$0-autotogglesnd \$0-autotogglercv empty 17
 7 0 10 -204800 -1 -1 0 1;
 #X obj 429 113 metro 150;

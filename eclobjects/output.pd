@@ -1,30 +1,30 @@
 #N canvas 489 70 625 468 10;
-#X obj 102 102 cnv 15 146 116 empty empty empty 20 12 0 14 -195769
+#X obj 102 102 cnv 15 146 106 empty empty empty 20 12 0 14 -165497
 -66577 0;
 #X msg 498 182 \; pd dsp \$1;
-#X obj 143 111 tgl 28 0 \$0-dspsnd \$0-dsprcv dsp 3 6 0 10 -261495
--259037 -99849 1 1;
+#X obj 142 105 tgl 28 0 \$0-dspsnd \$0-dsprcv dsp 3 6 0 10 -259484
+-262130 -99849 0 1;
 #X obj 363 312 dac~;
 #X obj 408 158 inlet~;
 #X obj 352 157 inlet~;
-#X obj 108 112 vsl 25 98 0.01 1.1 1 0 \$0-volsnd \$0-volrcv vol 5 4
-0 10 -261552 -184321 -1 7800 1;
+#X obj 108 106 vsl 30 97 0.01 1.1 1 0 \$0-volsnd \$0-volrcv vol 5 4
+0 10 -259753 -184321 -261234 0 1;
 #X obj 352 279 *~;
 #X obj 408 280 *~;
-#X floatatom 204 133 5 0 0 2 cpu #0-cpu -, f 5;
+#X floatatom 204 118 5 0 0 2 cpu #0-cpu -, f 5;
 #X obj 20 159 cputime;
 #X obj 20 19 loadbang;
 #X msg 20 47 1;
 #X obj 20 131 t b b;
 #X obj 20 219 * 0.1;
 #X obj 20 188 int;
-#X obj 143 141 tgl 28 1 \$0-kbsnd \$0-kbrcv kb 4 7 0 10 -260832 -261752
+#X obj 142 135 tgl 28 1 \$0-kbsnd \$0-kbrcv kb 4 7 0 10 -260512 -261752
 -1 1 1;
 #X obj 145 279 s keycontrol;
 #X text 325 37 most of the buttons should be self explanatory. 'kb'
 turns keyboard control on and off globally., f 36;
 #X text 317 112 madam data apr 2017;
-#X obj 204 153 bng 15 250 50 0 \$0-cfgbang empty conf 17 7 0 10 -259613
+#X obj 203 147 bng 15 250 50 0 \$0-cfgbang empty conf 17 7 0 10 -259613
 -261824 -1;
 #X obj 20 250 s \$0-cpu;
 #N canvas 156 67 460 252 config 0;
@@ -49,7 +49,7 @@ once you've done this!, f 22;
 #X restore 107 402 pd config;
 #X obj 116 329 r \$0-cfgbang;
 #X msg 116 351 \; pd-config vis 1;
-#N canvas 12 53 699 382 recorder 1;
+#N canvas 12 53 699 382 recorder 0;
 #X obj 101 101 cnv 15 98 38 empty empty empty 20 12 0 14 -261169 -66577
 0;
 #X obj 257 97 openpanel;
@@ -107,8 +107,8 @@ once you've done this!, f 22;
 #X connect 24 0 5 0;
 #X connect 25 0 23 0;
 #X coords 0 -1 1 1 100 40 1 100 100;
-#X restore 143 173 pd recorder;
-#X obj 173 141 tgl 28 0 \$0-allguissnd \$0-allguisrcv gui 3 6 0 10
+#X restore 142 165 pd recorder;
+#X obj 172 135 tgl 28 0 \$0-allguissnd \$0-allguisrcv gui 3 6 0 10
 -260336 -136768 -99849 1 1;
 #X obj 498 152 r \$0-dspsnd;
 #X obj 246 311 r \$0-allguissnd;
@@ -140,11 +140,14 @@ once you've done this!, f 22;
 #X connect 9 0 3 1;
 #X restore 395 364 pd vu;
 #X obj 93 65 s \$0-allguisrcv;
-#X text 202 105 ECL 0.3;
 #X obj 88 277 vu 8 80 \$0-vurcv empty -1 -8 0 10 -141547 -1 0 0;
 #X obj 229 426 s allguis;
 #X obj 246 350 t b f;
 #X obj 273 390 value allguistgl;
+#X obj 173 119 cnv 10 27 13 empty empty 0r4 2 7 0 12 -202944 -66577
+0;
+#X obj 173 105 cnv 10 27 13 empty empty ecl 2 7 0 12 -202944 -66577
+0;
 #X connect 4 0 8 0;
 #X connect 5 0 7 0;
 #X connect 7 0 3 0;
@@ -163,7 +166,7 @@ once you've done this!, f 22;
 #X connect 15 0 14 0;
 #X connect 23 0 24 0;
 #X connect 27 0 1 0;
-#X connect 28 0 40 0;
+#X connect 28 0 39 0;
 #X connect 29 0 17 0;
 #X connect 30 0 13 0;
 #X connect 31 0 34 0;
@@ -171,6 +174,6 @@ once you've done this!, f 22;
 #X connect 33 0 8 1;
 #X connect 34 0 33 0;
 #X connect 34 0 32 0;
-#X connect 40 0 39 0;
-#X connect 40 1 41 0;
-#X coords 0 -1 1 1 150 120 2 100 100;
+#X connect 39 0 38 0;
+#X connect 39 1 40 0;
+#X coords 0 -1 1 1 150 110 2 100 100;

@@ -1,4 +1,4 @@
-#N canvas 420 151 654 616 10;
+#N canvas 420 122 654 616 10;
 #X obj 12 24 cnv 15 146 72 empty empty empty 20 12 0 14 -232890 -66577
 0;
 #X obj 185 62 inlet bangs;
@@ -12,23 +12,23 @@
 -262144 -1 1 1;
 #X floatatom 30 44 3 0 0 0 - #0-note4rcv #0-note4snd, f 3;
 #X obj 13 44 tgl 15 0 \$0-tgl4snd \$0-tgl4rcv empty 17 7 0 10 -191407
--262144 -1 1 1;
+-262144 -1 0 1;
 #X floatatom 69 27 3 0 0 0 - #0-note2rcv #0-note2snd, f 3;
 #X obj 52 27 tgl 15 0 \$0-tgl2snd \$0-tgl2rcv empty 17 7 0 10 -191407
--262144 -1 1 1;
+-262144 -1 0 1;
 #X floatatom 69 44 3 0 0 0 - #0-note5rcv #0-note5snd, f 3;
 #X obj 52 44 tgl 15 0 \$0-tgl5snd \$0-tgl5rcv empty 17 7 0 10 -191407
 -262144 -1 1 1;
 #X floatatom 108 27 3 0 0 0 - #0-note3rcv #0-note3snd, f 3;
 #X obj 91 27 tgl 15 0 \$0-tgl3snd \$0-tgl3rcv empty 17 7 0 10 -191407
--262144 -1 1 1;
+-262144 -1 0 1;
 #X floatatom 108 44 3 0 0 0 - #0-note6rcv #0-note6snd, f 3;
 #X obj 91 44 tgl 15 0 \$0-tgl6snd \$0-tgl6rcv empty 17 7 0 10 -191407
--262144 -1 1 1;
-#X floatatom 130 29 4 0 0 3 trnsp #0-transprcv #0-transpsnd, f 4;
+-262144 -1 0 1;
+#X floatatom 133 28 3 0 0 3 trns #0-transprcv #0-transpsnd, f 3;
 #X floatatom 13 62 5 0 0 3 dur #0-durrcv #0-dursnd, f 5;
 #X floatatom 49 62 5 0 127 3 vel #0-velrcv #0-velsnd, f 5;
-#N canvas 0 22 679 648 chords 0;
+#N canvas 0 50 679 648 chords 0;
 #X obj 153 423 makechord;
 #X obj 38 108 r \$0-note1snd;
 #X obj 48 128 r \$0-note2snd;
@@ -145,7 +145,7 @@
 #X obj 85 61 tgl 15 0 \$0-kvtrigsnd \$0-kvtrigrcv kvtrig 17 7 0 8 -128992
 -262143 -1 1 1;
 #X obj 85 78 tgl 15 0 \$0-autorelsnd \$0-autorelrcv autorel 17 7 0
-8 -128992 -262143 -1 1 1;
+8 -128992 -262143 -1 0 1;
 #X obj 12 12 cnv 10 50 11 empty empty bng 2 5 0 10 -124831 -261980
 0;
 #X obj 63 12 cnv 10 50 11 empty empty num 12 5 0 10 -124831 -261980
