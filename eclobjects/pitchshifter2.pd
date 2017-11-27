@@ -13,19 +13,19 @@ f 3;
 #X floatatom 34 57 3 -48 48 0 - #0-unit4pitchrcv #0-unit4pitchsnd,
 f 3;
 #X obj 17 56 tgl 15 0 \$0-unit4tglsnd \$0-unit4tglrcv empty 17 7 0
-10 -259584 -1 -1 1 1;
+10 -259584 -1 -1 0 1;
 #X floatatom 79 40 3 -48 48 0 - #0-unit2pitchrcv #0-unit2pitchsnd,
 f 3;
 #X obj 62 39 tgl 15 0 \$0-unit2tglsnd \$0-unit2tglrcv empty 17 7 0
-10 -259584 -1 -1 1 1;
+10 -259584 -1 -1 0 1;
 #X floatatom 79 57 3 -48 48 0 - #0-unit5pitchrcv #0-unit5pitchsnd,
 f 3;
 #X obj 62 56 tgl 15 0 \$0-unit5tglsnd \$0-unit5tglrcv empty 17 7 0
-10 -259584 -1 -1 1 1;
+10 -259584 -1 -1 0 1;
 #X floatatom 124 40 3 -48 48 0 - #0-unit3pitchrcv #0-unit3pitchsnd
 , f 3;
 #X obj 107 39 tgl 15 0 \$0-unit3tglsnd \$0-unit3tglrcv empty 17 7 0
-10 -259584 -1 -1 1 1;
+10 -259584 -1 -1 0 1;
 #X floatatom 124 57 3 -48 48 0 - #0-unit6pitchrcv #0-unit6pitchsnd
 , f 3;
 #X obj 107 56 tgl 15 0 \$0-unit6tglsnd \$0-unit6tglrcv empty 17 7 0
@@ -81,20 +81,20 @@ f 3;
 #X obj 54 32 loadbang;
 #X msg 54 89 load savestate.pd_lua;
 #X obj 54 111 pdlua;
+#X obj 175 297 outlet;
+#X obj 72 60 t b b;
 #X obj 157 181 savestate \$0-index \$0-unit1tgl \$0-unit2tgl \$0-unit3tgl
 \$0-unit4tgl \$0-unit5tgl \$0-unit6tgl \$0-unit1pitch \$0-unit2pitch
 \$0-unit3pitch \$0-unit4pitch \$0-unit5pitch \$0-unit6pitch \$0-bypass
-\$0-maxdelay;
-#X obj 175 297 outlet;
+\$0-maxdelay \$0-spread;
 #X obj 162 136 pack \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9 \$10 \$11 \$12
-\$13 \$14 \$15;
-#X obj 72 60 t b b;
-#X connect 0 0 6 0;
+\$13 \$14 \$15 \$16;
+#X connect 0 0 4 0;
 #X connect 1 0 2 0;
-#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 1 1 0;
 #X connect 5 0 3 0;
 #X connect 6 0 5 0;
-#X connect 6 1 1 0;
 #X restore 104 345 pd statesaving;
 #X floatatom 57 410 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
 #X obj 114 375 canvasargs;
@@ -181,14 +181,8 @@ f 3;
 #X obj 413 282 adamonopan;
 #X obj 433 302 adamonopan;
 #X obj 437 361 hip~ 55;
-#N canvas 1 53 450 300 spread 0;
+#N canvas 1 53 450 300 spread 1;
 #X obj 61 35 r \$0-spreadsnd;
-#X obj 24 104 * -1;
-#X obj 296 106 * 1;
-#X obj 66 104 * -0.66;
-#X obj 244 108 * 0.66;
-#X obj 125 105 * -0.33;
-#X obj 184 106 * 0.33;
 #X obj 61 57 / 100;
 #X obj 76 227 outlet;
 #X obj 126 227 outlet;
@@ -196,19 +190,25 @@ f 3;
 #X obj 226 227 outlet;
 #X obj 276 227 outlet;
 #X obj 326 227 outlet;
-#X connect 0 0 7 0;
+#X obj 24 104 * 1;
+#X obj 66 104 * 0.66;
+#X obj 125 105 * 0.33;
+#X obj 184 106 * -0.33;
+#X obj 244 108 * -0.66;
+#X obj 296 106 * -1;
+#X connect 0 0 1 0;
 #X connect 1 0 8 0;
-#X connect 2 0 13 0;
-#X connect 3 0 9 0;
-#X connect 4 0 12 0;
-#X connect 5 0 10 0;
-#X connect 6 0 11 0;
-#X connect 7 0 3 0;
-#X connect 7 0 1 0;
-#X connect 7 0 5 0;
-#X connect 7 0 6 0;
-#X connect 7 0 4 0;
-#X connect 7 0 2 0;
+#X connect 1 0 9 0;
+#X connect 1 0 10 0;
+#X connect 1 0 11 0;
+#X connect 1 0 12 0;
+#X connect 1 0 13 0;
+#X connect 8 0 2 0;
+#X connect 9 0 3 0;
+#X connect 10 0 4 0;
+#X connect 11 0 5 0;
+#X connect 12 0 6 0;
+#X connect 13 0 7 0;
 #X restore 529 240 pd spread;
 #X connect 1 0 44 0;
 #X connect 3 0 1 2;
