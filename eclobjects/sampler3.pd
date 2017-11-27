@@ -6,12 +6,12 @@
 #X obj 429 370 outlet~ L;
 #X obj 527 370 outlet~ R;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-sampleL 17104 float 2;
-#X coords 0 250 17104 249 200 140 0;
+#X array \$0-sampleL 898048 float 2;
+#X coords 0 250 898048 249 200 140 0;
 #X restore 16 144 graph;
 #N canvas 0 50 687 386 (subpatch) 0;
-#X array \$0-sampleR 17104 float 2;
-#X coords 0 386 17104 385 200 140 0;
+#X array \$0-sampleR 898048 float 2;
+#X coords 0 386 898048 385 200 140 0;
 #X restore 19 121 graph;
 #X text 18 80 samples L and R;
 #X obj 14 48 bng 15 250 50 0 \$0-loadsnd \$0-loadrcv load 17 7 1 10
@@ -191,26 +191,23 @@ of 1;
 #N canvas 409 149 737 331 state_saving 0;
 #X obj 14 56 pdlua;
 #X msg 14 34 load savestate.pd_lua;
-#X obj 14 10 loadbang;
 #X msg 128 137 symbol dumpvalues;
 #X obj 128 210 outlet;
-#X obj 328 19 t b b;
-#X obj 299 8 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 319 64 pack \$1 \$2 \$3 \$4 \$5 \$6 s;
+#X obj 249 59 t b b;
+#X obj 240 104 pack \$1 \$2 \$3 \$4 \$5 \$6 s;
 #X obj 129 161 savestate \$0-index \$0-playbackspeed \$0-starttime
 \$0-volume \$0-loop \$0-onoff \$0-filepath;
-#X obj 562 31 symbol \$7;
+#X obj 401 78 symbol \$7;
+#X obj 14 8 inlet;
 #X connect 1 0 0 0;
-#X connect 2 0 1 0;
-#X connect 2 0 5 0;
-#X connect 3 0 8 0;
-#X connect 5 0 7 0;
-#X connect 5 1 9 0;
-#X connect 6 0 5 0;
-#X connect 7 0 8 0;
+#X connect 2 0 6 0;
+#X connect 4 0 5 0;
+#X connect 4 1 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X connect 7 0 5 6;
+#X connect 8 0 1 0;
 #X connect 8 0 4 0;
-#X connect 9 0 7 6;
 #X restore 175 321 pd state_saving;
 #X obj 178 350 canvasargs;
 #X floatatom 96 296 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
@@ -234,7 +231,7 @@ of 1;
 #X obj 141 50 tgl 15 0 \$0-loopsnd \$0-looprcv L 4 8 0 10 -261682 -1
 -1 0 1;
 #X obj 141 23 tgl 15 0 \$0-onoffsnd \$0-onoffrcv empty 17 7 0 10 -260757
--261682 -1 1 1;
+-261682 -1 0 1;
 #N canvas 1252 182 450 300 onoff 0;
 #X obj 286 122 outlet;
 #X obj 41 17 r \$0-onoffsnd;
@@ -273,6 +270,7 @@ of 1;
 0;
 #X obj 92 12 cnv 8 40 8 empty empty start 2 3 0 11 -151559 -257150
 0;
+#X obj 175 295 initbang;
 #X connect 1 0 16 0;
 #X connect 1 0 12 0;
 #X connect 2 0 12 2;
@@ -297,4 +295,5 @@ of 1;
 #X connect 31 0 30 0;
 #X connect 34 0 42 0;
 #X connect 40 0 41 0;
+#X connect 45 0 22 0;
 #X coords 0 -1 1 1 150 60 2 10 10;

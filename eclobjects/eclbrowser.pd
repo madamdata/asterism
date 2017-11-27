@@ -1,0 +1,166 @@
+#N canvas 780 284 450 300 10;
+#X obj 157 154 sendcanvas 1;
+#X obj 14 18 bng 15 250 50 0 \$0-openbrowsersnd \$0-openbrowserrcv
+open_browser 17 7 0 10 -262144 -1 -1;
+#X obj 204 50 r \$0-openbrowsersnd;
+#X msg 204 72 vis 1;
+#N canvas 552 234 679 456 \$0-browser 1;
+#X obj 6 7 cnv 15 120 200 empty empty signal_modules 2 7 0 14 -233017
+-66577 0;
+#X obj 10 27 bng 15 250 50 0 \$0-oscpanel \$0-oscpanelrcv oscpanel
+17 7 0 10 -262144 -1 -1;
+#X obj 133 7 cnv 15 120 200 empty empty utility_modules 2 7 0 14 -233017
+-66577 0;
+#X obj 137 27 bng 15 250 50 0 \$0-mixer4 \$0-mixer4rcv mixer4 17 7
+0 10 -262144 -1 -1;
+#X obj 137 47 bng 15 250 50 0 \$0-output \$0-outputrcv output 17 7
+0 10 -262144 -1 -1;
+#X floatatom 589 10 5 0 0 0 x_position #0-xposrcv #0-xpos, f 5;
+#X floatatom 589 30 5 0 0 0 y_position #0-yposrcv #0-ypos, f 5;
+#X obj 10 46 bng 15 250 50 0 \$0-303panel \$0-303panelrcv 303panel
+17 7 0 10 -262144 -1 -1;
+#X obj 259 7 cnv 15 120 200 empty empty samplers 2 7 0 14 -233017 -66577
+0;
+#X obj 264 47 bng 15 250 50 0 \$0-sampler3 \$0-sampler3rcv sampler3
+17 7 0 10 -262144 -1 -1;
+#X obj 264 67 bng 15 250 50 0 \$0-sampler4 \$0-sampler4rcv sampler4
+17 7 0 10 -261234 -1 -1;
+#X obj 385 7 cnv 15 120 200 empty empty sequencers 2 7 0 14 -233017
+-66577 0;
+#X obj 389 27 bng 15 250 50 0 \$0-seq162 \$0-seq162rcv seq162 17 7
+0 10 -262144 -1 -1;
+#X obj 389 47 bng 15 250 50 0 \$0-cvseq8 \$0-cvseq8rcv cvseq8 17 7
+0 10 -262144 -1 -1;
+#X obj 137 67 bng 15 250 50 0 \$0-clock \$0-clockrcv clock 17 7 0 10
+-262144 -1 -1;
+#X obj 264 27 bng 15 250 50 0 \$0-sampler \$0-samplerrcv sampler 17
+7 0 10 -262144 -1 -1;
+#X obj 6 213 cnv 15 120 200 empty empty processing 2 7 0 14 -233017
+-66577 0;
+#X obj 9 236 bng 15 250 50 0 \$0-delaypanel \$0-delaypanelrcv delaypanel
+17 7 0 10 -262144 -1 -1;
+#X obj 9 255 bng 15 250 50 0 \$0-rev3gui \$0-rev3guircv rev3gui 17
+7 0 10 -261234 -1 -1;
+#X obj 137 87 bng 15 250 50 0 \$0-lfopanel \$0-lfopanelrcv lfopanel
+17 7 0 10 -262144 -1 -1;
+#X obj 137 106 bng 15 250 50 0 \$0-attenuvert \$0-attenuvertrcv attenuvert
+17 7 0 10 -261234 -1 -1;
+#X obj 389 67 bng 15 250 50 0 \$0-trigdelay \$0-trigdelayrcv trigdelay
+17 7 0 10 -261234 -1 -1;
+#X obj 133 213 cnv 15 120 200 empty empty tracking 2 7 0 14 -233017
+-66577 0;
+#X obj 139 235 bng 15 250 50 0 \$0-sawbasstracker \$0-sawbasstrackerrcv
+sawbasstracker 17 7 0 10 -261234 -1 -1;
+#X obj 139 255 bng 15 250 50 0 \$0-wavefiddle2 \$0-wavefiddle2rcv wavefiddle2
+17 7 0 10 -261234 -1 -1;
+#X obj 9 274 bng 15 250 50 0 \$0-shaperpanel \$0-shaperpanelrcv shaperpanel
+17 7 0 10 -261234 -1 -1;
+#X obj 10 65 bng 15 250 50 0 \$0-wavetablepanel \$0-wavetablepanelrcv
+wavetablepanel 17 7 0 10 -261234 -1 -1;
+#X obj 9 293 bng 15 250 50 0 \$0-distortion \$0-distortionrcv distortion
+17 7 0 10 -261234 -1 -1;
+#X obj 137 125 bng 15 250 50 0 \$0-plexermono \$0-plexermonorcv plexermono
+17 7 0 10 -261234 -1 -1;
+#X obj 137 144 bng 15 250 50 0 \$0-envelope \$0-envelopercv envelope
+17 7 0 10 -261234 -1 -1;
+#X obj 260 213 cnv 15 120 200 empty empty midi 2 7 0 14 -233017 -66577
+0;
+#X obj 266 235 bng 15 250 50 0 \$0-midiwrangler \$0-midiwrangerrcv
+midiwrangler 17 7 0 10 -261234 -1 -1;
+#X obj 266 255 bng 15 250 50 0 \$0-velociraptor \$0-velociraptorrcv
+velociraptor 17 7 0 10 -261234 -1 -1;
+#X obj 266 275 bng 15 250 50 0 \$0-keyb \$0-keybrcv keyb 17 7 0 10
+-261234 -1 -1;
+#X obj 9 313 bng 15 250 50 0 \$0-pitchshifter2 \$0-pitchshifter2rcv
+pitchshifter2 17 7 0 10 -261234 -1 -1;
+#X restore 161 124 pd \$0-browser;
+#X obj 204 94 s pd-\$0-browser;
+#N canvas 219 129 1032 484 receives 0;
+#X obj 88 410 sendcanvas 2;
+#X obj 88 367 list trim;
+#X obj 88 301 list prepend 100;
+#X obj 88 323 list prepend 100;
+#X obj 88 345 list prepend obj;
+#X obj 249 281 r \$0-xpos;
+#X obj 249 305 r \$0-ypos;
+#N canvas 384 125 450 300 utility 0;
+#X obj 132 169 outlet;
+#X obj 22 11 r \$0-output;
+#X msg 22 33 output;
+#X obj 115 15 r \$0-mixer4;
+#X msg 115 37 mixer4 0 0 0 0 0 0 0 0 1 1 1 1 1 0;
+#X obj 21 58 r \$0-clock;
+#X msg 21 80 clock 0 100 1 2 4 7;
+#X obj 188 76 r \$0-lfopanel;
+#X msg 188 98 lfopanel 0 4 0.5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X restore 36 49 pd utility;
+#N canvas 1 53 450 300 signal 0;
+#X obj 23 56 r \$0-oscpanel;
+#X msg 23 79 oscpanel 0 9.49566 0.515556 0.019798 0.464646 0.464646
+0 1;
+#X obj 26 154 r \$0-303panel;
+#X msg 26 176 303panel 0 211.289 0.721212 383.052 0.211111 0.0757576
+;
+#X obj 38 227 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X restore 35 85 pd signal;
+#N canvas 1 53 450 300 sequencers 0;
+#X obj 25 32 r \$0-seq162;
+#X msg 25 54 seq162;
+#X obj 111 29 r \$0-cvseq8;
+#X msg 111 52 cvseq8 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 127 127 127
+127 127 127 127 127 28 45 70 0 0.01;
+#X obj 51 168 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X restore 87 129 pd sequencers;
+#N canvas 1 53 450 300 samplers 0;
+#X obj 22 9 r \$0-sampler3;
+#X msg 22 31 sampler3 0 100 0 100 0 1 /home/ada/Documents/soundlibrary/a123.wav
+;
+#X obj 22 71 r \$0-sampler;
+#X msg 22 97 sampler 0 1.8 1 15000 100 0 1 0.01 209.191 0.73913 2 0
+0 0 0 0 0.0930233 0.20155 0.364341 0.488372 0.604651 0.736434 0.844961
+0 0 /home/ada/Documents/soundlibrary/a123.wav;
+#X obj 28 202 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X restore 107 158 pd samplers;
+#N canvas 1 53 450 300 processing 0;
+#X obj 66 48 r \$0-delaypanel;
+#X obj 65 248 outlet;
+#X msg 66 70 delaypanel 0 1 298.874 0.599702 2142.33 0.149254 1.16955
+1 1.02239 0.9;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 125 198 pd processing;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 1;
+#X connect 6 0 3 1;
+#X connect 7 0 2 0;
+#X connect 8 0 2 0;
+#X connect 9 0 2 0;
+#X connect 10 0 2 0;
+#X connect 11 0 2 0;
+#X restore 284 131 pd receives;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X coords 0 -1 1 1 100 30 2 10 10;

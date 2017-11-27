@@ -1,25 +1,25 @@
-#N canvas 174 23 998 700 10;
+#N canvas 174 53 998 685 10;
 #X obj 102 102 cnv 15 146 106 empty \$0-canvas osc_\$1 110 8 0 12 -125299
 -240893 0;
-#X obj 107 123 moonlib/mknob 35 100 1 127 1 1 \$0-freqsnd \$0-freqrcv
-freq -2 -6 0 8 -203904 -159808 -1 6300 1;
+#X obj 106 123 moonlib/mknob 35 100 1 127 1 1 \$0-freqsnd \$0-freqrcv
+freq -2 -6 0 8 -203904 -159808 -1 4600 1;
 #X obj 367 283 osc~;
 #X obj 102 78 inlet~;
-#X obj 123 173 moonlib/mknob 20 100 0 1 0 1 \$0-modsnd \$0-modrcv mod_Amt
--2 -6 0 8 -203904 -159808 -1 0 1;
+#X obj 117 173 moonlib/mknob 20 100 0 1 0 1 \$0-modsnd \$0-modrcv mod_Amt
+-2 -6 0 8 -203904 -159808 -1 4600 1;
 #X obj 492 214 expr 1 - $f1;
 #X obj 519 195 expr 1 + $f1;
 #X obj 367 257 *~;
 #X obj 362 370 fold~ 2;
-#X obj 146 124 moonlib/mknob 35 100 0.48 4 0 1 \$0-foldsnd \$0-foldrcv
-fold -2 -6 0 8 -203904 -159808 -1 8300 1;
+#X obj 145 123 moonlib/mknob 35 100 0.48 4 0 1 \$0-foldsnd \$0-foldrcv
+fold -2 -6 0 8 -203904 -159808 -1 100 1;
 #X obj 150 78 inlet~;
 #X obj 411 234 cyclone/scale~ -1 1 1 1;
 #X obj 431 275 smoother 100;
 #X obj 389 143 cyclone/scale 0 127 30 17000 2;
 #X obj 453 329 *~;
-#X obj 164 173 moonlib/mknob 20 100 0 1 0 1 \$0-foldmodsnd \$0-foldmodrcv
-foldmod_Amt -2 -6 0 8 -203904 -159808 -1 300 1;
+#X obj 158 173 moonlib/mknob 20 100 0 1 0 1 \$0-foldmodsnd \$0-foldmodrcv
+foldmod_Amt -2 -6 0 8 -203904 -159808 -1 4600 1;
 #X obj 510 275 cyclone/scale~ -1 1 1 1;
 #X obj 591 254 expr 1 - $f1;
 #X obj 618 235 expr 1 + $f1;
@@ -28,12 +28,12 @@ foldmod_Amt -2 -6 0 8 -203904 -159808 -1 300 1;
 #X msg 597 95 17000;
 #X obj 390 120 f 0;
 #X obj 500 61 sel 1 0;
-#X text 216 142 audio;
-#X text 221 189 LFO;
+#X text 211 142 audio;
+#X text 219 189 LFO;
 #X obj 492 336 osc~;
 #X obj 493 377 fold~ 2;
-#X obj 186 128 moonlib/mknob 30 100 0 0.04 0 1 \$0-detunesnd \$0-detunercv
-detune -2 -6 0 8 -203904 -159808 -1 4100 1;
+#X obj 184 126 moonlib/mknob 30 100 0 0.04 0 1 \$0-detunesnd \$0-detunercv
+detune -2 -6 0 8 -203904 -159808 -1 4900 1;
 #X obj 277 274 smoother 50;
 #X obj 401 282 *~;
 #X obj 199 77 inlet~;
@@ -66,8 +66,7 @@ mod amount 7 rate (0 or 1 - audio / LFO);
 #X obj 227 439 sel 1 0;
 #X msg 226 579 \; \$2-canvas color \$1;
 #X text 120 532 color switching;
-#N canvas 0 22 450 300 state_loading 0;
-#X obj 50 80 loadbang;
+#N canvas 1 53 450 300 state_loading 0;
 #X obj 31 174 s \$0-freqrcv;
 #X obj 39 196 s \$0-foldrcv;
 #X obj 54 216 s \$0-detunercv;
@@ -78,17 +77,18 @@ mod amount 7 rate (0 or 1 - audio / LFO);
 #X obj 48 110 pack \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8;
 #X obj 59 139 unpack f f f f f f f f;
 #X obj 269 180 s \$0-switchrcv;
-#X connect 0 0 8 0;
-#X connect 8 0 9 0;
-#X connect 9 1 1 0;
-#X connect 9 2 2 0;
-#X connect 9 3 3 0;
-#X connect 9 4 4 0;
-#X connect 9 5 6 0;
-#X connect 9 6 5 0;
-#X connect 9 7 10 0;
+#X obj 50 80 inlet;
+#X connect 7 0 8 0;
+#X connect 8 1 0 0;
+#X connect 8 2 1 0;
+#X connect 8 3 2 0;
+#X connect 8 4 3 0;
+#X connect 8 5 5 0;
+#X connect 8 6 4 0;
+#X connect 8 7 9 0;
+#X connect 10 0 7 0;
 #X restore 28 369 pd state_loading;
-#N canvas 0 22 649 314 state_saving 0;
+#N canvas 0 50 649 314 state_saving 0;
 #X obj 10 88 r \$0-freqsnd;
 #X obj 93 88 r \$0-foldsnd;
 #X obj 171 88 r \$0-detunesnd;
@@ -133,6 +133,7 @@ mod amount 7 rate (0 or 1 - audio / LFO);
 #X restore 29 388 pd state_saving;
 #X msg 197 468 120 150 203;
 #X obj 89 461 switch~;
+#X obj 28 340 initbang;
 #X connect 1 0 21 0;
 #X connect 2 0 8 0;
 #X connect 3 0 11 0;
@@ -193,4 +194,5 @@ mod amount 7 rate (0 or 1 - audio / LFO);
 #X connect 54 1 51 0;
 #X connect 58 0 40 0;
 #X connect 59 0 52 0;
+#X connect 61 0 57 0;
 #X coords 0 -1 1 1 150 110 2 100 100;

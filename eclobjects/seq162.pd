@@ -80,7 +80,7 @@
 #X connect 27 1 21 0;
 #X connect 29 0 30 0;
 #X restore 49 210 pd state_loading;
-#N canvas 325 53 699 561 state_saving 0;
+#N canvas 325 53 699 561 state_saving 1;
 #X text 103 17 state saving;
 #X obj 8 265 r \$0-indexsnd;
 #X obj 103 189 debinarizer;
@@ -95,9 +95,9 @@
 #X obj 224 416 list split 1;
 #X obj 188 204 r \$0-currentslot;
 #X obj 398 154 r \$0-sequenceload;
-#N canvas 1 53 473 345 receive_toggles 0;
-#X obj 358 120 r storebang;
-#X obj 358 142 t b b b;
+#N canvas 1 53 473 345 receive_toggles 1;
+#X obj 358 106 r storebang;
+#X obj 358 128 t b b b;
 #X msg 403 177 1;
 #X obj 346 230 spigot;
 #X msg 341 179 0;
@@ -119,7 +119,7 @@
 #X obj 343 37 r \$0-tgl14snd;
 #X obj 353 58 r \$0-tgl15snd;
 #X obj 362 77 r \$0-tgl16snd;
-#X obj 38 205 pack f f f f f f f f f f f f f f f f;
+#X obj 38 205 pack f f f f f f f f f f f f f f f f, f 39;
 #X obj 38 168 cyclone/bondo 16, f 39;
 #X obj 91 257 outlet;
 #X connect 0 0 1 0;
@@ -406,7 +406,7 @@
 #X obj 101 103 tgl 15 0 \$0-tgl4snd \$0-tgl4rcv empty 17 7 0 10 -117052
 -262144 -1 0 1;
 #X obj 117 103 tgl 15 0 \$0-tgl5snd \$0-tgl5rcv empty 17 7 0 10 -117052
--262144 -1 1 1;
+-262144 -1 0 1;
 #X obj 133 103 tgl 15 0 \$0-tgl6snd \$0-tgl6rcv empty 17 7 0 10 -117052
 -262144 -1 0 1;
 #X obj 149 103 tgl 15 0 \$0-tgl7snd \$0-tgl7rcv empty 17 7 0 10 -117052
@@ -422,7 +422,7 @@
 #X obj 101 120 tgl 15 0 \$0-tgl12snd \$0-tgl12rcv empty 17 7 0 10 -117052
 -262144 -1 0 1;
 #X obj 117 120 tgl 15 0 \$0-tgl13snd \$0-tgl13rcv empty 17 7 0 10 -117052
--262144 -1 1 1;
+-262144 -1 0 1;
 #X obj 133 120 tgl 15 0 \$0-tgl14snd \$0-tgl14rcv empty 17 7 0 10 -117052
 -262144 -1 0 1;
 #X obj 149 120 tgl 15 0 \$0-tgl15snd \$0-tgl15rcv empty 17 7 0 10 -117052
@@ -532,7 +532,7 @@
 #X msg 926 475 load debinarizer.pd_lua;
 #X obj 915 506 pdlua;
 #X obj 53 137 hradio 16 1 0 8 \$0-seqsnd \$0-seqrcv empty 0 -8 0 10
--167424 -259869 -1 0;
+-167424 -259869 -1 5;
 #X obj 155 285 r \$0-seqsnd;
 #X obj 155 307 t f f;
 #X obj 182 347 s \$0-currentslot;
@@ -590,7 +590,7 @@
 #X obj 48 281 r globalscene;
 #X obj 48 303 s \$0-seqrcv;
 #X obj 183 138 tgl 15 0 \$0-globalsnd \$0-globalrcv G 2 9 1 15 -131072
--4160 -159808 1 1;
+-4160 -159808 0 1;
 #X obj 512 32 spigot;
 #X obj 615 9 r \$0-globalsnd;
 #X connect 0 0 12 0;
