@@ -1,36 +1,36 @@
 #N canvas 386 194 886 488 10;
-#X obj 12 12 cnv 15 146 71 empty empty empty 20 12 0 14 -232576 -66577
+#X obj 12 12 cnv 15 146 61 empty empty empty 20 12 0 14 -232576 -66577
 0;
 #X obj 180 224 ps2unit;
-#X floatatom 78 24 5 5 500 0 maxdelay #0-maxdelayrcv #0-maxdelaysnd
+#X floatatom 78 23 5 5 500 0 maxdelay #0-maxdelayrcv #0-maxdelaysnd
 , f 5;
 #X obj 560 143 r \$0-maxdelaysnd;
 #X obj 252 96 inlet~;
-#X floatatom 36 42 3 -48 48 0 - #0-unit1pitchrcv #0-unit1pitchsnd,
+#X floatatom 34 40 3 -48 48 0 - #0-unit1pitchrcv #0-unit1pitchsnd,
 f 3;
-#X obj 19 41 tgl 15 0 \$0-unit1tglsnd \$0-unit1tglrcv empty 17 7 0
-10 -259584 -1 -1 1 1;
-#X floatatom 36 59 3 -48 48 0 - #0-unit4pitchrcv #0-unit4pitchsnd,
+#X obj 17 39 tgl 15 0 \$0-unit1tglsnd \$0-unit1tglrcv empty 17 7 0
+10 -259584 -1 -1 0 1;
+#X floatatom 34 57 3 -48 48 0 - #0-unit4pitchrcv #0-unit4pitchsnd,
 f 3;
-#X obj 19 58 tgl 15 0 \$0-unit4tglsnd \$0-unit4tglrcv empty 17 7 0
-10 -259584 -1 -1 1 1;
-#X floatatom 79 42 3 -48 48 0 - #0-unit2pitchrcv #0-unit2pitchsnd,
+#X obj 17 56 tgl 15 0 \$0-unit4tglsnd \$0-unit4tglrcv empty 17 7 0
+10 -259584 -1 -1 0 1;
+#X floatatom 79 40 3 -48 48 0 - #0-unit2pitchrcv #0-unit2pitchsnd,
 f 3;
-#X obj 62 41 tgl 15 0 \$0-unit2tglsnd \$0-unit2tglrcv empty 17 7 0
-10 -259584 -1 -1 1 1;
-#X floatatom 79 59 3 -48 48 0 - #0-unit5pitchrcv #0-unit5pitchsnd,
+#X obj 62 39 tgl 15 0 \$0-unit2tglsnd \$0-unit2tglrcv empty 17 7 0
+10 -259584 -1 -1 0 1;
+#X floatatom 79 57 3 -48 48 0 - #0-unit5pitchrcv #0-unit5pitchsnd,
 f 3;
-#X obj 62 58 tgl 15 0 \$0-unit5tglsnd \$0-unit5tglrcv empty 17 7 0
-10 -259584 -1 -1 1 1;
-#X floatatom 122 42 3 -48 48 0 - #0-unit3pitchrcv #0-unit3pitchsnd
+#X obj 62 56 tgl 15 0 \$0-unit5tglsnd \$0-unit5tglrcv empty 17 7 0
+10 -259584 -1 -1 0 1;
+#X floatatom 124 40 3 -48 48 0 - #0-unit3pitchrcv #0-unit3pitchsnd
 , f 3;
-#X obj 105 41 tgl 15 0 \$0-unit3tglsnd \$0-unit3tglrcv empty 17 7 0
-10 -259584 -1 -1 1 1;
-#X floatatom 122 59 3 -48 48 0 - #0-unit6pitchrcv #0-unit6pitchsnd
+#X obj 107 39 tgl 15 0 \$0-unit3tglsnd \$0-unit3tglrcv empty 17 7 0
+10 -259584 -1 -1 0 1;
+#X floatatom 124 57 3 -48 48 0 - #0-unit6pitchrcv #0-unit6pitchsnd
 , f 3;
-#X obj 105 58 tgl 15 0 \$0-unit6tglsnd \$0-unit6tglrcv empty 17 7 0
-10 -259584 -1 -1 1 1;
-#X obj 117 23 tgl 15 0 \$0-bypasssnd \$0-bypassrcv bp 17 8 0 10 -259584
+#X obj 107 56 tgl 15 0 \$0-unit6tglsnd \$0-unit6tglrcv empty 17 7 0
+10 -259584 -1 -1 0 1;
+#X obj 117 22 tgl 15 0 \$0-bypasssnd \$0-bypassrcv bp 17 8 0 10 -259584
 -1 -1 1 1;
 #N canvas 1 53 450 300 pitchrcv 0;
 #X obj 38 37 r \$0-unit1pitchsnd;
@@ -217,4 +217,4 @@ f 3;
 #X connect 41 1 42 1;
 #X connect 43 0 23 0;
 #X connect 43 0 24 0;
-#X coords 0 -1 1 1 150 75 2 10 10;
+#X coords 0 -1 1 1 150 65 2 10 10;

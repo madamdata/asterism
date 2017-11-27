@@ -1,4 +1,4 @@
-#N canvas 503 192 1155 489 12;
+#N canvas 204 192 1155 489 12;
 #X obj 12 12 cnv 15 146 56 empty \$0-canvasrcv empty 0 0 0 8 -248037
 -66577 0;
 #X obj 266 63 inlet bangkv;
@@ -6,12 +6,12 @@
 #X obj 429 370 outlet~ L;
 #X obj 527 370 outlet~ R;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-sampleL 396099 float 2;
-#X coords 0 250 396099 249 200 140 0;
+#X array \$0-sampleL 17104 float 2;
+#X coords 0 250 17104 249 200 140 0;
 #X restore 16 144 graph;
 #N canvas 0 50 687 386 (subpatch) 0;
-#X array \$0-sampleR 396099 float 2;
-#X coords 0 386 396099 385 200 140 0;
+#X array \$0-sampleR 17104 float 2;
+#X coords 0 386 17104 385 200 140 0;
 #X restore 19 121 graph;
 #X text 18 80 samples L and R;
 #X obj 14 48 bng 15 250 50 0 \$0-loadsnd \$0-loadrcv load 17 7 1 10
@@ -224,10 +224,8 @@ of 1;
 #X obj 12 12 cnv 8 35 8 empty empty ! 2 3 0 11 -151559 -262144 0;
 #X obj 46 12 cnv 8 50 8 empty empty pitch 2 3 0 11 -151559 -257150
 0;
-#X obj 94 12 cnv 8 50 8 empty empty start 2 3 0 11 -151559 -257150
-0;
 #X obj 798 68 inlet control;
-#X obj 123 12 cnv 8 35 8 empty empty ctrl 15 3 0 11 -151559 -262144
+#X obj 124 12 cnv 8 35 8 empty empty ctrl 11 3 0 10 -151559 -262144
 0;
 #X obj 13 38 cnv 8 35 8 empty empty vol 2 3 0 11 -248037 -262144 0
 ;
@@ -273,6 +271,8 @@ of 1;
 #X restore 798 103 pd control;
 #X obj 43 38 cnv 8 35 8 empty empty pitch 2 3 0 11 -248037 -262144
 0;
+#X obj 92 12 cnv 8 40 8 empty empty start 2 3 0 11 -151559 -257150
+0;
 #X connect 1 0 16 0;
 #X connect 1 0 12 0;
 #X connect 2 0 12 2;
@@ -295,6 +295,6 @@ of 1;
 #X connect 30 0 28 1;
 #X connect 30 0 27 1;
 #X connect 31 0 30 0;
-#X connect 35 0 43 0;
-#X connect 41 0 42 0;
+#X connect 34 0 42 0;
+#X connect 40 0 41 0;
 #X coords 0 -1 1 1 150 60 2 10 10;

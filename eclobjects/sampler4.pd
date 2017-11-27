@@ -1,5 +1,5 @@
-#N canvas 188 357 1576 489 16;
-#X obj 12 12 cnv 15 146 56 empty \$0-canvasrcv empty 0 0 0 8 -248037
+#N canvas 1 156 1345 489 10;
+#X obj 12 12 cnv 15 146 56 empty \$0-canvasrcv empty 0 0 0 8 -236414
 -66577 0;
 #X obj 266 63 inlet bangkv;
 #X obj 627 65 inlet~ start;
@@ -32,7 +32,7 @@
 #X obj 380 197 adabasedir;
 #X obj 212 218 s \$0-filepathsnd;
 #X obj 176 36 r \$0-filepathrcv;
-#X msg 66 154 read -maxsize 4e+007 -resize \$1 \$2 \$3;
+#X msg 66 154 read -maxsize 4e+07 -resize \$1 \$2 \$3;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 2 0 14 0;
@@ -86,7 +86,7 @@ of 1;
 #X obj 314 131 s \$0-declickbang;
 #X obj 122 23 bng 15 250 50 0 \$0-manualtrigsnd \$0-manualtrigrcv tr
 3 7 0 8 -248037 -241088 -262144;
-#X symbolatom 54 48 8 0 0 0 - #0-filenamedisplay -, f 8;
+#X symbolatom 54 49 10 0 0 0 - #0-filenamedisplay -, f 10;
 #X obj 348 93 r \$0-manualtrigsnd;
 #X floatatom 87 22 3 0 1000 0 - #0-starttimercv #0-starttimesnd, f
 3;
@@ -141,10 +141,10 @@ of 1;
 #X obj 86 38 cnv 8 35 8 empty empty start 2 3 0 11 -248037 -262144
 0;
 #X obj 139 49 tgl 15 0 \$0-loopsnd \$0-looprcv L 4 8 0 10 -261682 -1
--1 1 1;
+-1 0 1;
 #X obj 145 23 tgl 12 0 \$0-onoffsnd \$0-onoffrcv empty 17 7 0 10 -260757
 -261682 -1 1 1;
-#N canvas 1252 182 450 300 onoff 0;
+#N canvas 909 182 450 300 onoff 0;
 #X obj 286 122 outlet;
 #X obj 41 17 r \$0-onoffsnd;
 #X msg 46 115 195 205 214;
@@ -152,7 +152,7 @@ of 1;
 #X obj 46 162 pack f \$0;
 #X obj 41 45 sel 1 0;
 #X msg 45 190 \; \$2-canvasrcv color \$1;
-#X msg 70 80 240 140 144;
+#X msg 70 80 230 180 244;
 #X connect 1 0 5 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;

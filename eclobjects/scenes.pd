@@ -1,5 +1,5 @@
 #N canvas 258 124 1015 342 12;
-#X obj 10 15 hradio 30 1 0 8 \$0-scenesnd \$0-scenercv empty 0 -8 0
+#X obj 10 10 hradio 30 1 0 8 \$0-scenesnd \$0-scenercv empty 0 -8 0
 10 -261298 -259201 -1 0;
 #X obj 569 26 r \$0-scenesnd;
 #X obj 569 51 s globalscene;
@@ -30,6 +30,7 @@
 #X obj 346 287 s scene6;
 #X obj 402 263 s scene7;
 #X obj 457 238 s scene8;
+#X floatatom 453 106 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
 #X connect 1 0 2 0;
 #X connect 3 0 6 0;
 #X connect 4 0 5 0;
@@ -41,4 +42,4 @@
 #X connect 6 5 12 0;
 #X connect 6 6 13 0;
 #X connect 6 7 14 0;
-#X coords 0 -1 1 1 240 40 2 10 10;
+#X coords 0 -1 1 1 240 30 2 10 10;
