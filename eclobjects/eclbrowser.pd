@@ -1,10 +1,7 @@
-#N canvas 780 284 450 300 10;
+#N canvas 746 340 559 292 10;
 #X obj 157 154 sendcanvas 1;
-#X obj 14 18 bng 15 250 50 0 \$0-openbrowsersnd \$0-openbrowserrcv
-open_browser 17 7 0 10 -262144 -1 -1;
-#X obj 204 50 r \$0-openbrowsersnd;
-#X msg 204 72 vis 1;
-#N canvas 552 234 679 456 \$0-browser 1;
+#X obj 204 29 r \$0-openbrowsersnd;
+#N canvas 654 90 679 456 \$0-browser 0;
 #X obj 6 7 cnv 15 120 200 empty empty signal_modules 2 7 0 14 -233017
 -66577 0;
 #X obj 10 27 bng 15 250 50 0 \$0-oscpanel \$0-oscpanelrcv oscpanel
@@ -15,15 +12,15 @@ open_browser 17 7 0 10 -262144 -1 -1;
 0 10 -262144 -1 -1;
 #X obj 137 47 bng 15 250 50 0 \$0-output \$0-outputrcv output 17 7
 0 10 -262144 -1 -1;
-#X floatatom 589 10 5 0 0 0 x_position #0-xposrcv #0-xpos, f 5;
-#X floatatom 589 30 5 0 0 0 y_position #0-yposrcv #0-ypos, f 5;
+#X floatatom 588 11 5 0 0 0 x_position #0-xposrcv #0-xpos, f 5;
+#X floatatom 589 34 5 0 0 0 y_position #0-yposrcv #0-ypos, f 5;
 #X obj 10 46 bng 15 250 50 0 \$0-303panel \$0-303panelrcv 303panel
 17 7 0 10 -262144 -1 -1;
-#X obj 259 7 cnv 15 120 200 empty empty samplers 2 7 0 14 -233017 -66577
-0;
-#X obj 264 47 bng 15 250 50 0 \$0-sampler3 \$0-sampler3rcv sampler3
+#X obj 387 213 cnv 15 120 200 empty empty samplers 2 7 0 14 -233017
+-66577 0;
+#X obj 392 253 bng 15 250 50 0 \$0-sampler3 \$0-sampler3rcv sampler3
 17 7 0 10 -262144 -1 -1;
-#X obj 264 67 bng 15 250 50 0 \$0-sampler4 \$0-sampler4rcv sampler4
+#X obj 392 273 bng 15 250 50 0 \$0-sampler4 \$0-sampler4rcv sampler4
 17 7 0 10 -261234 -1 -1;
 #X obj 385 7 cnv 15 120 200 empty empty sequencers 2 7 0 14 -233017
 -66577 0;
@@ -33,7 +30,7 @@ open_browser 17 7 0 10 -262144 -1 -1;
 0 10 -262144 -1 -1;
 #X obj 137 67 bng 15 250 50 0 \$0-clock \$0-clockrcv clock 17 7 0 10
 -262144 -1 -1;
-#X obj 264 27 bng 15 250 50 0 \$0-sampler \$0-samplerrcv sampler 17
+#X obj 392 233 bng 15 250 50 0 \$0-sampler \$0-samplerrcv sampler 17
 7 0 10 -262144 -1 -1;
 #X obj 6 213 cnv 15 120 200 empty empty processing 2 7 0 14 -233017
 -66577 0;
@@ -44,7 +41,7 @@ open_browser 17 7 0 10 -262144 -1 -1;
 #X obj 137 87 bng 15 250 50 0 \$0-lfopanel \$0-lfopanelrcv lfopanel
 17 7 0 10 -262144 -1 -1;
 #X obj 137 106 bng 15 250 50 0 \$0-attenuvert \$0-attenuvertrcv attenuvert
-17 7 0 10 -261234 -1 -1;
+17 7 0 10 -262144 -1 -1;
 #X obj 389 67 bng 15 250 50 0 \$0-trigdelay \$0-trigdelayrcv trigdelay
 17 7 0 10 -261234 -1 -1;
 #X obj 133 213 cnv 15 120 200 empty empty tracking 2 7 0 14 -233017
@@ -52,115 +49,240 @@ open_browser 17 7 0 10 -262144 -1 -1;
 #X obj 139 235 bng 15 250 50 0 \$0-sawbasstracker \$0-sawbasstrackerrcv
 sawbasstracker 17 7 0 10 -261234 -1 -1;
 #X obj 139 255 bng 15 250 50 0 \$0-wavefiddle2 \$0-wavefiddle2rcv wavefiddle2
-17 7 0 10 -261234 -1 -1;
+17 7 0 10 -262144 -1 -1;
 #X obj 9 274 bng 15 250 50 0 \$0-shaperpanel \$0-shaperpanelrcv shaperpanel
 17 7 0 10 -261234 -1 -1;
 #X obj 10 65 bng 15 250 50 0 \$0-wavetablepanel \$0-wavetablepanelrcv
-wavetablepanel 17 7 0 10 -261234 -1 -1;
+wavetablepanel 17 7 0 10 -262144 -1 -1;
 #X obj 9 293 bng 15 250 50 0 \$0-distortion \$0-distortionrcv distortion
 17 7 0 10 -261234 -1 -1;
 #X obj 137 125 bng 15 250 50 0 \$0-plexermono \$0-plexermonorcv plexermono
 17 7 0 10 -261234 -1 -1;
 #X obj 137 144 bng 15 250 50 0 \$0-envelope \$0-envelopercv envelope
-17 7 0 10 -261234 -1 -1;
+17 7 0 10 -262144 -1 -1;
 #X obj 260 213 cnv 15 120 200 empty empty midi 2 7 0 14 -233017 -66577
 0;
 #X obj 266 235 bng 15 250 50 0 \$0-midiwrangler \$0-midiwrangerrcv
-midiwrangler 17 7 0 10 -261234 -1 -1;
+midiwrangler 17 7 0 10 -262144 -1 -1;
 #X obj 266 255 bng 15 250 50 0 \$0-velociraptor \$0-velociraptorrcv
 velociraptor 17 7 0 10 -261234 -1 -1;
 #X obj 266 275 bng 15 250 50 0 \$0-keyb \$0-keybrcv keyb 17 7 0 10
--261234 -1 -1;
+-262144 -1 -1;
 #X obj 9 313 bng 15 250 50 0 \$0-pitchshifter2 \$0-pitchshifter2rcv
 pitchshifter2 17 7 0 10 -261234 -1 -1;
+#X obj 515 58 bng 25 250 50 0 \$0-resetxysnd \$0-resetxyrcv reset_XY_position
+30 10 0 10 -262144 -1 -1;
+#X obj 9 333 bng 15 250 50 0 \$0-filterpanel \$0-filterpanel filterpanel
+17 7 0 10 -262144 -1 -1;
+#X obj 515 93 bng 25 250 50 0 \$0-closesnd \$0-closercv close_browser
+30 10 0 10 -262144 -1 -1;
+#X obj 10 85 bng 15 250 50 0 \$0-wavetablemono \$0-wavetablemonorcv
+wavetablemono 17 7 0 10 -262144 -1 -1;
+#X obj 10 105 bng 15 250 50 0 \$0-string \$0-stringrcv string 17 7
+0 10 -262144 -1 -1;
+#X obj 259 7 cnv 15 120 200 empty empty utility_(contd) 2 7 0 14 -233017
+-66577 0;
+#X obj 264 26 bng 15 250 50 0 \$0-width \$0-widthrcv width 17 7 0 10
+-262144 -1 -1;
+#X text 511 127 SHIFT-b toggles the browser, f 23;
 #X restore 161 124 pd \$0-browser;
 #X obj 204 94 s pd-\$0-browser;
-#N canvas 219 129 1032 484 receives 0;
-#X obj 88 410 sendcanvas 2;
-#X obj 88 367 list trim;
+#N canvas 61 162 1032 484 receives 1;
+#X obj 88 424 sendcanvas 2;
 #X obj 88 301 list prepend 100;
 #X obj 88 323 list prepend 100;
 #X obj 88 345 list prepend obj;
 #X obj 249 281 r \$0-xpos;
-#X obj 249 305 r \$0-ypos;
-#N canvas 384 125 450 300 utility 0;
-#X obj 132 169 outlet;
+#X obj 248 258 r \$0-ypos;
+#N canvas 384 125 709 300 utility 0;
+#X obj 34 256 outlet;
 #X obj 22 11 r \$0-output;
-#X msg 22 33 output;
 #X obj 115 15 r \$0-mixer4;
-#X msg 115 37 mixer4 0 0 0 0 0 0 0 0 1 1 1 1 1 0;
 #X obj 21 58 r \$0-clock;
-#X msg 21 80 clock 0 100 1 2 4 7;
 #X obj 188 76 r \$0-lfopanel;
-#X msg 188 98 lfopanel 0 4 0.5 0;
-#X connect 1 0 2 0;
-#X connect 2 0 0 0;
-#X connect 3 0 4 0;
-#X connect 4 0 0 0;
-#X connect 5 0 6 0;
+#X msg 188 98 lfopanel 0 4 0.5 0 80;
+#X msg 21 80 clock 0 100 1 2 4 7 60;
+#X msg 115 37 mixer4 0 0 0 0 0 0 0 0 1 1 1 1 1 0 155;
+#X obj 415 42 r \$0-attenuvert;
+#X msg 415 64 attenuvert 0 50 0 37;
+#X msg 22 33 output 120;
+#X obj 32 111 r \$0-envelope;
+#X msg 32 133 envelope 0 128 1 0 /home/ada/Documents/Pd/ecl/eclobjects/wavetables/decay1.txt
+125;
+#X obj 482 130 r \$0-width;
+#X msg 482 152 width 0 1 35;
+#X connect 1 0 10 0;
+#X connect 2 0 7 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
 #X connect 6 0 0 0;
-#X connect 7 0 8 0;
-#X connect 8 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 9 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X connect 13 0 14 0;
+#X connect 14 0 0 0;
 #X restore 36 49 pd utility;
-#N canvas 1 53 450 300 signal 0;
+#N canvas 119 135 982 558 signal 0;
 #X obj 23 56 r \$0-oscpanel;
+#X obj 24 122 r \$0-303panel;
+#X obj 23 532 outlet;
 #X msg 23 79 oscpanel 0 9.49566 0.515556 0.019798 0.464646 0.464646
-0 1;
-#X obj 26 154 r \$0-303panel;
-#X msg 26 176 303panel 0 211.289 0.721212 383.052 0.211111 0.0757576
-;
-#X obj 38 227 outlet;
-#X connect 0 0 1 0;
+0 1 120;
+#X msg 24 145 303panel 0 211.289 0.721212 383.052 0.211111 0.0757576
+110;
+#X obj 457 32 r \$0-wavetablepanel;
+#X msg 457 54 wavetablepanel 0 114.364 3175.91 1990.77 1 0 1 0 0.858586
+8 1 /home/ada/Documents/Pd/ecl/eclobjects/spectra/triish.txt /home/ada/Documents/Pd/ecl/eclobjects/spectra/sine.txt
+/home/ada/Documents/Pd/ecl/eclobjects/wavetables/crab.txt /home/ada/Documents/Pd/ecl/eclobjects/wavetables/sinus.txt
+270;
+#X obj 458 163 r \$0-wavetablemono;
+#X msg 458 186 wavetablemono 0 114.364 3175.91 1990.77 1 0 1 0 0.858586
+8 1 /home/ada/Documents/Pd/ecl/eclobjects/spectra/triish.txt /home/ada/Documents/Pd/ecl/eclobjects/spectra/sine.txt
+/home/ada/Documents/Pd/ecl/eclobjects/wavetables/crab.txt /home/ada/Documents/Pd/ecl/eclobjects/wavetables/sinus.txt
+270;
+#X obj 44 198 r \$0-string;
+#X msg 44 220 string 0 0 20 0 8000 35 2 120;
+#X connect 0 0 3 0;
 #X connect 1 0 4 0;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 0;
+#X connect 9 0 10 0;
+#X connect 10 0 2 0;
 #X restore 35 85 pd signal;
 #N canvas 1 53 450 300 sequencers 0;
 #X obj 25 32 r \$0-seq162;
-#X msg 25 54 seq162;
 #X obj 111 29 r \$0-cvseq8;
-#X msg 111 52 cvseq8 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 127 127 127
-127 127 127 127 127 28 45 70 0 0.01;
 #X obj 51 168 outlet;
-#X connect 0 0 1 0;
-#X connect 1 0 4 0;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
+#X msg 112 51 cvseq8 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 127 127 127
+127 127 127 127 127 28 45 70 0 0.01 160;
+#X msg 25 54 seq162 65;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
 #X restore 87 129 pd sequencers;
 #N canvas 1 53 450 300 samplers 0;
 #X obj 22 9 r \$0-sampler3;
-#X msg 22 31 sampler3 0 100 0 100 0 1 /home/ada/Documents/soundlibrary/a123.wav
-;
 #X obj 22 71 r \$0-sampler;
+#X obj 28 202 outlet;
+#X msg 22 31 sampler3 0 100 0 100 0 1 /home/ada/Documents/soundlibrary/a123.wav
+70;
 #X msg 22 97 sampler 0 1.8 1 15000 100 0 1 0.01 209.191 0.73913 2 0
 0 0 0 0 0.0930233 0.20155 0.364341 0.488372 0.604651 0.736434 0.844961
-0 0 /home/ada/Documents/soundlibrary/a123.wav;
-#X obj 28 202 outlet;
-#X connect 0 0 1 0;
+0 0 /home/ada/Documents/soundlibrary/a123.wav 170;
+#X connect 0 0 3 0;
 #X connect 1 0 4 0;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
 #X restore 107 158 pd samplers;
-#N canvas 1 53 450 300 processing 0;
+#N canvas 1 53 450 300 processing 1;
 #X obj 66 48 r \$0-delaypanel;
 #X obj 65 248 outlet;
 #X msg 66 70 delaypanel 0 1 298.874 0.599702 2142.33 0.149254 1.16955
-1 1.02239 0.9;
+1 1.02239 0.9 160;
+#X obj 78 108 r \$0-filterpanel;
+#X msg 78 130 filterpanel 0 610 0.8 27 0.35 85;
+#X obj 94 155 r \$0-pitchshifter2;
+#X msg 94 177 pitchshifter2 0 1 1 1 1 1 1 2 14 9 5 12 4 1 45 100 75
+;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
-#X restore 125 198 pd processing;
-#X connect 1 0 0 0;
-#X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
-#X connect 5 0 2 1;
-#X connect 6 0 3 1;
-#X connect 7 0 2 0;
-#X connect 8 0 2 0;
-#X connect 9 0 2 0;
-#X connect 10 0 2 0;
-#X connect 11 0 2 0;
-#X restore 284 131 pd receives;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X restore 125 198 pd processing;
+#N canvas 1 53 631 328 midi 0;
+#X obj 63 41 r \$0-keyb;
+#X obj 63 261 outlet;
+#X obj 142 42 r \$0-midiwrangler;
+#X msg 63 63 keyb 90;
+#X msg 143 64 midiwrangler 0 1 0 1 3 1 7 1 10 1 14 1 5 64 150 100 1
+0 110;
+#X connect 0 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X restore 287 177 pd midi;
+#N canvas 1 53 450 300 tracking 0;
+#X obj 57 172 outlet;
+#X obj 57 30 r \$0-wavefiddle2;
+#X msg 57 52 wavefiddle2 6 70;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X restore 305 227 pd tracking;
+#X obj 249 310 value ypos;
+#X obj 363 342 list split;
+#X obj 88 370 listlast 1;
+#X obj 305 392 value ypos;
+#X obj 285 416 +;
+#X obj 273 367 t f b;
+#X obj 88 392 list trim;
+#X obj 164 396 list trim;
+#X text 406 399 increment y pos based on last element in list;
+#X obj 611 94 loadbang;
+#X msg 611 116 100;
+#X obj 611 138 value ypos;
+#X obj 560 193 r \$0-resetxysnd;
+#X obj 560 237 unpack f f;
+#X obj 560 259 s \$0-xposrcv;
+#X obj 560 281 s \$0-yposrcv;
+#X obj 285 438 s \$0-yposrcv;
+#X msg 560 215 250 50;
+#X obj 706 195 r \$0-closesnd;
+#X msg 706 217 vis 0;
+#X obj 706 239 s pd-\$0-browser;
+#X connect 1 0 2 0;
 #X connect 2 0 3 0;
-#X connect 3 0 5 0;
+#X connect 3 0 15 0;
+#X connect 4 0 2 1;
+#X connect 5 0 13 0;
+#X connect 5 0 1 1;
+#X connect 6 0 1 0;
+#X connect 7 0 1 0;
+#X connect 8 0 1 0;
+#X connect 9 0 1 0;
+#X connect 10 0 1 0;
+#X connect 11 0 1 0;
+#X connect 12 0 1 0;
+#X connect 15 0 19 0;
+#X connect 15 1 20 0;
+#X connect 16 0 17 1;
+#X connect 17 0 29 0;
+#X connect 18 0 17 0;
+#X connect 18 1 16 0;
+#X connect 19 0 0 0;
+#X connect 20 0 18 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 25 0 30 0;
+#X connect 26 0 27 0;
+#X connect 26 1 28 0;
+#X connect 30 0 26 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X restore 284 131 pd receives;
+#X obj 14 209 key;
+#X obj 14 231 sel 66;
+#X obj 14 253 s \$0-openbrowserrcv;
+#X text 82 222 shift-B;
+#X obj 17 17 tgl 15 0 \$0-openbrowsersnd \$0-openbrowserrcv open_browser
+17 7 0 10 -262144 -1 -1 0 1;
+#X msg 204 72 vis \$1;
+#X obj 335 58 sel 0;
+#X obj 335 80 s \$0-resetxyrcv;
+#X connect 1 0 10 0;
+#X connect 1 0 11 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 10 0 3 0;
+#X connect 11 0 12 0;
 #X coords 0 -1 1 1 100 30 2 10 10;

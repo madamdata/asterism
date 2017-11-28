@@ -17,26 +17,26 @@
 #X obj 104 117 vsl 16 70 -1 1 0 0 \$0-step1snd \$0-step1rcv empty 0
 -9 0 10 -251930 -253514 -1 3450 1;
 #X obj 122 117 vsl 16 70 -1 1 0 0 \$0-step2snd \$0-step2rcv empty 0
--9 0 10 -251930 -253514 -1 1750 1;
+-9 0 10 -251930 -253514 -1 3450 1;
 #X obj 140 117 vsl 16 70 -1 1 0 0 \$0-step3snd \$0-step3rcv empty 0
--9 0 10 -251930 -253514 -1 4850 1;
+-9 0 10 -251930 -253514 -1 3050 1;
 #X obj 158 117 vsl 16 70 -1 1 0 0 \$0-step4snd \$0-step4rcv empty 0
--9 0 10 -262053 -227243 -1 2250 1;
+-9 0 10 -262053 -227243 -1 4350 1;
 #X obj 176 117 vsl 16 70 -1 1 0 0 \$0-step5snd \$0-step5rcv empty 0
--9 0 10 -251930 -253514 -1 5050 1;
+-9 0 10 -251930 -253514 -1 2350 1;
 #X obj 194 117 vsl 16 70 -1 1 0 0 \$0-step6snd \$0-step6rcv empty 0
--9 0 10 -251930 -253514 -1 2050 1;
+-9 0 10 -251930 -253514 -1 4650 1;
 #X obj 212 117 vsl 16 70 -1 1 0 0 \$0-step7snd \$0-step7rcv empty 0
--9 0 10 -251930 -253514 -1 5050 1;
+-9 0 10 -251930 -253514 -1 2850 1;
 #X obj 230 117 vsl 16 70 -1 1 0 0 \$0-step8snd \$0-step8rcv empty 0
--9 0 10 -251930 -253514 -1 2950 1;
+-9 0 10 -251930 -253514 -1 4450 1;
 #X text 129 450 state saving;
 #X obj 59 428 canvasargs;
 #X text 717 211 inlets \; 1: bang for next step \; 2-9: change steps
 1 to 8 (-1 to 1) \;;
 #X obj 593 533 smoother 20;
 #X obj 107 210 hsl 137 12 0.01 2500 1 0 \$0-glideamtsnd \$0-glideamtrcv
-glide 45 5 0 9 -261355 -247320 -168707 5900 1;
+glide 45 5 0 9 -261355 -247320 -168707 0 1;
 #X obj 104 192 tgl 16 0 \$0-glide1snd \$0-glide1rcv empty 17 7 0 10
 -259863 -261830 -1 1 1;
 #X obj 122 192 tgl 16 0 \$0-glide2snd \$0-glide2rcv empty 17 7 0 10
@@ -48,7 +48,7 @@ glide 45 5 0 9 -261355 -247320 -168707 5900 1;
 #X obj 176 192 tgl 16 0 \$0-glide5snd \$0-glide5rcv empty 17 7 0 10
 -259863 -261830 -1 1 1;
 #X obj 194 192 tgl 16 0 \$0-glide6snd \$0-glide6rcv empty 17 7 0 10
--259863 -261830 -1 0 1;
+-259863 -261830 -1 1 1;
 #X obj 212 192 tgl 16 0 \$0-glide7snd \$0-glide7rcv empty 17 7 0 10
 -259863 -261830 -1 1 1;
 #X obj 230 192 tgl 16 0 \$0-glide8snd \$0-glide8rcv empty 17 7 0 10
@@ -592,6 +592,7 @@ dirty 0;
 #X obj 61 467 initbang;
 #X obj 583 247 f 1;
 #X obj 878 272 initbang;
+#X obj 878 294 delay 50;
 #X connect 1 0 7 0;
 #X connect 2 0 127 1;
 #X connect 3 0 14 0;
@@ -638,5 +639,6 @@ dirty 0;
 #X connect 126 0 41 0;
 #X connect 127 0 2 0;
 #X connect 127 0 13 0;
-#X connect 128 0 125 0;
+#X connect 128 0 129 0;
+#X connect 129 0 125 0;
 #X coords 0 -1 1 1 150 150 2 100 100;

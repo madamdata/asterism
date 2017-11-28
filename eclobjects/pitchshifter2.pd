@@ -13,19 +13,19 @@ f 3;
 #X floatatom 34 57 3 -48 48 0 - #0-unit4pitchrcv #0-unit4pitchsnd,
 f 3;
 #X obj 17 56 tgl 15 0 \$0-unit4tglsnd \$0-unit4tglrcv empty 17 7 0
-10 -259584 -1 -1 0 1;
+10 -259584 -1 -1 1 1;
 #X floatatom 79 40 3 -48 48 0 - #0-unit2pitchrcv #0-unit2pitchsnd,
 f 3;
 #X obj 62 39 tgl 15 0 \$0-unit2tglsnd \$0-unit2tglrcv empty 17 7 0
-10 -259584 -1 -1 0 1;
+10 -259584 -1 -1 1 1;
 #X floatatom 79 57 3 -48 48 0 - #0-unit5pitchrcv #0-unit5pitchsnd,
 f 3;
 #X obj 62 56 tgl 15 0 \$0-unit5tglsnd \$0-unit5tglrcv empty 17 7 0
-10 -259584 -1 -1 0 1;
+10 -259584 -1 -1 1 1;
 #X floatatom 124 40 3 -48 48 0 - #0-unit3pitchrcv #0-unit3pitchsnd
 , f 3;
 #X obj 107 39 tgl 15 0 \$0-unit3tglsnd \$0-unit3tglrcv empty 17 7 0
-10 -259584 -1 -1 0 1;
+10 -259584 -1 -1 1 1;
 #X floatatom 124 57 3 -48 48 0 - #0-unit6pitchrcv #0-unit6pitchsnd
 , f 3;
 #X obj 107 56 tgl 15 0 \$0-unit6tglsnd \$0-unit6tglrcv empty 17 7 0
@@ -78,7 +78,6 @@ f 3;
 #X obj 307 391 outlet~;
 #X obj 411 393 outlet~;
 #N canvas 25 166 900 418 statesaving 0;
-#X obj 54 32 loadbang;
 #X msg 54 89 load savestate.pd_lua;
 #X obj 54 111 pdlua;
 #X obj 175 297 outlet;
@@ -89,12 +88,13 @@ f 3;
 \$0-maxdelay \$0-spread;
 #X obj 162 136 pack \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9 \$10 \$11 \$12
 \$13 \$14 \$15 \$16;
-#X connect 0 0 4 0;
-#X connect 1 0 2 0;
-#X connect 4 0 6 0;
-#X connect 4 1 1 0;
-#X connect 5 0 3 0;
-#X connect 6 0 5 0;
+#X obj 54 32 initbang;
+#X connect 0 0 1 0;
+#X connect 3 0 5 0;
+#X connect 3 1 0 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 3 0;
 #X restore 104 345 pd statesaving;
 #X floatatom 57 410 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
 #X obj 114 375 canvasargs;
@@ -181,7 +181,7 @@ f 3;
 #X obj 413 282 adamonopan;
 #X obj 433 302 adamonopan;
 #X obj 437 361 hip~ 55;
-#N canvas 1 53 450 300 spread 1;
+#N canvas 1 53 450 300 spread 0;
 #X obj 61 35 r \$0-spreadsnd;
 #X obj 61 57 / 100;
 #X obj 76 227 outlet;

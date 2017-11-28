@@ -37,7 +37,7 @@
 #X obj 14 60 tgl 30 0 \$0-overdubsnd \$0-overdubrcv dub 6 25 0 10 -261361
 -213060 -1 0 1;
 #X obj 178 113 hsl 130 8 0 100 0 0 \$0-positionsnd \$0-positionrcv
-empty -2 -8 0 10 -190656 -241472 -1 3279 1;
+empty -2 -8 0 10 -190656 -241472 -1 843 1;
 #X obj 628 267 t b f;
 #X obj 567 216 inlet reset;
 #X obj 464 217 inlet~ rate;
@@ -273,8 +273,8 @@ dirty 0;
 #N canvas 330 148 902 478 saving_loading 0;
 #X obj 328 284 soundfiler;
 #X obj 290 72 openpanel;
-#X msg 467 249 read -maxsize 1.323e+07 -resize /home/ada/Documents/soundlibrary/a123.wav
-1537-samp1L 1537-samp1R;
+#X msg 467 249 read -maxsize 1.323e+07 -resize /home/ada/Documents/soundlibrary/bass/crushwoob.wav
+1701-samp1L 1701-samp1R;
 #X obj 345 125 f \$0;
 #X msg 365 170 add2 \$1-samp1L;
 #X obj 345 147 t f f;
@@ -337,7 +337,7 @@ dirty 0;
 #X connect 29 1 30 0;
 #X connect 29 1 8 0;
 #X restore 13 209 pd saving_loading;
-#N canvas 369 141 913 559 state_saving 0;
+#N canvas 369 141 913 559 state_saving 1;
 #X obj 66 304 outlet;
 #X msg 38 70 load savestate.pd_lua;
 #X obj 38 92 pdlua;
@@ -354,6 +354,10 @@ dirty 0;
 \$13 \$14 \$15 \$16 \$17 \$18 \$19 \$20 \$21 \$22 \$23 \$24 \$25,
 f 100;
 #X obj 291 121 symbol \$26;
+#X obj 566 210 f \$25;
+#X obj 565 186 delay 50;
+#X obj 566 232 s \$0-tabselectorrcv;
+#X text 653 207 hack to fix UI bugginess;
 #X connect 1 0 2 0;
 #X connect 3 0 5 0;
 #X connect 3 0 7 0;
@@ -361,9 +365,12 @@ f 100;
 #X connect 4 1 9 0;
 #X connect 6 0 1 0;
 #X connect 6 0 4 0;
+#X connect 6 0 11 0;
 #X connect 7 0 0 0;
 #X connect 8 0 3 0;
 #X connect 9 0 3 1;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
 #X restore 16 376 pd state_saving;
 #X obj 16 398 canvasargs;
 #X text 731 39 Note: Spaces in file names are still very badly handled!
@@ -375,17 +382,17 @@ recommend not having any.;
 #X obj 7 9 cnv 15 1030 465 empty empty empty 20 12 0 14 -155129 -66577
 0;
 #X obj 23 32 hsl 995 320 0 100 0 0 \$0-positionsnd \$0-positionrcv
-empty -2 -8 0 10 -190656 -241472 -1 25263 1;
+empty -2 -8 0 10 -190656 -241472 -1 6497 1;
 #N canvas 0 50 450 278 (subpatch) 0;
-#X array \$0-samp1L 898048 float 2;
-#X coords 0 1 898048 -1 1000 150 1 0 0;
+#X array \$0-samp1L 413892 float 2;
+#X coords 0 1 413892 -1 1000 150 1 0 0;
 #X restore 20 32 graph;
 #N canvas 0 50 450 278 (subpatch) 0;
-#X array \$0-samp1R 898048 float 2;
-#X coords 0 1 898048 -1 1000 150 1 0 0;
+#X array \$0-samp1R 413892 float 2;
+#X coords 0 1 413892 -1 1000 150 1 0 0;
 #X restore 20 202 graph;
 #X obj 24 359 hsl 995 10 0 1 0 0 \$0-startsnd \$0-startrcv start 15
-4 0 10 -101504 -256853 -1 0 1;
+4 0 10 -101504 -256853 -1 19264 1;
 #X obj 24 375 hsl 995 9 0 1 0 0 \$0-slice1snd \$0-slice1rcv slice_1
 15 4 0 7 -210742 -253394 -262144 0 1;
 #X obj 24 386 hsl 995 9 0 1 0 0 \$0-slice2snd \$0-slice2rcv slice_2
@@ -417,11 +424,11 @@ empty -2 -8 0 10 -190656 -241472 -1 25263 1;
 #X msg 582 468 0;
 #X msg 686 420 0;
 #X msg 499 381 1;
-#X msg 437 382 0;
+#X msg 437 382 0.193798;
 #X obj 530 520 tabread4~ \$0-samp1L;
 #X obj 582 488 spigot;
 #X obj 175 149 tgl 15 1 \$0-loopsnd \$0-looprcv loop 17 7 0 10 -89664
--261963 -1 0 1;
+-261963 -1 1 1;
 #X obj 635 475 r \$0-loopsnd;
 #X obj 635 497 == 0;
 #X obj 450 266 r \$0-loopsnd;
@@ -478,7 +485,7 @@ empty -2 -8 0 10 -190656 -241472 -1 25263 1;
 #X obj 190 328 bang;
 #X obj 685 400 r \$0-deloop;
 #X obj 178 123 hsl 130 10 0 1 0 1 \$0-startsnd \$0-startrcv start 15
-6 0 8 -101504 -256853 -1 0 1;
+6 0 8 -101504 -256853 -1 2500 1;
 #X obj 420 309 r \$0-startsnd;
 #X obj 217 149 tgl 15 1 \$0-autoplaysnd \$0-autoplayrcv auto 17 7 0
 10 -261234 -260118 -1 0 1;
@@ -886,4 +893,4 @@ empty 0 -8 0 10 -248799 -222740 -1 0;
 #X connect 184 0 80 0;
 #X connect 185 0 120 1;
 #X connect 186 0 156 0;
-#X coords 0 -1 1 1 150 160 1 10 10;
+#X coords 0 -1 1 1 150 160 2 10 10;

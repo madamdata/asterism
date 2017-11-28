@@ -1,4 +1,4 @@
-#N canvas 222 26 939 599 10;
+#N canvas 222 53 939 599 10;
 #X obj 97 262 +~ 1;
 #X obj 97 312 *~;
 #X obj 176 312 *~;
@@ -23,7 +23,7 @@
 #X text 154 59 phasor index;
 #X obj 97 186 *~;
 #X obj 158 78 inlet~;
-#X obj 97 209 *~;
+#X obj 97 235 *~;
 #X obj 97 288 tabread4~ \$2;
 #X obj 176 288 tabread4~ \$3;
 #X obj 219 341 tabread4~ \$4;
@@ -64,12 +64,12 @@
 #X obj 836 346 inlet spread;
 #X msg 661 454 0;
 #X obj 594 428 * 1;
-#X msg 275 243 200 8832.73;
+#X msg 275 243 200 951.777;
 #X msg 272 113 set 200 \$1;
-#X msg 495 235 200 2275.36;
+#X msg 495 235 200 881.499;
 #X msg 483 145 set 200 \$1;
-#X msg 574 214 256 568.841;
-#X msg 383 243 256 2208.18;
+#X msg 574 214 256 220.375;
+#X msg 383 243 256 237.944;
 #X msg 345 140 set 256 \$1;
 #X msg 554 168 set 256 \$1;
 #X obj 102 349 hip~ 10;
