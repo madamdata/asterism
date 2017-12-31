@@ -168,17 +168,17 @@
 #X connect 10 0 0 1;
 #X restore 394 334 pd feedback;
 #X obj 17 57 hsl 135 15 0 0.98 0 0 \$0-feedbacksnd \$0-feedbackrcv
-feedback -2 6 0 9 -260975 -258511 -1 10000 1;
+feedback -2 6 0 9 -260975 -258511 -1 9700 1;
 #X obj 17 40 hsl 135 15 5 4000 1 0 \$0-deltimesnd \$0-deltimercv time
--2 6 0 9 -260125 -258511 -1 8200 1;
+-2 6 0 9 -260125 -258511 -1 7135 1;
 #X obj 17 74 hsl 135 15 40 15000 1 0 \$0-cutoffsnd \$0-cutoffrcv cutoff
--2 6 0 9 -227366 -258511 -1 6800 1;
+-2 6 0 9 -227366 -258511 -1 12324 1;
 #X obj 17 91 hsl 135 15 0.01 3 1 0 \$0-qsnd \$0-qrcv q -2 6 0 9 -226911
--261557 -1 400 1;
+-261557 -1 0 1;
 #X obj 14 23 tgl 15 0 \$0-filterswitchsnd \$0-filterswitchrcv filter
 17 7 0 9 -260266 -261331 -1 1 1;
 #X obj 17 108 hsl 135 15 3 0.08 0 0 \$0-saturationsnd \$0-saturationrcv
-saturation -2 6 0 9 -247066 -261630 -1 8400 1;
+saturation -2 6 0 9 -247066 -261630 -1 2400 1;
 #X obj 142 25 tgl 12 0 \$0-switchsnd \$0-switchrcv empty 17 7 0 10
 -260271 -262144 -1 1 1;
 #N canvas 0 50 716 346 colours 0;
@@ -262,7 +262,7 @@ saturation -2 6 0 9 -247066 -261630 -1 8400 1;
 #X obj 140 12 cnv 8 18 10 empty empty ctrl 0 5 0 9 -261502 -33289 0
 ;
 #X obj 17 125 hsl 135 15 0.5 1.5 0 0 \$0-decouplesnd \$0-decouplercv
-decouple -2 6 0 9 -218467 -261630 -1 7000 1;
+decouple -2 6 0 9 -218467 -261630 -1 6647 1;
 #X obj 562 115 *~ 0.6;
 #X obj 562 136 +~ 1;
 #X obj 498 138 +~ 1;
@@ -276,7 +276,7 @@ decouple -2 6 0 9 -218467 -261630 -1 7000 1;
 #X obj 597 216 t b b;
 #X obj 597 262 s \$0-deltimercv;
 #X obj 778 96 inlet ctrl;
-#N canvas 555 156 450 300 ctrl 0;
+#N canvas 555 156 552 302 ctrl 1;
 #X obj 111 14 inlet;
 #X obj 112 103 s \$0-deltimercv;
 #X obj 112 125 s \$0-feedbackrcv;
@@ -284,21 +284,23 @@ decouple -2 6 0 9 -218467 -261630 -1 7000 1;
 #X obj 112 169 s \$0-qrcv;
 #X obj 112 191 s \$0-saturationrcv;
 #X obj 112 213 s \$0-decouplercv;
-#X obj 108 38 route time feedback cutoff q saturation decouple tap
-;
 #X obj 112 235 s \$0-taprcv;
-#X connect 0 0 7 0;
-#X connect 7 0 1 0;
-#X connect 7 1 2 0;
-#X connect 7 2 3 0;
-#X connect 7 3 4 0;
-#X connect 7 4 5 0;
-#X connect 7 5 6 0;
-#X connect 7 6 8 0;
+#X obj 108 38 route time feedback cutoff q saturation decouple tap
+wetpre;
+#X obj 249 272 s \$0-wetprercv;
+#X connect 0 0 8 0;
+#X connect 8 0 1 0;
+#X connect 8 1 2 0;
+#X connect 8 2 3 0;
+#X connect 8 3 4 0;
+#X connect 8 4 5 0;
+#X connect 8 5 6 0;
+#X connect 8 6 7 0;
+#X connect 8 7 9 0;
 #X restore 783 142 pd ctrl;
 #X floatatom 151 413 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
 #X obj 17 142 hsl 135 15 0 1 0 0 \$0-wetpresnd \$0-wetprercv wet_pre
--2 6 0 9 -177187 -228856 -228856 12760 1;
+-2 6 0 9 -177187 -228856 -228856 13400 1;
 #N canvas 1 53 450 300 bypass 0;
 #X obj 177 61 inlet~;
 #X obj 247 61 inlet~;
