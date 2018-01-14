@@ -1,0 +1,200 @@
+#N struct adaguiseq-test float x float y float step1 float step2 float
+step3 float step4 float step5 float step6 float step7 float step8 float
+step9 float step10 float step11 float step12 float step13 float step14
+float step15 float step16;
+#N canvas 274 131 1085 583 10;
+#X obj 14 70 draw rect 18 step1 0 0;
+#X msg 106 15 fill red \, fill-opacity 0.9;
+#X obj 200 97 draw rect 18 step4 60 0;
+#X obj 47 95 draw rect 18 step2 20 0;
+#X obj 157 71 draw rect 18 step3 40 0;
+#X obj 332 4 struct adaguiseq-test float x float y float step1 float
+step2 float step3 float step4 float step5 float step6 float step7 float
+step8 float step9 float step10 float step11 float step12 float step13
+float step14 float step15 float step16;
+#X obj 78 118 draw rect 18 step5 80 0;
+#X obj 111 143 draw rect 18 step6 100 0;
+#X obj 221 119 draw rect 18 step7 120 0;
+#X obj 264 145 draw rect 18 step8 140 0;
+#X obj 21 171 draw rect 18 step9 0 20;
+#X obj 187 173 draw rect 18 step11 40 20;
+#X obj 230 199 draw rect 18 step12 60 20;
+#X obj 85 218 draw rect 18 step13 80 20;
+#X obj 271 244 draw rect 18 step16 140 20;
+#X obj 100 241 draw rect 18 step14 100 20;
+#X obj 251 221 draw rect 18 step15 120 20;
+#X obj 54 196 draw rect 18 step10 20 20;
+#X obj 481 255 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 499 384 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 476 385 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 542 383 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 521 384 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 572 142 bang;
+#X obj 582 169 bang;
+#X obj 597 191 bang;
+#X obj 605 214 bang;
+#X obj 588 118 draw rect 18 18 0 0;
+#X obj 607 142 draw rect 18 18 20 0;
+#X obj 644 164 draw rect 18 18 40 0;
+#X obj 664 186 draw rect 18 18 60 0;
+#X msg 793 46 fill grey \, fill-opacity 0.1 \, mousedown 1;
+#X obj 488 417 cyclone/bondo 16;
+#X obj 586 383 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 564 383 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 627 382 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 606 383 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 668 383 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 648 383 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 711 383 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 686 384 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 753 382 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 733 382 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 796 381 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 775 383 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+18;
+#X obj 486 448 pack f f f f f f f f f f f f f f f f;
+#X obj 482 479 set adaguiseq-test step1 step2 step3 step4 step5 step6
+step7 step8 step9 step10 step11 step12 step13 step14 step15 step16
+;
+#X obj 718 119 draw rect 18 18 80 0;
+#X obj 746 142 draw rect 18 18 100 0;
+#X obj 789 164 draw rect 18 18 120 0;
+#X obj 795 188 draw rect 18 18 140 0;
+#X obj 688 207 draw rect 18 18 0 20;
+#X obj 711 231 draw rect 18 18 20 20;
+#X obj 732 252 draw rect 18 18 40 20;
+#X obj 778 275 draw rect 18 18 60 20;
+#X obj 825 210 draw rect 18 18 80 20;
+#X obj 863 235 draw rect 18 18 100 20;
+#X obj 890 254 draw rect 18 18 120 20;
+#X obj 895 281 draw rect 18 18 140 20;
+#X obj 642 232 bang;
+#X obj 652 259 bang;
+#X obj 667 281 bang;
+#X obj 679 305 bang;
+#X obj 713 314 bang;
+#X obj 749 312 bang;
+#X obj 780 315 bang;
+#X obj 815 314 bang;
+#X obj 873 315 bang;
+#X obj 901 320 bang;
+#X obj 933 317 bang;
+#X obj 964 318 bang;
+#X obj 854 458 inlet;
+#X obj 807 8 initbang;
+#X connect 1 0 0 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 1 0 10 0;
+#X connect 1 0 11 0;
+#X connect 1 0 12 0;
+#X connect 1 0 13 0;
+#X connect 1 0 14 0;
+#X connect 1 0 8 0;
+#X connect 1 0 9 0;
+#X connect 1 0 7 0;
+#X connect 1 0 6 0;
+#X connect 1 0 15 0;
+#X connect 1 0 16 0;
+#X connect 1 0 17 0;
+#X connect 19 0 32 1;
+#X connect 20 0 32 0;
+#X connect 21 0 32 3;
+#X connect 22 0 32 2;
+#X connect 23 0 20 0;
+#X connect 24 0 19 0;
+#X connect 25 0 22 0;
+#X connect 26 0 21 0;
+#X connect 27 0 23 0;
+#X connect 28 0 24 0;
+#X connect 29 0 25 0;
+#X connect 30 0 26 0;
+#X connect 31 0 27 0;
+#X connect 31 0 28 0;
+#X connect 31 0 29 0;
+#X connect 31 0 30 0;
+#X connect 31 0 51 0;
+#X connect 31 0 52 0;
+#X connect 31 0 53 0;
+#X connect 31 0 54 0;
+#X connect 31 0 47 0;
+#X connect 31 0 48 0;
+#X connect 31 0 49 0;
+#X connect 31 0 50 0;
+#X connect 31 0 55 0;
+#X connect 31 0 56 0;
+#X connect 31 0 57 0;
+#X connect 31 0 58 0;
+#X connect 32 0 45 0;
+#X connect 32 1 45 1;
+#X connect 32 2 45 2;
+#X connect 32 3 45 3;
+#X connect 32 4 45 4;
+#X connect 32 5 45 5;
+#X connect 32 6 45 6;
+#X connect 32 7 45 7;
+#X connect 32 8 45 8;
+#X connect 32 9 45 9;
+#X connect 32 10 45 10;
+#X connect 32 11 45 11;
+#X connect 32 12 45 12;
+#X connect 32 13 45 13;
+#X connect 32 14 45 14;
+#X connect 32 15 45 15;
+#X connect 33 0 32 5;
+#X connect 34 0 32 4;
+#X connect 35 0 32 7;
+#X connect 36 0 32 6;
+#X connect 37 0 32 9;
+#X connect 38 0 32 8;
+#X connect 39 0 32 11;
+#X connect 40 0 32 10;
+#X connect 41 0 32 13;
+#X connect 42 0 32 12;
+#X connect 43 0 32 15;
+#X connect 44 0 32 14;
+#X connect 45 0 46 0;
+#X connect 47 0 59 0;
+#X connect 48 0 60 0;
+#X connect 49 0 61 0;
+#X connect 50 0 62 0;
+#X connect 51 0 63 0;
+#X connect 52 0 64 0;
+#X connect 53 0 65 0;
+#X connect 54 0 66 0;
+#X connect 55 0 67 0;
+#X connect 56 0 68 0;
+#X connect 57 0 69 0;
+#X connect 58 0 70 0;
+#X connect 59 0 34 0;
+#X connect 60 0 33 0;
+#X connect 61 0 36 0;
+#X connect 62 0 35 0;
+#X connect 63 0 38 0;
+#X connect 64 0 37 0;
+#X connect 65 0 40 0;
+#X connect 66 0 39 0;
+#X connect 67 0 42 0;
+#X connect 68 0 41 0;
+#X connect 69 0 44 0;
+#X connect 70 0 43 0;
+#X connect 71 0 46 16;
+#X connect 72 0 31 0;
+#X connect 72 0 1 0;

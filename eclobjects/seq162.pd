@@ -1,4 +1,4 @@
-#N canvas 95 53 1175 653 10;
+#N canvas 96 62 1175 653 10;
 #X obj 203 22 inlet;
 #X obj 622 93 f 1;
 #X obj 652 93 + 1;
@@ -80,7 +80,7 @@
 #X connect 27 1 21 0;
 #X connect 29 0 30 0;
 #X restore 49 210 pd state_loading;
-#N canvas 325 53 699 561 state_saving 1;
+#N canvas 325 53 699 561 state_saving 0;
 #X text 103 17 state saving;
 #X obj 8 265 r \$0-indexsnd;
 #X obj 103 189 debinarizer;
@@ -95,7 +95,7 @@
 #X obj 224 416 list split 1;
 #X obj 188 204 r \$0-currentslot;
 #X obj 398 154 r \$0-sequenceload;
-#N canvas 1 53 473 345 receive_toggles 1;
+#N canvas 1 53 473 345 receive_toggles 0;
 #X obj 358 106 r storebang;
 #X obj 358 128 t b b b;
 #X msg 403 177 1;
@@ -532,7 +532,7 @@
 #X msg 926 475 load debinarizer.pd_lua;
 #X obj 915 506 pdlua;
 #X obj 53 137 hradio 16 1 0 8 \$0-seqsnd \$0-seqrcv empty 0 -8 0 10
--167424 -259869 -1 5;
+-167424 -259869 -1 0;
 #X obj 155 285 r \$0-seqsnd;
 #X obj 155 307 t f f;
 #X obj 182 347 s \$0-currentslot;
@@ -589,7 +589,7 @@
 #X obj 512 10 r globalclock;
 #X obj 48 281 r globalscene;
 #X obj 48 303 s \$0-seqrcv;
-#X obj 183 138 tgl 15 0 \$0-globalsnd \$0-globalrcv G 2 9 1 15 -131072
+#X obj 183 137 tgl 15 0 \$0-globalsnd \$0-globalrcv G 2 9 1 15 -131072
 -4160 -159808 0 1;
 #X obj 512 32 spigot;
 #X obj 615 9 r \$0-globalsnd;

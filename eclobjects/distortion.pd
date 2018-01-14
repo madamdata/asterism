@@ -1,8 +1,8 @@
-#N canvas 1 53 922 455 10;
+#N canvas 380 60 922 455 10;
 #X obj 12 12 cnv 15 146 41 empty empty empty 20 12 0 14 -209419 -66577
 0;
 #X obj 353 70 inlet~;
-#X obj 727 47 inlet~;
+#X obj 606 44 inlet~;
 #X obj 363 412 outlet~;
 #X obj 449 411 outlet~;
 #X obj 359 126 *~;
@@ -11,16 +11,16 @@
 #X obj 453 241 tanh~;
 #X obj 362 293 lop~;
 #X obj 466 289 lop~, f 5;
-#X obj 455 47 r \$0-distortionsnd;
-#X obj 455 91 smoother 20;
+#X obj 477 44 r \$0-distortionsnd;
+#X obj 477 88 smoother 20;
 #X obj 589 175 r \$0-cutoffsnd;
 #X obj 359 180 *~;
 #X obj 443 189 *~;
-#X obj 622 39 inlet~ dist;
-#X obj 723 110 *~ 60;
-#X obj 723 132 midiratio~;
+#X obj 660 44 inlet~ dist;
+#X obj 659 91 *~ 60;
+#X obj 659 113 midiratio~;
 #X obj 18 37 hsl 135 15 40 14000 1 0 \$0-cutoffsnd \$0-cutoffrcv cutoff
-3 7 0 10 -115206 -261929 -241147 13400 1;
+3 7 0 10 -115206 -261929 -241147 12900 1;
 #N canvas 202 86 450 300 statesaving 0;
 #X obj 173 222 outlet;
 #X obj 48 24 loadbang;
@@ -36,13 +36,18 @@
 #X restore 118 163 pd statesaving;
 #X floatatom 68 112 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
 #X obj 118 185 canvasargs;
-#X obj 455 69 / 10;
+#X obj 477 66 / 10;
 #X obj 80 22 nbx 5 13 5 5000 0 0 \$0-distortionsnd \$0-distortionrcv
-distortion -63 7 0 10 -259607 -253244 -252597 5 256;
-#X obj 12 12 cnv 8 70 8 empty empty L 1 5 0 8 -236477 -258113 0;
-#X obj 73 12 cnv 8 55 8 empty empty dist 1 5 0 8 -236477 -258113 0
+distortion -63 7 0 10 -259607 -253244 -252597 5 256 0;
+#X obj 12 12 cnv 8 70 8 empty empty L 1 2 0 8 -236477 -258113 0;
+#X obj 58 12 cnv 8 55 8 empty empty R 1 2 0 8 -236477 -258113 0;
+#X obj 76 12 cnv 8 55 8 empty empty dist 23 2 0 8 -236477 -258113 0
 ;
-#X obj 118 12 cnv 8 40 8 empty empty R 35 5 0 8 -236477 -258113 0;
+#X obj 764 44 inlet ctrl;
+#X obj 764 66 route distortion cutoff;
+#X obj 764 88 s \$0-distortionrcv;
+#X obj 783 117 s \$0-cutoffrcv;
+#X obj 128 12 cnv 8 30 8 empty empty ctrl 11 3 0 8 -236477 -1 0;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;
 #X connect 5 0 14 0;
@@ -64,4 +69,7 @@ distortion -63 7 0 10 -259607 -253244 -252597 5 256;
 #X connect 18 0 14 1;
 #X connect 20 0 22 0;
 #X connect 23 0 12 0;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
+#X connect 29 1 31 0;
 #X coords 0 -1 1 1 150 45 2 10 10;

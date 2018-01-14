@@ -1,4 +1,4 @@
-#N canvas 387 97 956 592 16;
+#N canvas 380 104 956 592 16;
 #X floatatom 18 26 4 1 1000 0 - #0-atkrcv #0-atksnd, f 4;
 #X floatatom 64 26 4 5 1500 0 - #0-decrcv #0-decsnd, f 4;
 #X obj 490 23 inlet~ atk;
@@ -17,7 +17,7 @@
 #X obj 94 457 outlet~ sigL;
 #X obj 226 455 outlet~ sigR;
 #X obj 732 144 +~ 1;
-#X obj 358 248 *~;
+#X obj 363 239 *~;
 #N canvas 265 112 967 337 controls 0;
 #X obj 596 56 r \$0-atksnd;
 #X obj 716 59 r \$0-decsnd;
@@ -45,7 +45,7 @@
 #X connect 11 0 12 0;
 #X connect 12 0 5 0;
 #X restore 334 130 pd controls;
-#N canvas 0 50 450 300 declick 1;
+#N canvas 0 50 450 300 declick 0;
 #X obj 89 43 inlet~;
 #X obj 224 41 inlet~;
 #X obj 89 240 outlet~;
