@@ -1,0 +1,33 @@
+#N canvas 0 24 1360 692 10;
+#X obj 476 145 eclbrowser;
+#X obj 1144 370 mixer4 0.627701 1 0.01 0.01 0 0 0 0 0 1 1 1 1 0;
+#X obj 1144 526 output;
+#X obj 44 78 sampler3 0 30 0 87 1 1 /home/ada/Documents/soundlibrary/drones/just1.wav
+;
+#X obj 249 93 sampler3 0 25 0 96 1 1 /home/ada/Documents/soundlibrary/drones/drone12.wav
+;
+#X obj 153 391 bus 1;
+#X obj 483 24 lfopanel 0 0.05 50.5 0;
+#X obj 131 249 xfade 0 0.485915 2.23239;
+#X obj 631 31 wavetablepanel 0 34.8485 2125.32 1447.37 1 0 0 0.444444
+0.525253 3.96465 1.72727 /home/ada/Documents/Pd/ecl/eclobjects/spectra/triish.txt
+/home/ada/Documents/Pd/ecl/eclobjects/spectra/sine.txt /home/ada/Documents/Pd/ecl/eclobjects/wavetables/crab.txt
+/home/ada/Documents/Pd/ecl/eclobjects/wavetables/sinus.txt;
+#X obj 611 342 rev3gui 0 96.3969 2340.71 56.2963 1477.11 1;
+#X obj 611 457 bus 2;
+#X obj 1120 87 keyb;
+#X obj 1031 119 ctrlbus 1;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 3 0 7 0;
+#X connect 3 1 7 1;
+#X connect 4 0 7 2;
+#X connect 4 1 7 3;
+#X connect 6 0 7 4;
+#X connect 7 0 5 0;
+#X connect 7 1 5 1;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 9 0 10 0;
+#X connect 9 1 10 1;
+#X connect 12 0 8 0;

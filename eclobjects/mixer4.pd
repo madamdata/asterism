@@ -1,14 +1,14 @@
-#N canvas 185 41 1037 674 10;
+#N canvas 186 41 1037 674 10;
 #X obj 172 12 cnv 15 146 146 empty empty empty 20 12 0 14 -261578 -66577
 0;
 #X obj 12 12 cnv 15 146 146 empty empty empty 20 12 0 14 -261578 -66577
 0;
 #X obj 13 16 vsl 25 90 0.01 1 1 0 \$0-fader1snd \$0-fader1rcv empty
-0 -9 0 10 -261682 -260097 -1 2450 1;
+0 -9 0 10 -261682 -260097 -1 4500 1;
 #X obj 40 16 vsl 25 90 0.01 1 1 0 \$0-fader2snd \$0-fader2rcv empty
-0 -9 0 10 -261682 -260097 -1 7600 1;
+0 -9 0 10 -261682 -260097 -1 0 1;
 #X obj 67 16 vsl 25 90 0.01 1 1 0 \$0-fader3snd \$0-fader3rcv empty
-0 -9 0 10 -261682 -260097 -1 8900 1;
+0 -9 0 10 -261682 -260097 -1 0 1;
 #X obj 94 16 vsl 25 90 0.01 1 1 0 \$0-fader4snd \$0-fader4rcv empty
 0 -9 0 10 -261682 -260097 -1 0 1;
 #X obj 420 367 *~;
@@ -27,7 +27,7 @@
 #X obj 295 437 mux~ . . . .;
 #X obj 373 439 mux~ . . . .;
 #X obj 122 32 hradio 9 1 0 4 \$0-vuselectorsnd \$0-vuselectorrcv empty
-0 -8 0 10 -228856 -260097 -1 1;
+0 -8 0 10 -228856 -260097 -1 0;
 #X obj 177 262 r~ \$0-tovuL;
 #X obj 248 263 r~ \$0-tovuR;
 #X obj 178 284 env~;
@@ -35,13 +35,13 @@
 #X obj 178 306 - 90;
 #X obj 248 307 - 90;
 #X obj 13 111 tgl 25 1 \$0-mute1snd \$0-mute1rcv empty 17 7 0 10 -239465
--257985 -1 0 1;
+-257985 -1 1 1;
 #X obj 40 111 tgl 25 1 \$0-mute2snd \$0-mute2rcv empty 17 7 0 10 -239465
--257985 -1 0 1;
+-257985 -1 1 1;
 #X obj 67 111 tgl 25 1 \$0-mute3snd \$0-mute3rcv empty 17 7 0 10 -239465
--257985 -1 0 1;
+-257985 -1 1 1;
 #X obj 94 111 tgl 25 1 \$0-mute4snd \$0-mute4rcv empty 17 7 0 10 -239465
--257985 -1 0 1;
+-257985 -1 1 1;
 #X obj 462 438 *~;
 #X obj 493 437 *~;
 #X obj 534 438 *~;
@@ -270,7 +270,7 @@ rel 1 20 0 8 -260287 -258892 -1 0 1;
 #X connect 8 0 9 0;
 #X restore 739 506 pd indivouts;
 #X obj 131 133 tgl 15 1 \$0-outputswitchsnd \$0-outputswitchrcv out
-1 18 0 8 -261548 -262144 -1 1 1;
+1 18 0 8 -261548 -262144 -1 0 1;
 #X obj 918 450 r \$0-outputswitchsnd;
 #X obj 557 530 *~ 1;
 #X obj 623 528 *~ 1;
@@ -304,7 +304,6 @@ rel 1 20 0 8 -260287 -258892 -1 0 1;
 #X obj 631 277 + 0.5;
 #X obj 542 278 + 0.5;
 #X obj 451 280 + 0.5;
-#X obj 451 302;
 #X obj 181 169 initbang;
 #X obj 552 112 initbang;
 #X obj 795 182 maxlib/scale 0 127 0.01 1 2;
@@ -376,7 +375,7 @@ rel 1 20 0 8 -260287 -258892 -1 0 1;
 #X connect 57 0 88 0;
 #X connect 58 0 57 1;
 #X connect 61 0 62 0;
-#X connect 62 0 136 0;
+#X connect 62 0 135 0;
 #X connect 63 0 48 0;
 #X connect 64 0 49 0;
 #X connect 65 0 50 0;
@@ -441,8 +440,7 @@ rel 1 20 0 8 -260287 -258892 -1 0 1;
 #X connect 130 0 108 0;
 #X connect 131 0 107 0;
 #X connect 132 0 106 0;
-#X connect 132 0 133 0;
-#X connect 134 0 120 0;
-#X connect 135 0 98 0;
-#X connect 136 0 60 0;
+#X connect 133 0 120 0;
+#X connect 134 0 98 0;
+#X connect 135 0 60 0;
 #X coords 0 -1 1 1 150 150 2 10 10;
