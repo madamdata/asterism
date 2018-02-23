@@ -16,6 +16,10 @@ dependencies: moonlib, cyclone, zexy, iemguts, iemlib, pdlua, ggee
 4. You may have to manually add some of them to your path even after installing - zexy in particular can cause problems. 
 5. If everything has gone right, you should be able to open a new patch and instantiate any object in the eclobjects folder. 
 
+## Getting Started
+
+1. Once everything is installed, you can make an empty patch and create a [eclbrowser] object. Press SHIFT-B or click on the toggle to open the browser; instantiate any object from within the browser and start making noise! 
+
 ## Objects and features
 
 * ------ items with a > are up-to-date and should work well. Items without a > should probably work but haven't been updated in some time.
