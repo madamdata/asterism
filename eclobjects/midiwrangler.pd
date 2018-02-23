@@ -1,4 +1,4 @@
-#N canvas 420 122 654 616 10;
+#N canvas 431 99 654 616 10;
 #X obj 12 24 cnv 15 146 72 empty empty empty 20 12 0 14 -232890 -66577
 0;
 #X obj 185 62 inlet bangs;
@@ -24,7 +24,7 @@
 -262144 -1 1 1;
 #X floatatom 108 44 3 0 0 0 - #0-note6rcv #0-note6snd, f 3;
 #X obj 91 44 tgl 15 0 \$0-tgl6snd \$0-tgl6rcv empty 17 7 0 10 -191407
--262144 -1 1 1;
+-262144 -1 0 1;
 #X floatatom 133 28 3 0 0 3 trns #0-transprcv #0-transpsnd, f 3;
 #X floatatom 13 62 5 0 0 3 dur #0-durrcv #0-dursnd, f 5;
 #X floatatom 49 62 5 0 127 3 vel #0-velrcv #0-velsnd, f 5;
@@ -141,9 +141,9 @@
 #X connect 48 0 49 0;
 #X connect 48 1 40 0;
 #X connect 49 0 29 0;
-#X restore 298 248 pd chords;
+#X restore 294 292 pd chords;
 #X obj 85 61 tgl 15 0 \$0-kvtrigsnd \$0-kvtrigrcv kvtrig 17 7 0 8 -128992
--262143 -1 1 1;
+-262143 -1 0 1;
 #X obj 85 78 tgl 15 0 \$0-autorelsnd \$0-autorelrcv autorel 17 7 0
 8 -128992 -262143 -1 0 1;
 #X obj 12 12 cnv 10 50 11 empty empty bng 2 5 0 10 -124831 -261980
@@ -218,7 +218,7 @@
 #X connect 19 16 17 16;
 #X connect 19 17 17 17;
 #X restore 41 191 pd state_saving;
-#N canvas 498 185 617 318 state_loading 1;
+#N canvas 498 185 617 318 state_loading 0;
 #X obj 67 54 pack \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9 \$10 \$11 \$12
 \$13 \$14 \$15 \$16 \$17 \$18, f 68;
 #X obj 67 76 unpack f f f f f f f f f f f f f f f f f f, f 68;
@@ -261,11 +261,29 @@
 #X connect 19 0 0 0;
 #X restore 46 249 pd state_loading;
 #X obj 41 213 canvasargs;
+#X obj 519 193 reversepair;
+#X obj 519 215 route 0 1;
+#X msg 519 290 1;
+#X msg 479 290 0;
+#X obj 474 160 striptease;
+#X obj 359 153 demux;
+#X obj 402 125 r \$0-autorelsnd;
+#X obj 408 217 pack f f;
 #X connect 1 0 22 0;
-#X connect 3 0 22 1;
-#X connect 3 0 31 0;
+#X connect 3 0 40 0;
+#X connect 3 0 41 0;
 #X connect 22 0 4 0;
+#X connect 31 0 43 0;
 #X connect 31 1 32 0;
+#X connect 31 1 43 1;
 #X connect 32 0 5 0;
 #X connect 33 0 35 0;
+#X connect 36 0 37 0;
+#X connect 37 0 39 0;
+#X connect 37 2 38 0;
+#X connect 40 0 36 0;
+#X connect 41 0 22 1;
+#X connect 41 1 31 0;
+#X connect 42 0 41 1;
+#X connect 43 0 22 1;
 #X coords 0 -1 1 1 150 100 2 10 10;

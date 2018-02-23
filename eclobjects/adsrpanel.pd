@@ -1,16 +1,16 @@
-#N canvas 556 332 723 310 10;
+#N canvas 557 356 723 310 10;
 #X obj 25 21 cnv 15 73 61 empty empty empty 20 12 0 14 -104026 -66577
 0;
 #X obj 54 31 nbx 4 11 0 10000 0 0 \$0-atksnd \$0-atkrcv a -11 4 0 9
--104026 -262017 -237178 0 256 0;
+-104026 -262017 -237178 1 256 0;
 #X obj 54 44 nbx 4 11 0 10000 0 0 \$0-decsnd \$0-decrcv d -11 4 0 9
--104026 -253060 -237178 9 256 0;
+-104026 -253060 -237178 1 256 0;
 #X obj 54 57 nbx 4 11 0 100 0 0 \$0-sussnd \$0-susrcv s -11 4 0 9 -104026
--260939 -237178 91 256 0;
+-260939 -237178 95 256 0;
 #X obj 54 70 nbx 4 11 0 50000 0 0 \$0-relsnd \$0-relrcv r -11 4 0 9
--104026 -260045 -237178 46 256 0;
+-104026 -260045 -237178 2 256 0;
 #X obj 27 32 tgl 12 0 \$0-trigdispsnd \$0-trigdisp empty 17 7 0 10
--104026 -257986 -1 1 1;
+-104026 -257986 -1 0 1;
 #X obj 25 21 cnv 8 33 8 empty empty ! 0 2 0 8 -158119 -66577 0;
 #X obj 38 21 cnv 8 20 8 empty empty a 0 2 0 8 -158119 -254368 0;
 #X obj 52 21 cnv 8 20 8 empty empty d 0 2 0 8 -158119 -254368 0;
@@ -41,21 +41,21 @@
 #X obj 72 273 s \$0-trigdisp;
 #X msg 145 108 64;
 #X obj 227 175 unpack f f;
-#N canvas 456 232 450 300 state_saving 0;
+#N canvas 458 280 450 300 state_saving 1;
 #X obj 17 13 initbang;
 #X msg 41 59 load savestate.pd_lua;
-#X obj 41 81 pdlua;
-#X obj 81 175 savestate \$0-index \$0-atk \$0-dec \$0-sus \$0-rel;
+#X obj 88 103 pdlua;
 #X obj 81 197 outlet;
-#X obj 17 119 pack \$1 \$2 \$3 \$4 \$5;
 #X obj 17 35 t b b;
-#X connect 0 0 6 0;
+#X obj 81 175 savestate \$0-index \$0-atk \$0-dec \$0-sus \$0-rel \$0-loop
+;
+#X obj 17 119 pack \$1 \$2 \$3 \$4 \$5 \$6;
+#X connect 0 0 4 0;
 #X connect 1 0 2 0;
-#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 1 1 0;
 #X connect 5 0 3 0;
 #X connect 6 0 5 0;
-#X connect 6 1 1 0;
-#X connect 6 1 2 0;
 #X restore 513 225 pd state_saving;
 #X obj 513 247 canvasargs;
 #X floatatom 61 99 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
@@ -65,9 +65,14 @@
 #X obj 598 62 s \$0-susrcv;
 #X obj 600 84 s \$0-relrcv;
 #X obj 146 130 makenote 127 50;
+#X obj 27 68 tgl 12 0 \$0-loopsnd \$0-looprcv L 3 4 0 10 -104026 -257986
+-244598 0 1;
+#X obj 385 233 spigot;
+#X obj 415 197 r \$0-loopsnd;
 #X connect 11 0 24 0;
 #X connect 16 0 39 0;
 #X connect 18 0 19 0;
+#X connect 18 1 46 0;
 #X connect 20 0 26 0;
 #X connect 21 0 26 1;
 #X connect 22 0 28 0;
@@ -97,4 +102,6 @@
 #X connect 39 3 43 0;
 #X connect 44 0 25 0;
 #X connect 44 1 25 1;
+#X connect 46 0 34 0;
+#X connect 47 0 46 1;
 #X coords 0 -1 1 1 77 65 2 23 19;

@@ -1,4 +1,4 @@
-#N canvas 1 53 1280 646 10;
+#N canvas 3 69 1280 646 10;
 #X obj 102 102 cnv 15 146 106 empty empty empty 20 12 0 14 -261047
 -66577 0;
 #X obj 344 605 outlet~;
@@ -6,14 +6,14 @@
 #X obj 298 124 inlet~;
 #X obj 398 125 inlet~;
 #X obj 108 117 hsl 136 15 65 100 1 1 \$0-livenesssnd \$0-livenessrcv
-liveness 5 7 0 10 -233473 -1 -261234 10400 1;
+liveness 5 7 0 10 -233473 -1 -261234 12500 1;
 #X obj 108 135 hsl 136 15 50 10000 1 1 \$0-crossoversnd \$0-crossoverrcv
-crossover 5 7 0 10 -212993 -66577 -261234 10700 1;
+crossover 5 7 0 10 -212993 -66577 -261234 7500 1;
 #X obj 108 153 hsl 136 15 0 100 0 1 \$0-dampingsnd \$0-dampingrcv damping
-5 7 0 10 -167937 -112348 -261234 3500 1;
+5 7 0 10 -167937 -112348 -261234 6900 1;
 #X obj 593 119 loadbang;
 #X obj 108 171 hsl 136 15 50 8500 1 1 \$0-filtsnd \$0-filtrcv filt
-5 7 0 10 -131073 -195568 -261234 9600 1;
+5 7 0 10 -131073 -195568 -261234 9500 1;
 #X obj 263 372 smoother 50;
 #X obj 394 405 rev3~, f 29;
 #X msg 533 239 100;
@@ -39,7 +39,7 @@ crossover 5 7 0 10 -212993 -66577 -261234 10700 1;
 #X restore 652 283 pd state_saving;
 #X obj 652 308 canvasargs;
 #X obj 108 189 hsl 136 15 1 0 0 1 \$0-drywetsnd \$0-drywetrcv dry/wet
-5 7 0 10 -94209 -228856 -261234 3700 1;
+5 7 0 10 -94209 -228856 -261234 0 1;
 #X obj 660 452 r \$0-drywetsnd;
 #X obj 660 474 smoother 50;
 #X obj 369 550 adapanlinear;
@@ -52,7 +52,6 @@ crossover 5 7 0 10 -212993 -66577 -261234 10700 1;
 0;
 #X obj 791 160 inlet~ dry/wet;
 #X obj 660 496 +~;
-#X obj 791 182 *~ 0.5;
 #X obj 660 518 clip~ 0 1;
 #X obj 919 180 inlet control;
 #X obj 223 102 cnv 8 25 10 empty empty ctrl 5 5 0 8 -230625 -262144
@@ -64,6 +63,8 @@ crossover 5 7 0 10 -212993 -66577 -261234 10700 1;
 #X obj 935 313 s \$0-filtrcv;
 #X obj 935 335 s \$0-drywetrcv;
 #X floatatom 901 470 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
+#X obj 709 563 numscope;
+#X obj 791 182 *~ 0.5;
 #X connect 3 0 11 0;
 #X connect 3 0 24 2;
 #X connect 4 0 11 1;
@@ -93,15 +94,16 @@ crossover 5 7 0 10 -212993 -66577 -261234 10700 1;
 #X connect 24 1 1 0;
 #X connect 25 0 2 0;
 #X connect 25 1 2 0;
-#X connect 29 0 31 0;
-#X connect 30 0 32 0;
-#X connect 31 0 30 1;
-#X connect 32 0 25 1;
-#X connect 32 0 24 1;
-#X connect 33 0 35 0;
-#X connect 35 0 37 0;
-#X connect 35 1 36 0;
-#X connect 35 2 38 0;
-#X connect 35 3 39 0;
-#X connect 35 4 40 0;
+#X connect 29 0 42 0;
+#X connect 30 0 31 0;
+#X connect 31 0 25 1;
+#X connect 31 0 24 1;
+#X connect 31 0 41 0;
+#X connect 32 0 34 0;
+#X connect 34 0 36 0;
+#X connect 34 1 35 0;
+#X connect 34 2 37 0;
+#X connect 34 3 38 0;
+#X connect 34 4 39 0;
+#X connect 42 0 30 1;
 #X coords 0 -1 1 1 150 110 2 100 100;

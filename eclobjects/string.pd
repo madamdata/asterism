@@ -1,11 +1,11 @@
-#N canvas 230 180 862 441 10;
+#N canvas 231 204 862 441 10;
 #X obj 12 12 cnv 15 146 106 empty empty empty 20 12 0 14 -221146 -66577
 0;
 #X obj 195 43 inlet k/v;
 #X obj 251 349 outlet~ L;
 #X obj 434 343 outlet~ R;
 #X obj 92 43 nbx 3 14 0 100 0 0 \$0-decaysnd \$0-decayrcv decay 0 -6
-0 10 -133525 -229360 -259713 82 256 0;
+0 10 -133525 -229360 -259713 57 256 0;
 #X obj 195 65 stripnote;
 #N canvas 99 85 862 556 delay 0;
 #X obj 33 333 inlet~;
@@ -79,18 +79,18 @@
 #X connect 34 0 12 0;
 #X connect 35 0 5 0;
 #X restore 354 270 pd delay;
-#X obj 92 71 nbx 5 14 100 10000 1 0 \$0-cutoffsnd \$0-cutoffrcv cutoff
-0 -6 0 10 -259973 -241664 -35 947.464 256 0;
+#X obj 92 71 nbx 5 14 100 14000 1 0 \$0-cutoffsnd \$0-cutoffrcv cutoff
+0 -6 0 10 -259973 -241664 -35 8816.83 256 0;
 #X obj 92 99 nbx 5 14 0 100 0 0 \$0-ressnd \$0-resrcv res 0 -6 0 10
--258545 -262136 -2369 13 256 0;
-#N canvas 629 98 730 315 noise 1;
+-258545 -262136 -2369 0 256 0;
+#N canvas 629 98 730 315 noise 0;
 #X obj 104 114 noise~;
 #X obj 113 207 *~;
 #X obj 172 108 line~;
 #X obj 172 45 r \$0-strikesnd;
 #X obj 113 242 outlet~;
 #X obj 283 43 r \$0-midinote;
-#X msg 172 82 0.351458 \, 0 26.9382;
+#X msg 172 82 1 \, 0 1.26447;
 #X obj 416 68 t f f;
 #X msg 416 189 addcomma \, add2 0 \, add2 \$1;
 #X msg 460 146 set \$1;
@@ -116,7 +116,7 @@
 #X obj 92 140 osc~;
 #X obj 92 162 *~;
 #X obj 244 119 line~;
-#X msg 244 97 1 \, 0 0.2;
+#X msg 244 97 1 \, 0 3.3;
 #X msg 299 71 set 1 \, addcomma \, add2 0 \, add2 \$1;
 #X obj 79 30 r \$0-midinote;
 #X obj 93 209 outlet~;
@@ -147,11 +147,11 @@
 #X restore 243 190 pd blip;
 #X obj 208 99 s \$0-midinote;
 #X obj 21 99 nbx 5 14 2 500 0 0 \$0-shapesnd \$0-shapercv shape 0 -6
-0 10 -5980 -147392 -120705 2 256 0;
+0 10 -5980 -147392 -120705 33 256 0;
 #X obj 22 71 nbx 5 14 -1 2 0 0 \$0-offsetsnd \$0-offsetrcv offset 0
--6 0 10 -172817 -229366 -103516 2 256 0;
+-6 0 10 -172817 -229366 -103516 0 256 0;
 #X obj 22 43 nbx 5 14 0 500 0 0 \$0-slidesnd \$0-slidercv slide 0 -6
-0 10 -173093 -216748 -218881 30 256 0;
+0 10 -173093 -216748 -218881 0 256 0;
 #X obj 386 42 inlet~ pitch;
 #N canvas 1 53 450 300 pitchmod 0;
 #X obj 152 55 inlet~;

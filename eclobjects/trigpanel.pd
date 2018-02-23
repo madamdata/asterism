@@ -1,33 +1,33 @@
-#N canvas 231 102 756 310 16;
-#X obj 153 103 inlet~;
-#X obj 153 130 threshold~ 0 1 0 1;
-#X obj 66 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 233 150 756 310 12;
+#X obj 114 112 inlet~;
+#X obj 114 131 threshold~ 0 1 0 1;
+#X obj 64 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X floatatom 13 15 3 -100 100 1 thr #0-thresholdrcv #0-thresholdsnd
+#X floatatom 15 13 3 -100 100 1 thr #0-thresholdrcv #0-thresholdsnd
 , f 3;
-#X obj 333 52 r \$0-thresholdsnd;
-#X msg 328 100 set \$1 1 \$1 1;
-#X obj 144 215 outlet bangrising;
-#X obj 328 217 outlet bangfalling;
-#X text 119 4 thr - threshold level. when signal crosses this level
+#X obj 240 68 r \$0-thresholdsnd;
+#X msg 241 112 set \$1 1 \$1 1;
+#X obj 108 191 outlet bangrising;
+#X obj 237 192 outlet bangfalling;
+#X text 83 3 thr - threshold level. when signal crosses this level
 going up \, a bang is output on the right. When it crosses going down
 \, a bang is output on the left.;
-#X obj 333 74 / 100;
+#X obj 240 92 / 100;
 #N canvas 230 69 450 300 state_saving 0;
-#X obj 56 10 loadbang;
-#X msg 56 32 load savestate.pd_lua;
-#X obj 56 54 pdlua;
-#X obj 151 127 savestate \$0-index \$0-threshold;
-#X obj 151 149 outlet;
-#X obj 304 22 pack \$1 \$2;
+#X obj 39 7 loadbang;
+#X msg 39 22 load savestate.pd_lua;
+#X obj 39 38 pdlua;
+#X obj 106 89 savestate \$0-index \$0-threshold;
+#X obj 106 104 outlet;
+#X obj 213 15 pack \$1 \$2;
 #X connect 0 0 1 0;
 #X connect 0 0 5 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
 #X connect 5 0 3 0;
-#X restore 526 64 pd state_saving;
-#X obj 526 86 canvasargs;
-#X floatatom 17 170 5 0 0 0 - #0-indexrcv #0-indexsnd, f 5;
+#X restore 375 85 pd state_saving;
+#X obj 375 100 canvasargs;
+#X floatatom 12 119 5 0 0 0 - #0-indexrcv #0-indexsnd, f 5;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 6 0;

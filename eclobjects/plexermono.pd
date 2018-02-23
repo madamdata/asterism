@@ -1,4 +1,4 @@
-#N canvas 619 87 740 414 10;
+#N canvas 619 111 740 414 10;
 #N canvas 227 181 450 300 keys 0;
 #X obj 135 44 key;
 #X obj 77 207 s \$0-tgl1rcv;
@@ -18,7 +18,7 @@
 #X obj 285 348 outlet~;
 #X obj 394 354 outlet~;
 #X obj 13 16 tgl 15 0 \$0-tgl1snd \$0-tgl1rcv empty 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 51 16 tgl 15 0 \$0-tgl2snd \$0-tgl2rcv empty 17 7 0 10 -262144
 -1 -1 0 1;
 #X obj 89 16 tgl 15 0 \$0-tgl3snd \$0-tgl3rcv empty 17 7 0 10 -262144
@@ -46,7 +46,7 @@
 #X obj 30 33 tgl 15 0 \$0-loop1overdubsnd \$0-loop1overdubrcv o 4 7
 0 12 -262130 -1 -1 0 1;
 #X obj 13 33 tgl 15 0 \$0-loop1playsnd \$0-loop1playrcv > 5 7 0 10
--232576 -1 -1 1 1;
+-232576 -1 -1 0 1;
 #N canvas 1 53 931 624 loopcontrols 0;
 #X msg 56 131 rec;
 #X obj 68 103 sel 1 0;
@@ -194,15 +194,15 @@
 #X obj 89 33 tgl 15 0 \$0-loop3playsnd \$0-loop3playrcv > 5 7 0 10
 -232576 -1 -1 0 1;
 #X obj 89 50 bng 15 250 50 0 \$0-loop3clearsnd \$0-loop3clearrcv clr
-17 7 0 10 -128832 -1 -1;
+16 7 0 10 -128832 -1 -1;
 #X obj 143 16 tgl 15 0 \$0-loop4recsnd \$0-loop4recrcv r 4 7 0 10 -261234
 -1 -1 0 1;
 #X obj 143 33 tgl 15 0 \$0-loop4overdubsnd \$0-loop4overdubrcv o 4
 7 0 12 -262130 -1 -1 0 1;
 #X obj 126 33 tgl 15 0 \$0-loop4playsnd \$0-loop4playrcv > 5 7 0 10
 -232576 -1 -1 0 1;
-#X obj 126 50 bng 15 250 50 0 \$0-loop4clearsnd \$0-loop4clearrcv clr
-17 7 0 10 -128832 -1 -1;
+#X obj 126 51 bng 15 250 50 0 \$0-loop4clearsnd \$0-loop4clearrcv clr
+15 6 0 10 -128832 -1 -1;
 #X obj 284 312 simplelooper;
 #X obj 181 313 simplelooper;
 #X obj 394 314 simplelooper;

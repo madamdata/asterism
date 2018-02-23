@@ -1,4 +1,4 @@
-#N canvas 204 187 1155 512 12;
+#N canvas 204 203 1155 512 12;
 #X obj 12 12 cnv 15 146 56 empty \$0-canvasrcv empty 0 0 0 8 -248037
 -262144 0;
 #X obj 238 8 inlet bangkv;
@@ -238,7 +238,7 @@ of 1;
 #X obj 86 38 cnv 8 35 8 empty empty start 2 3 0 11 -248037 -262144
 0;
 #X obj 141 50 tgl 15 0 \$0-loopsnd \$0-looprcv L 4 8 0 10 -261682 -1
--1 1 1;
+-1 0 1;
 #X obj 141 23 tgl 15 0 \$0-onoffsnd \$0-onoffrcv empty 17 7 0 10 -260757
 -261682 -1 1 1;
 #N canvas 1252 182 450 300 onoff 0;
@@ -281,19 +281,19 @@ of 1;
 0;
 #X obj 175 295 initbang;
 #X obj 238 33 route bang list;
-#X obj 369 13 unpack f f;
-#X obj 369 38 t b f;
-#X obj 451 14 s \$0-midipitch;
+#X obj 441 38 t b f;
+#X obj 523 14 s \$0-midipitch;
 #N canvas 456 232 281 351 samples 0;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-sampleL 330750 float 2 black black;
-#X coords 0 250 330750 249 200 140 1;
+#X array \$0-sampleL 98654 float 2 black black;
+#X coords 0 250 98654 249 200 140 1;
 #X restore 32 168 graph;
 #N canvas 0 50 687 386 (subpatch) 0;
-#X array \$0-sampleR 330750 float 2 black black;
-#X coords 0 386 330750 385 200 140 1;
+#X array \$0-sampleR 98654 float 2 black black;
+#X coords 0 386 98654 385 200 140 1;
 #X restore 33 20 graph;
 #X restore 24 121 pd samples;
+#X obj 441 13 stripnote;
 #X connect 1 0 44 0;
 #X connect 2 0 10 2;
 #X connect 7 0 9 0;
@@ -319,9 +319,9 @@ of 1;
 #X connect 43 0 20 0;
 #X connect 44 0 14 0;
 #X connect 44 0 10 0;
-#X connect 44 1 45 0;
-#X connect 45 0 46 0;
-#X connect 46 0 14 0;
-#X connect 46 0 10 0;
-#X connect 46 1 47 0;
+#X connect 44 1 48 0;
+#X connect 45 0 14 0;
+#X connect 45 0 10 0;
+#X connect 45 1 46 0;
+#X connect 48 0 45 0;
 #X coords 0 -1 1 1 150 60 2 10 10;
