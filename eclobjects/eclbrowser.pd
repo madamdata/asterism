@@ -1,7 +1,7 @@
-#N canvas 746 340 559 292 10;
+#N canvas 747 364 559 292 10;
 #X obj 157 154 sendcanvas 1;
 #X obj 204 29 r \$0-openbrowsersnd;
-#N canvas 39 129 679 479 \$0-browser 1;
+#N canvas 40 153 881 455 \$0-browser 0;
 #X obj 6 7 cnv 15 120 200 empty empty signal_modules 2 7 0 14 -233017
 -66577 0;
 #X obj 10 27 bng 15 250 50 0 \$0-oscpanel \$0-oscpanelrcv oscpanel
@@ -87,16 +87,20 @@ wavetablemono 17 7 0 10 -262144 -1 -1;
 #X text 511 127 SHIFT-b toggles the browser, f 23;
 #X obj 264 45 bng 15 250 50 0 \$0-drywet \$0-drywet xfade 17 7 0 10
 -262144 -1 -1;
+#X obj 10 353 bng 15 250 50 0 \$0-parametriceq \$0-parametriceqrcv
+parametriceq 17 7 0 10 -262144 -1 -1;
+#X obj 10 373 bng 15 250 50 0 \$0-5bandeq \$0-5bandeqrcv 5bandeq 17
+7 0 10 -262144 -1 -1;
 #X restore 161 124 pd \$0-browser;
 #X obj 204 94 s pd-\$0-browser;
-#N canvas 45 106 1032 507 receives 0;
+#N canvas 45 106 1032 507 receives 1;
 #X obj 88 424 sendcanvas 2;
 #X obj 88 301 list prepend 100;
 #X obj 88 323 list prepend 100;
 #X obj 88 345 list prepend obj;
 #X obj 249 281 r \$0-xpos;
 #X obj 248 258 r \$0-ypos;
-#N canvas 385 149 709 300 utility 0;
+#N canvas 387 197 709 300 utility 1;
 #X obj 34 256 outlet;
 #X obj 22 11 r \$0-output;
 #X obj 115 15 r \$0-mixer4;
@@ -115,6 +119,10 @@ wavetablemono 17 7 0 10 -262144 -1 -1;
 #X msg 482 152 width 0 1 35;
 #X obj 584 73 r \$0-plexermono;
 #X msg 584 95 plexermono 75;
+#X obj 372 198 r \$0-5bandeq;
+#X msg 372 220 5bandeq 0 0 0 0 0 0 130;
+#X obj 538 188 r \$0-parametriceq;
+#X msg 538 210 parametriceq 0 250 0 15 1 55;
 #X connect 1 0 10 0;
 #X connect 2 0 7 0;
 #X connect 3 0 6 0;
@@ -131,6 +139,10 @@ wavetablemono 17 7 0 10 -262144 -1 -1;
 #X connect 14 0 0 0;
 #X connect 15 0 16 0;
 #X connect 16 0 0 0;
+#X connect 17 0 18 0;
+#X connect 18 0 0 0;
+#X connect 19 0 20 0;
+#X connect 20 0 0 0;
 #X restore 36 49 pd utility;
 #N canvas 119 135 982 558 signal 0;
 #X obj 23 56 r \$0-oscpanel;
