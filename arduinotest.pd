@@ -1,4 +1,0 @@
-#N canvas 315 104 450 300 10;
-#X obj 184 150 print;
-#X obj 183 129 arduinobuttons 2 3 4;
-#X connect 1 0 0 0;

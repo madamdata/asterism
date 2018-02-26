@@ -2,17 +2,17 @@
 #X obj 32 30 cnv 15 71 41 empty empty empty 20 12 0 14 -216304 -66577
 0;
 #X obj 56 32 nbx 5 12 35 20000 1 0 \$0-freqsnd \$0-freqrcv freq -24
-5 0 8 -1 -212212 -1 250 256 0;
+5 0 8 -1 -212212 -1 44.85 256 0;
 #X obj 56 58 nbx 3 12 0 200 0 0 \$0-bwsnd \$0-bwrcv bw -20 5 0 8 -104026
--241245 -1 15 256 0;
+-241245 -1 34 256 0;
 #X obj 56 45 nbx 4 12 -100 100 0 0 \$0-gainsnd \$0-gainrcv gain -23
-5 0 8 -62351 -203814 -1 0 256 0;
+5 0 8 -62351 -203814 -1 20 256 0;
 #X obj 292 43 inlet~ R;
 #X obj 212 43 inlet~ L;
-#X obj 197 258 outlet~ L;
-#X obj 294 264 outlet~ R;
-#X obj 90 60 tgl 10 0 \$0-monosnd \$0-monorcv m 2 3 0 10 -87252 -87252
--262144 0 1;
+#X obj 204 293 outlet~ L;
+#X obj 300 291 outlet~ R;
+#X obj 90 60 tgl 10 0 \$0-monosnd \$0-monorcv s 2 3 0 10 -87252 -87252
+-262144 1 1;
 #X obj 79 97 r \$0-monosnd;
 #X obj 79 119 sel 0 1;
 #X msg 38 150 label m;
