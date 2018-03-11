@@ -1,7 +1,7 @@
-#N canvas 233 150 756 310 12;
+#N canvas 234 174 756 310 12;
 #X obj 114 112 inlet~;
 #X obj 114 131 threshold~ 0 1 0 1;
-#X obj 64 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 64 16 bng 15 50 25 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X floatatom 15 13 3 -100 100 1 thr #0-thresholdrcv #0-thresholdsnd
 , f 3;
