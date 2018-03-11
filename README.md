@@ -1,12 +1,11 @@
 # ASTERISM v0.5 (formerly called ecl) 
 modular synth environment for pd   
 
-developed and tested on Pd Vanilla v0.48.0  
-(in progress - migrating to Purr Data, should remain compatible with Vanilla) 
+developed and tested on Purr Data - 2.4.9
 
-dependencies: moonlib, cyclone, zexy, iemguts, iemlib, pdlua, ggee 
+dependencies: moonlib, cyclone, zexy, iemguts, iemlib, pdlua, ggee, maxlib 
 
-![ecl 0.4](ecl0r4screenshot.png)
+![ecl 0.5](asterismscreenshot.png)
 
 ## Installation Instructions
 

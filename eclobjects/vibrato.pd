@@ -1,4 +1,4 @@
-#N canvas 41 137 598 347 10;
+#N canvas 42 161 598 347 10;
 #X obj 20 16 cnv 15 146 36 empty empty empty 20 12 0 14 -206088 -66577
 0;
 #X obj 216 54 inlet~ L;
@@ -7,15 +7,15 @@
 #X obj 221 248 outlet~ L;
 #X obj 352 255 outlet~ R;
 #X obj 27 31 nbx 3 14 -1e+37 1e+37 0 0 \$0-ratesnd \$0-ratercv rate
-0 -8 0 10 -220052 -114689 -249638 6.27 256 0;
+0 -8 0 10 -220052 -114689 -249638 16 256 0;
 #X obj 381 44 r \$0-ratesnd;
 #X obj 67 31 nbx 4 14 0 8000 0 0 \$0-depthsnd \$0-depthrcv dpth 0 -8
-0 10 -220052 -114689 -257702 94 256 0;
+0 10 -220052 -114689 -257702 18 256 0;
 #X obj 456 64 r \$0-depthsnd;
 #X obj 415 86 / 50;
 #X obj 349 221 vibratounit;
 #X obj 116 31 nbx 4 14 0 8000 0 0 \$0-widthsnd \$0-widthrcv width 0
--8 0 10 -220052 -114689 -257702 0 256 0;
+-8 0 10 -220052 -114689 -257702 9 256 0;
 #X obj 349 94 osc~ 6;
 #X obj 285 171 *~ 2;
 #X obj 410 135 phasor~;
@@ -26,6 +26,23 @@
 #X obj 496 167 / 100;
 #X obj 364 178 *~ 2;
 #X obj 496 145 r \$0-widthsnd;
+#X floatatom 120 108 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
+#N canvas 665 232 450 300 state_saving 0;
+#X obj 164 39 initbang;
+#X obj 164 61 t b b;
+#X msg 180 89 load savestate.pd_lua;
+#X obj 180 111 pdlua;
+#X obj 148 148 pack \$1 \$2 \$3 \$4;
+#X obj 148 170 savestate \$0-index \$0-rate \$0-depth \$0-width;
+#X obj 148 192 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 1 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X restore 71 198 pd state_saving;
+#X obj 71 220 canvasargs;
 #X connect 1 0 3 0;
 #X connect 2 0 11 0;
 #X connect 3 0 4 0;
@@ -45,4 +62,5 @@
 #X connect 20 0 17 1;
 #X connect 21 0 11 1;
 #X connect 22 0 20 0;
+#X connect 24 0 25 0;
 #X coords 0 -1 1 1 150 40 1 18 14;
