@@ -64,27 +64,29 @@
 #X obj 589 373 *~ 2;
 #X obj 640 457 outlet~ justadbipolar;
 #X obj 589 395 -~ 1;
-#N canvas 783 61 556 318 state_saving 0;
-#X obj 42 25 loadbang;
-#X msg 42 47 load savestate.pd_lua;
-#X obj 42 69 pdlua;
+#N canvas 784 85 556 318 state_saving 0;
+#X msg 42 85 load savestate.pd_lua;
+#X obj 42 120 pdlua;
 #X obj 296 43 pack \$1 \$2 \$3 \$4;
 #X obj 167 126 savestate \$0-index \$0-atk \$0-dec \$0-curve;
 #X obj 167 148 outlet;
+#X obj 42 14 initbang;
+#X obj 42 41 t b b;
 #X connect 0 0 1 0;
-#X connect 0 0 3 0;
-#X connect 1 0 2 0;
+#X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 6 1 0 0;
 #X restore 85 192 pd state_saving;
 #X obj 85 214 canvasargs;
 #X floatatom 70 289 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
-#X obj 17 29 nbx 5 12 -1e+37 1e+37 0 0 \$0-atksnd \$0-atkrcv atk -1
--5 0 8 -83221 -216048 -249661 0 256 0;
-#X obj 63 29 nbx 5 12 -1e+37 1e+37 0 0 \$0-decsnd \$0-decrcv dec -1
--5 0 8 -116314 -249531 -249661 0 256 0;
-#X obj 109 29 nbx 5 12 -1e+37 1e+37 0 0 \$0-curvesnd \$0-curvercv curve
--1 -5 0 8 -37320 -241010 -249661 0 256 0;
+#X obj 17 29 nbx 5 12 0 1e+37 0 0 \$0-atksnd \$0-atkrcv atk -1 -5 0
+8 -83221 -216048 -249661 334 256 0;
+#X obj 63 29 nbx 5 12 0 1e+37 0 0 \$0-decsnd \$0-decrcv dec -1 -5 0
+8 -116314 -249531 -249661 4 256 0;
+#X obj 109 29 nbx 5 12 0 1e+37 0 0 \$0-curvesnd \$0-curvercv curve
+-1 -5 0 8 -37320 -241010 -249661 82 256 0;
 #X obj 12 12 cnv 8 40 8 empty empty ! 2 3 0 8 -233017 -66577 0;
 #X obj 39 12 cnv 8 40 8 empty empty L 1 3 0 8 -233017 -173008 0;
 #X obj 67 12 cnv 8 30 8 empty empty R 2 3 0 8 -233017 -173008 0;

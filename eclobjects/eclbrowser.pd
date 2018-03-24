@@ -1,7 +1,7 @@
-#N canvas 747 364 559 292 10;
+#N canvas 748 388 559 292 10;
 #X obj 157 154 sendcanvas 1;
 #X obj 204 29 r \$0-openbrowsersnd;
-#N canvas 41 177 881 455 \$0-browser 0;
+#N canvas 403 191 881 524 \$0-browser 0;
 #X obj 6 7 cnv 15 120 200 empty empty signal_modules 2 7 0 14 -233017
 -66577 0;
 #X obj 10 27 bng 15 250 50 0 \$0-oscpanel \$0-oscpanelrcv oscpanel
@@ -93,16 +93,20 @@ parametriceq 17 7 0 10 -262144 -1 -1;
 7 0 10 -262144 -1 -1;
 #X obj 264 64 bng 15 250 50 0 \$0-doublelfo \$0-doublelforcv doublelfo
 17 7 0 10 -262144 -1 -1;
+#X obj 264 82 bng 15 250 50 0 \$0-vcad \$0-vcadrcv vcad 17 7 0 10 -262144
+-1 -1;
+#X obj 264 100 bng 15 250 50 0 \$0-monomix \$0-monomixrcv monomix 18
+6 0 10 -262144 -1 -1;
 #X restore 161 124 pd \$0-browser;
 #X obj 204 94 s pd-\$0-browser;
-#N canvas 51 162 1032 530 receives 1;
+#N canvas 622 119 1032 553 receives 0;
 #X obj 88 424 sendcanvas 2;
 #X obj 88 301 list prepend 100;
 #X obj 88 323 list prepend 100;
 #X obj 88 345 list prepend obj;
 #X obj 249 281 r \$0-xpos;
 #X obj 248 258 r \$0-ypos;
-#N canvas 389 245 709 300 utility 1;
+#N canvas 326 79 934 445 utility 0;
 #X obj 34 256 outlet;
 #X obj 22 11 r \$0-output;
 #X obj 115 15 r \$0-mixer4;
@@ -127,6 +131,10 @@ parametriceq 17 7 0 10 -262144 -1 -1;
 #X msg 188 98 lfopanel 0 4 50 0 80;
 #X obj 330 79 r \$0-doublelfo;
 #X msg 330 101 doublelfo 0 4 50 0 2.85 50 2 50 110;
+#X obj 716 133 r \$0-vcad;
+#X msg 716 155 vcad 0 8 386 843 50;
+#X obj 579 270 r \$0-monomix;
+#X msg 579 292 monomix 0 0 0 0 0;
 #X connect 1 0 9 0;
 #X connect 2 0 6 0;
 #X connect 3 0 5 0;
@@ -149,6 +157,10 @@ parametriceq 17 7 0 10 -262144 -1 -1;
 #X connect 20 0 0 0;
 #X connect 21 0 22 0;
 #X connect 22 0 0 0;
+#X connect 23 0 24 0;
+#X connect 24 0 0 0;
+#X connect 25 0 26 0;
+#X connect 26 0 0 0;
 #X restore 36 49 pd utility;
 #N canvas 119 135 982 558 signal 0;
 #X obj 23 56 r \$0-oscpanel;

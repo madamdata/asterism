@@ -1,6 +1,6 @@
 #N canvas 0 24 1360 692 10;
-#X obj 8 15 cnv 15 146 96 empty empty empty 20 12 0 14 -150905 -66577
-0;
+#X obj 8 15 cnv 15 146 96 empty empty double\ lfo 49 81 0 8 -150905
+-5118 0;
 #X obj 219 31 inlet~;
 #X obj 420 164 *~ 2;
 #X obj 420 186 -~ 1;
@@ -17,7 +17,7 @@
 #X obj 521 152 -~ 0.5;
 #X text 398 237 square with pwm;
 #X obj 9 58 hradio 17 0 0 4 \$0-typesnd \$0-typercv empty 0 -8 0 10
--188160 -260893 -1 1;
+-188160 -260893 -1 0;
 #X obj 340 203 cos~;
 #X obj 293 28 inlet~;
 #X obj 300 129 *~;
@@ -43,9 +43,9 @@
 #X obj 290 96 midiratio~;
 #X obj 290 74 *~ 48;
 #X obj 32 28 nbx 4 12 0.05 100 1 0 \$0-freqsnd \$0-freqrcv freq -24
-4 0 9 -71981 -229196 -24966 1.88345 256 0;
+4 0 9 -71981 -229196 -24966 0.790992 256 0;
 #X obj 32 43 nbx 4 12 0 100 0 0 \$0-pwmsnd \$0-pwmrcv pwm -22 4 0 9
--71981 -229127 -24966 27 256 0;
+-71981 -229127 -24966 40 256 0;
 #X obj 178 61 r \$0-freqsnd;
 #X obj 177 144 r \$0-pwmsnd;
 #X obj 177 166 / 100;
@@ -56,9 +56,9 @@
 #X text 118 58 pl;
 #X text 135 58 tr;
 #X obj 106 28 nbx 4 12 0.05 100 1 0 \$0-freq2snd \$0-freq2rcv freq
--24 4 0 9 -71981 -229196 -24966 2.23607 256 0;
+-24 4 0 9 -71981 -229196 -24966 1.272 256 0;
 #X obj 106 43 nbx 4 12 0 100 0 0 \$0-pwm2snd \$0-pwm2rcv pwm -22 4
-0 9 -71981 -229127 -24966 66 256 0;
+0 9 -71981 -229127 -24966 40 256 0;
 #X obj 608 30 route bang float type freq pwm type2 freq2 pwm2;
 #X obj 900 55 inlet~;
 #X obj 1101 188 *~ 2;
@@ -101,8 +101,8 @@
 #X obj 769 541 outlet~ min;
 #X obj 335 410 outlet~ one;
 #X obj 411 418 outlet~ two;
-#X obj 14 81 hsl 130 12 0 100 0 0 \$0-balsnd \$0-balrcv <-bal-> 45
-5 0 10 -87115 -260737 -262144 7800 1;
+#X obj 14 78 hsl 130 12 0 100 0 0 \$0-balsnd \$0-balrcv <-bal-> 45
+5 0 10 -87115 -260737 -262144 2300 1;
 #X obj 864 523 outlet~ mix;
 #X obj 68 15 cnv 8 30 8 empty empty rate2 1 3 0 8 -136825 -261234 0
 ;
@@ -112,7 +112,7 @@
 #X obj 58 103 cnv 8 30 8 empty empty < 1 3 0 8 -136825 -261234 0;
 #X obj 75 103 cnv 8 30 8 empty empty max 9 3 0 8 -136825 -261234 0
 ;
-#X obj 124 103 cnv 8 30 8 empty empty mix 10 3 0 8 -136825 -261234
+#X obj 124 103 cnv 8 30 8 empty empty mix 14 3 0 8 -136825 -261234
 0;
 #X obj 102 103 cnv 8 28 8 empty empty min 11 3 0 8 -136825 -261234
 0;

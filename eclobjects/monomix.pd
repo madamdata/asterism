@@ -1,0 +1,72 @@
+#N canvas 488 215 741 388 10;
+#X obj 15 19 cnv 15 146 46 empty empty mono\ mix 53 4 0 8 -116249 -248881
+0;
+#X obj 185 59 inlet~ one;
+#X obj 260 59 inlet~ two;
+#X obj 330 59 inlet~ three;
+#X obj 414 58 inlet~ four;
+#X obj 190 248 *~;
+#X obj 262 249 *~;
+#X obj 332 249 *~;
+#X obj 394 247 *~;
+#X obj 270 329 outlet~;
+#X obj 25 30 nbx 5 14 0 100 0 0 \$0-chan1snd \$0-chan1rcv 1 -10 6 0
+10 -112348 -260454 -1 0 256 0;
+#X obj 100 30 nbx 5 14 0 100 0 0 \$0-chan2snd \$0-chan2rcv 2 -10 6
+0 10 -112348 -260454 -1 0 256 0;
+#X obj 25 47 nbx 5 14 0 100 0 0 \$0-chan3snd \$0-chan3rcv 3 -10 6 0
+10 -112348 -260454 -1 0 256 0;
+#X obj 100 47 nbx 5 14 0 100 0 0 \$0-chan4snd \$0-chan4rcv 4 -10 6
+0 10 -112348 -260454 -1 0 256 0;
+#X obj 207 90 r \$0-chan1snd;
+#X obj 302 92 r \$0-chan2snd;
+#X obj 393 93 r \$0-chan3snd;
+#X obj 482 93 r \$0-chan4snd;
+#X obj 207 135 smoother 20;
+#X obj 207 112 / 100;
+#X obj 302 114 / 100;
+#X obj 302 136 smoother 20;
+#X obj 393 115 / 100;
+#X obj 393 137 smoother 20;
+#X obj 482 115 / 100;
+#X obj 482 137 smoother 20;
+#N canvas 456 232 450 300 state_saving 0;
+#X obj 143 39 initbang;
+#X obj 143 61 t b b;
+#X msg 188 96 load savestate.pd_lua;
+#X obj 188 118 pdlua;
+#X obj 142 148 pack \$1 \$2 \$3 \$4 \$5;
+#X obj 142 170 savestate \$0-index \$0-chan1 \$0-chan2 \$0-chan3 \$0-chan4
+;
+#X obj 142 192 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 1 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X restore 58 210 pd state_saving;
+#X obj 58 232 canvasargs;
+#X floatatom 69 129 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 5 0 9 0;
+#X connect 6 0 9 0;
+#X connect 7 0 9 0;
+#X connect 8 0 9 0;
+#X connect 14 0 19 0;
+#X connect 15 0 20 0;
+#X connect 16 0 22 0;
+#X connect 17 0 24 0;
+#X connect 18 0 5 1;
+#X connect 19 0 18 0;
+#X connect 20 0 21 0;
+#X connect 21 0 6 1;
+#X connect 22 0 23 0;
+#X connect 23 0 7 1;
+#X connect 24 0 25 0;
+#X connect 25 0 8 1;
+#X connect 26 0 27 0;
+#X coords 0 -1 1 1 150 50 2 13 17;

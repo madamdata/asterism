@@ -98,7 +98,7 @@ ratios \;;
 #X obj 716 192 spigot;
 #X obj 786 158 r keycontrol;
 #X obj 717 271 s \$0-tglrcv;
-#X obj 716 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 716 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 581 282 reset;
 #X obj 153 424 s globalclock;
@@ -164,4 +164,4 @@ ratios \;;
 #X connect 57 1 58 1;
 #X connect 58 0 59 0;
 #X connect 59 0 60 0;
-#X coords 0 -1 1 1 150 50 1 100 100;
+#X coords 0 -1 1 1 150 50 2 100 100;
