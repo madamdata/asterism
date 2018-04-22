@@ -1,4 +1,4 @@
-#N canvas 375 140 773 575 10;
+#N canvas 376 140 773 575 10;
 #X obj 102 111 cnv 15 146 96 empty empty empty 20 12 0 14 -166720 -66577
 0;
 #N canvas 0 50 512 322 (subpatch) 0;
@@ -52,7 +52,7 @@
 #X obj 295 321 *~;
 #X obj 243 286 smoother 40;
 #X obj 205 112 moonlib/mknob 25 100 5 4000 1 1 \$0-ratesnd \$0-ratercv
-empty -2 -6 0 8 -139257 -4160 -1 4802 1;
+empty -2 -6 0 8 -139257 -4160 -1 1802 1;
 #X obj 207 141 tgl 20 0 \$0-autotogglesnd \$0-autotogglercv empty 17
 7 0 10 -204800 -1 -1 0 1;
 #X obj 429 113 metro 150;
@@ -168,8 +168,9 @@ empty -2 -6 0 8 -139257 -4160 -1 4802 1;
 0;
 #X obj 103 102 cnv 8 96 8 empty empty ! 3 5 0 8 -132224 -262144 0;
 #X obj 34 436 s \$0-trigrcv;
-#X obj 372 185 maxlib/scale -1 1 0.25 1.75;
 #X obj 34 414 initbang;
+#X obj 372 207 midiratio;
+#X obj 372 185 * 48;
 #X connect 3 0 7 0;
 #X connect 4 0 3 0;
 #X connect 5 0 13 1;
@@ -184,7 +185,7 @@ empty -2 -6 0 8 -139257 -4160 -1 4802 1;
 #X connect 13 0 15 0;
 #X connect 13 0 24 0;
 #X connect 14 0 15 0;
-#X connect 15 0 42 0;
+#X connect 15 0 44 0;
 #X connect 16 0 6 0;
 #X connect 19 0 20 0;
 #X connect 20 0 17 0;
@@ -198,6 +199,7 @@ empty -2 -6 0 8 -139257 -4160 -1 4802 1;
 #X connect 35 0 15 0;
 #X connect 35 0 24 0;
 #X connect 35 0 5 0;
-#X connect 42 0 16 1;
-#X connect 43 0 41 0;
+#X connect 42 0 41 0;
+#X connect 43 0 16 1;
+#X connect 44 0 43 0;
 #X coords 0 -1 1 1 150 115 2 100 100;

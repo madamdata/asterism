@@ -1,4 +1,4 @@
-#N canvas 28 62 1303 653 10;
+#N canvas 29 62 1303 653 10;
 #X obj 203 22 inlet;
 #X obj 622 93 f 1;
 #X obj 652 93 + 1;
@@ -411,31 +411,31 @@
 #X obj 85 103 tgl 15 0 \$0-tgl3snd \$0-tgl3rcv empty 17 7 0 10 -117052
 -262144 -1 1 1;
 #X obj 101 103 tgl 15 0 \$0-tgl4snd \$0-tgl4rcv empty 17 7 0 10 -117052
--262144 -1 0 1;
+-262144 -1 1 1;
 #X obj 117 103 tgl 15 0 \$0-tgl5snd \$0-tgl5rcv empty 17 7 0 10 -117052
 -262144 -1 0 1;
 #X obj 133 103 tgl 15 0 \$0-tgl6snd \$0-tgl6rcv empty 17 7 0 10 -117052
 -262144 -1 1 1;
 #X obj 149 103 tgl 15 0 \$0-tgl7snd \$0-tgl7rcv empty 17 7 0 10 -117052
--262144 -1 0 1;
+-262144 -1 1 1;
 #X obj 165 103 tgl 15 0 \$0-tgl8snd \$0-tgl8rcv empty 17 7 0 10 -117052
 -262144 -1 0 1;
 #X obj 53 120 tgl 15 0 \$0-tgl9snd \$0-tgl9rcv empty 17 7 0 10 -117052
--262144 -1 1 1;
-#X obj 69 120 tgl 15 0 \$0-tgl10snd \$0-tgl10rcv empty 17 7 0 10 -117052
 -262144 -1 0 1;
-#X obj 85 120 tgl 15 0 \$0-tgl11snd \$0-tgl11rcv empty 17 7 0 10 -117052
+#X obj 69 120 tgl 15 0 \$0-tgl10snd \$0-tgl10rcv empty 17 7 0 10 -117052
 -262144 -1 1 1;
+#X obj 85 120 tgl 15 0 \$0-tgl11snd \$0-tgl11rcv empty 17 7 0 10 -117052
+-262144 -1 0 1;
 #X obj 101 120 tgl 15 0 \$0-tgl12snd \$0-tgl12rcv empty 17 7 0 10 -117052
 -262144 -1 1 1;
 #X obj 117 120 tgl 15 0 \$0-tgl13snd \$0-tgl13rcv empty 17 7 0 10 -117052
--262144 -1 0 1;
-#X obj 133 120 tgl 15 0 \$0-tgl14snd \$0-tgl14rcv empty 17 7 0 10 -117052
 -262144 -1 1 1;
+#X obj 133 120 tgl 15 0 \$0-tgl14snd \$0-tgl14rcv empty 17 7 0 10 -117052
+-262144 -1 0 1;
 #X obj 149 120 tgl 15 0 \$0-tgl15snd \$0-tgl15rcv empty 17 7 0 10 -117052
--262144 -1 0 1;
+-262144 -1 1 1;
 #X obj 165 120 tgl 15 0 \$0-tgl16snd \$0-tgl16rcv empty 17 7 0 10 -117052
--262144 -1 0 1;
+-262144 -1 1 1;
 #N canvas 0 50 901 306 receives 0;
 #X obj 37 51 r \$0-tgl1snd;
 #X obj 47 71 r \$0-tgl2snd;
@@ -496,7 +496,7 @@
 #X obj 715 262 f 0;
 #X obj 621 114 mod 16;
 #X obj 448 151 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
-#X obj 104 123 cnv 4 4 4 empty \$0-cnv empty 0 0 0 14 -61638 -66577
+#X obj 72 107 cnv 4 4 4 empty \$0-cnv empty 0 0 0 14 -61638 -66577
 0;
 #N canvas 0 50 450 300 blinker 0;
 #X obj 213 238 spigot;
@@ -537,7 +537,7 @@
 #X msg 926 475 load debinarizer.pd_lua;
 #X obj 915 506 pdlua;
 #X obj 53 137 hradio 16 1 0 8 \$0-seqsnd \$0-seqrcv empty 0 -8 0 10
--167424 -259869 -1 7;
+-167424 -259869 -1 6;
 #X obj 155 285 r \$0-seqsnd;
 #X obj 155 307 t f f;
 #X obj 182 347 s \$0-currentslot;
@@ -597,7 +597,6 @@
 #X obj 615 9 r \$0-globalsnd;
 #X obj 1116 41 inlet~ seqmod;
 #X obj 1117 87 snapshot~;
-#X obj 1035 238 sel 0;
 #X obj 1117 109 + 1;
 #X obj 1117 131 / 2;
 #X obj 1117 153 * 8;
@@ -608,6 +607,8 @@
 -4160 -145319 1 1;
 #X obj 1177 172 r \$0-seqmodsnd;
 #X obj 707 116 t f f;
+#X obj 1063 213 bang;
+#X obj 1007 163 sel 0 8;
 #X connect 0 0 12 0;
 #X connect 1 0 2 0;
 #X connect 1 0 55 0;
@@ -658,7 +659,7 @@
 #X connect 54 0 22 0;
 #X connect 55 0 18 0;
 #X connect 55 0 58 0;
-#X connect 55 0 97 0;
+#X connect 55 0 96 0;
 #X connect 56 0 3 0;
 #X connect 56 1 4 0;
 #X connect 56 2 5 0;
@@ -700,14 +701,16 @@
 #X connect 84 0 12 0;
 #X connect 85 0 84 1;
 #X connect 86 0 87 0;
-#X connect 87 0 89 0;
-#X connect 88 0 87 0;
+#X connect 87 0 88 0;
+#X connect 88 0 89 0;
 #X connect 89 0 90 0;
 #X connect 90 0 91 0;
-#X connect 91 0 92 0;
-#X connect 92 0 94 0;
-#X connect 94 0 93 0;
-#X connect 96 0 94 1;
-#X connect 97 0 56 0;
-#X connect 97 1 88 0;
+#X connect 91 0 93 0;
+#X connect 93 0 92 0;
+#X connect 95 0 93 1;
+#X connect 96 0 56 0;
+#X connect 96 1 98 0;
+#X connect 97 0 87 0;
+#X connect 98 0 97 0;
+#X connect 98 1 97 0;
 #X coords 0 -1 1 1 150 55 2 50 100;
