@@ -1,14 +1,14 @@
-#N canvas 557 356 723 310 10;
+#N canvas 393 118 888 496 10;
 #X obj 25 21 cnv 15 73 61 empty empty empty 20 12 0 14 -104026 -66577
 0;
 #X obj 54 31 nbx 4 11 0 10000 0 0 \$0-atksnd \$0-atkrcv a -11 4 0 9
--104026 -262017 -237178 1 256 0;
+-104026 -262017 -237178 0 256 0;
 #X obj 54 44 nbx 4 11 0 10000 0 0 \$0-decsnd \$0-decrcv d -11 4 0 9
--104026 -253060 -237178 1 256 0;
+-104026 -253060 -237178 13 256 0;
 #X obj 54 57 nbx 4 11 0 100 0 0 \$0-sussnd \$0-susrcv s -11 4 0 9 -104026
--260939 -237178 95 256 0;
+-260939 -237178 0 256 0;
 #X obj 54 70 nbx 4 11 0 50000 0 0 \$0-relsnd \$0-relrcv r -11 4 0 9
--104026 -260045 -237178 2 256 0;
+-104026 -260045 -237178 0 256 0;
 #X obj 27 32 tgl 12 0 \$0-trigdispsnd \$0-trigdisp empty 17 7 0 10
 -104026 -257986 -1 0 1;
 #X obj 25 21 cnv 8 33 8 empty empty ! 0 2 0 8 -158119 -66577 0;
@@ -23,25 +23,25 @@
 #X obj 411 61 inlet~ r;
 #X obj 522 18 inlet ctrl;
 #X obj 88 21 cnv 8 10 8 empty empty ct 0 2 0 8 -158119 -66577 0;
-#X obj 284 235 simpleadsr;
-#X obj 284 257 outlet~;
-#X obj 315 124 r \$0-atksnd;
-#X obj 390 124 r \$0-decsnd;
-#X obj 465 123 r \$0-sussnd;
+#X obj 283 371 simpleadsr;
+#X obj 283 393 outlet~;
+#X obj 275 248 r \$0-atksnd;
+#X obj 402 238 r \$0-decsnd;
+#X obj 464 259 r \$0-sussnd;
 #X obj 542 126 r \$0-relsnd;
 #X obj 145 85 route bang list;
 #X obj 145 152 pack f f;
-#X obj 315 149 bondo 4, f 12;
-#X obj 315 171 pack f f f f;
-#X obj 465 145 / 100;
+#X obj 314 285 bondo 4, f 12;
+#X obj 314 307 pack f f f f;
+#X obj 464 281 / 100;
 #X obj 76 175 reversepair;
 #X obj 76 210 route 0;
 #X msg 76 232 0;
 #X msg 111 233 1;
 #X obj 72 273 s \$0-trigdisp;
 #X msg 145 108 64;
-#X obj 227 175 unpack f f;
-#N canvas 458 280 450 300 state_saving 1;
+#X obj 226 311 unpack f f;
+#N canvas 458 280 450 300 state_saving 0;
 #X obj 17 13 initbang;
 #X msg 41 59 load savestate.pd_lua;
 #X obj 88 103 pdlua;
@@ -56,8 +56,8 @@
 #X connect 4 1 1 0;
 #X connect 5 0 3 0;
 #X connect 6 0 5 0;
-#X restore 513 225 pd state_saving;
-#X obj 513 247 canvasargs;
+#X restore 512 361 pd state_saving;
+#X obj 512 383 canvasargs;
 #X floatatom 61 99 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
 #X obj 522 40 route atk dec sus rel;
 #X obj 523 74 s \$0-atkrcv;
@@ -67,14 +67,24 @@
 #X obj 146 130 makenote 127 50;
 #X obj 27 68 tgl 12 0 \$0-loopsnd \$0-looprcv L 3 4 0 10 -104026 -257986
 -244598 0 1;
-#X obj 385 233 spigot;
-#X obj 415 197 r \$0-loopsnd;
+#X obj 384 369 spigot;
+#X obj 414 333 r \$0-loopsnd;
+#X obj 304 102 snapshot~;
+#X obj 304 124 * 24;
+#X obj 304 146 midiratio;
+#X obj 304 168 s \$0-delaymodsnd;
+#X obj 231 31 bang;
+#X obj 356 262 *;
+#X obj 374 221 t b f;
+#X obj 380 199 r \$0-delaymodsnd;
 #X connect 11 0 24 0;
+#X connect 11 0 52 0;
+#X connect 13 0 48 0;
 #X connect 16 0 39 0;
 #X connect 18 0 19 0;
 #X connect 18 1 46 0;
 #X connect 20 0 26 0;
-#X connect 21 0 26 1;
+#X connect 21 0 53 0;
 #X connect 22 0 28 0;
 #X connect 23 0 26 3;
 #X connect 24 0 34 0;
@@ -104,4 +114,12 @@
 #X connect 44 1 25 1;
 #X connect 46 0 34 0;
 #X connect 47 0 46 1;
+#X connect 48 0 49 0;
+#X connect 49 0 50 0;
+#X connect 50 0 51 0;
+#X connect 52 0 48 0;
+#X connect 53 0 26 1;
+#X connect 54 0 53 0;
+#X connect 54 1 53 1;
+#X connect 55 0 54 0;
 #X coords 0 -1 1 1 77 65 2 23 19;

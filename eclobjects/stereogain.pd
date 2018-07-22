@@ -1,4 +1,4 @@
-#N canvas 1 53 450 300 10;
+#N canvas 2 77 450 300 10;
 #X obj 185 121 inlet~;
 #X obj 185 143 *~;
 #X obj 185 165 outlet~;
@@ -6,9 +6,26 @@
 #X obj 285 143 *~;
 #X obj 285 165 outlet~;
 #X obj 20 15 hsl 132 15 0 1 0 0 \$0-gainsnd \$0-gainrcv empty -2 -8
-0 10 -262144 -1 -1 2800 1;
+0 10 -262144 -1 -1 5500 1;
 #X obj 273 40 r \$0-gainsnd;
 #X obj 273 62 smoother 50;
+#N canvas 456 232 450 300 state_saving 0;
+#X obj 117 34 initbang;
+#X obj 117 56 t b b;
+#X msg 153 86 load savestate.pd_lua;
+#X obj 153 108 pdlua;
+#X obj 113 159 pack \$1 \$2;
+#X obj 113 181 savestate \$0-index \$0-gain;
+#X obj 113 203 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 1 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X restore 63 111 pd state_saving;
+#X obj 63 133 canvasargs;
+#X floatatom 274 235 5 0 0 0 index #0-indexrcv #0-indexsnd, f 5;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
@@ -16,4 +33,5 @@
 #X connect 7 0 8 0;
 #X connect 8 0 4 1;
 #X connect 8 0 1 1;
+#X connect 9 0 10 0;
 #X coords 0 -1 1 1 150 25 2 10 10;
