@@ -1,6 +1,6 @@
-local savestate = pd.Class:new():register("savestate")
+local adlibsavestate = pd.Class:new():register("adlibsavestate")
 
-function savestate:initialize(name, atoms)
+function adlibsavestate:initialize(name, atoms)
 	self.inlets = 1
 	self.outlets = 1
 	self.args = {}
@@ -14,7 +14,7 @@ function savestate:initialize(name, atoms)
 	return true
 end
 
-function savestate:postinitialize()
+function adlibsavestate:postinitialize()
 	for index, val in ipairs(self.args) do
 		self.receives[index] = pd.Receive:new():register(self, val .. "snd", val .. "snd")
 		self[val .. "snd"] = function (self, sel, atoms)
@@ -26,14 +26,14 @@ function savestate:postinitialize()
 	end
 end
 
-function savestate:in_1_symbol(sym)
+function adlibsavestate:in_1_symbol(sym)
 	if sym == "dumpvalues" then
 		dumptable(self.values)
 		dumptable(self.types)
 	end
 end
 
-function savestate:in_1_list(list)
+function adlibsavestate:in_1_list(list)
 	for index, value in ipairs(list) do
 		self.types[index] = type(value)
 		self.values[index] = value
@@ -67,6 +67,6 @@ function dumptable(table)
 	end
 end
 
-function savestate:finalize()
+function adlibsavestate:finalize()
   for _,r in ipairs(self.receives) do r:destruct() end
 end

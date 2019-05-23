@@ -1,4 +1,4 @@
-#N canvas 197 223 973 462 10;
+#N canvas 198 247 973 462 10;
 #N canvas 1 53 450 300 writer 0;
 #X obj 158 77 inlet~;
 #X obj 166 211 outlet~;
@@ -105,7 +105,7 @@ power of (number of semitones /12);
 #X text 314 44 semitones;
 #X text 401 35 maxdelay;
 #X obj 506 46 inlet~ mod;
-#X msg 400 61 35;
+#X msg 400 61 75;
 #X connect 0 0 1 0;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;

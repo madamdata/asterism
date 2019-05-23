@@ -4,7 +4,7 @@
 #X obj 12 12 cnv 15 146 146 empty empty empty 20 12 0 14 -261578 -66577
 0;
 #X obj 13 16 vsl 25 90 0.01 1 1 0 \$0-fader1snd \$0-fader1rcv empty
-0 -9 0 10 -261682 -260097 -1 4500 1;
+0 -9 0 10 -261682 -260097 -1 0 1;
 #X obj 40 16 vsl 25 90 0.01 1 1 0 \$0-fader2snd \$0-fader2rcv empty
 0 -9 0 10 -261682 -260097 -1 0 1;
 #X obj 67 16 vsl 25 90 0.01 1 1 0 \$0-fader3snd \$0-fader3rcv empty
@@ -166,7 +166,7 @@ rel 1 20 0 8 -260287 -258892 -1 0 1;
 #X obj 261 35 vsl 15 100 20 1000 1 1 \$0-hipsnd \$0-hiprcv hip 1 20
 0 8 -260767 -258892 -1 0 1;
 #X obj 140 14 tgl 15 0 \$0-switchsnd \$0-switchrcv empty 17 7 0 10
--253461 -258576 -1 1 1;
+-253461 -258576 -1 0 1;
 #N canvas 1 53 450 300 switch 0;
 #X obj 130 73 r \$0-switchsnd;
 #X msg 130 108 set \$1;
@@ -177,7 +177,7 @@ rel 1 20 0 8 -260287 -258892 -1 0 1;
 #X connect 1 0 2 0;
 #X restore 636 52 pd switch;
 #X obj 300 14 tgl 15 0 \$0-switchsnd \$0-switchrcv empty 17 7 0 10
--253461 -258576 -1 1 1;
+-253461 -258576 -1 0 1;
 #X obj 636 73 switch~;
 #X text 18 510 ^ key control \; numbers 1-4 control channels 1-4;
 #N canvas 159 125 753 313 \$0-dyncatches 0;
@@ -276,21 +276,21 @@ rel 1 20 0 8 -260287 -258892 -1 0 1;
 #X obj 623 528 *~ 1;
 #X obj 926 531 == 0;
 #X obj 181 216 canvasargs;
-#N canvas 182 301 1177 342 state_saving 0;
-#X msg 27 254 load savestate.pd_lua;
+#N canvas 182 301 1177 342 state_saving 1;
 #X obj 27 276 pdlua;
 #X obj 181 195 outlet;
-#X obj 182 134 savestate \$0-fader1 \$0-fader2 \$0-fader3 \$0-fader4
-\$0-pan1 \$0-pan2 \$0-pan3 \$0-pan4 \$0-mute1 \$0-mute2 \$0-mute3 \$0-mute4
-\$0-switch \$0-outputswitch;
 #X obj 94 87 pack \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9 \$10 \$11 \$12
 \$13 \$14, f 80;
 #X obj 28 14 inlet;
-#X connect 0 0 1 0;
+#X msg 30 254 load adlibsavestate.pd_lua;
+#X obj 187 134 adlibsavestate \$0-fader1 \$0-fader2 \$0-fader3 \$0-fader4
+\$0-pan1 \$0-pan2 \$0-pan3 \$0-pan4 \$0-mute1 \$0-mute2 \$0-mute3 \$0-mute4
+\$0-switch \$0-outputswitch;
+#X connect 2 0 5 0;
 #X connect 3 0 2 0;
-#X connect 4 0 3 0;
-#X connect 5 0 4 0;
-#X connect 5 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 1 0;
 #X restore 181 192 pd state_saving;
 #X floatatom 15 139 3 -100 100 0 - #0-pan1rcv #0-pan1snd, f 3;
 #X floatatom 41 139 3 -100 100 0 - #0-pan2rcv #0-pan2snd, f 3;
